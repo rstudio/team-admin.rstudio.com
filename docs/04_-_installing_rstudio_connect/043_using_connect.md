@@ -7,11 +7,11 @@ In this session you:
 * Deploy a simple app
 * Discover some other administrator tools
 
----
+
 
 ## Connecting the IDE
 
----
+
 
 
 ### Connecting your IDE to Connect
@@ -33,7 +33,7 @@ Have them do this now. Talk about what happens and show them the resulting file.
 
 
 
----
+
 
 
 ### Video: Connecting your IDE to Connect
@@ -44,7 +44,7 @@ Have them do this now. Talk about what happens and show them the resulting file.
 
 
 
----
+
 
 ### Pointing IDE to Connect
 
@@ -79,7 +79,7 @@ cat <result.dcf>
 
 
 
----
+
 
 ### Demo
 
@@ -95,7 +95,7 @@ Deploy an app to Connect
 
 
 
----
+
 
 ### That was pretty easy ...
 
@@ -109,12 +109,12 @@ Write down your observations.
 * App failed 
 
 
----
+
 
 ## Understanding failure
 
 
----
+
 
 ### Understanding failure
 
@@ -131,7 +131,7 @@ Deploying content to Connect is like taking a kid from home to daycare.
 
 
 
----
+
 
 ### Explore some troubleshooting tools
 
@@ -144,7 +144,7 @@ Deploying content to Connect is like taking a kid from home to daycare.
 
 
 
----
+
 
 ### Deployment log
 
@@ -184,12 +184,12 @@ Bundle requested R version 3.4.1; using /usr/lib64/R/bin/R which has version 3.4
 ```
 
 
----
+
 
 ## The deployment bundle
 
 
----
+
 
 ### Components of the bundle
 
@@ -200,7 +200,7 @@ Part 2: Upload Bundle on RSC
 Part 3: Restore Bundle
 
 
----
+
 
 ### Components of the bundle: Create and upload
 
@@ -219,7 +219,7 @@ Deploying bundle: 1 for application: 1 ...
 
 
 
----
+
 
 ### Components of the bundle: Restore
 
@@ -256,7 +256,7 @@ Bundle requested R version 3.4.1; using /usr/lib64/R/bin/R which has version 3.4
 2017/12/05 00:15:56.437335870 Installing Rcpp (0.12.13) ...
 ```
 
----
+
 
 ### Summary of the bundle
 
@@ -273,7 +273,7 @@ First thing is the deployment log in the IDE:
 4. Packages to install
 
 
----
+
 
 ### Bundle: bundle id and app id
 
@@ -294,7 +294,7 @@ The app id (2) corresponds to the app id in Connect (2):
 ![image](assets/connect_app_url.png)
 
 
----
+
 
 ### Redeployment increments the bundle id
 
@@ -311,7 +311,7 @@ Building R Markdown document...
 ```
 
 
----
+
 
 ### Video: viewing the bundle in Connect
 
@@ -319,7 +319,7 @@ Building R Markdown document...
   <source src="https://cdn.rstudio.com/pro-admin/videos/connect_view_bundle.mp4" type="video/mp4">
 </video>
 
----
+
 
 ### Viewing the bundle in Connect
 
@@ -334,11 +334,11 @@ You can download the bundle from Connect, and the bundle id corresponds to the i
 
 
 
----
+
 
 ## Understanding what's in the bundle
 
----
+
 
 ### Part 1: Bundle (What are you sending to daycare?)
 
@@ -359,7 +359,7 @@ Download the bundle from RSC and show the contents of the `packrat.lock` file an
 
 
 
----
+
 
 ### Part 1:  Bundle (what's in the bundle?)
 
@@ -385,7 +385,7 @@ Download the bundle from RSC and show the contents of the `packrat.lock` file an
 
 
 
----
+
 
 ### Part 1: Bundle (deployment record)
 
@@ -415,7 +415,7 @@ Show the contents of the rsconnect folder
 
 
 
----
+
 
 ### Part 2: Upload (How do you get to daycare?)
 
@@ -429,7 +429,7 @@ HTTP Requests
 Discuss the pitfalls of custom SSL certs.
 
 
----
+
 
 ### Part 3: Restore (What happens at daycare?)
 
@@ -443,7 +443,7 @@ Unpacking the bundle --> installing the packages
 This slide is all about unpacking the bundle and installing packages.
 
 
----
+
 
 ### Where did the bundle go?
 
@@ -461,7 +461,7 @@ Have them navigate to `/var/lib/rstudio-connect` and run the `tree` command.
 
 
 
----
+
 
 ### Part 3: Restore (What happens at daycare?)
 
@@ -490,7 +490,7 @@ Main takeaway, RSC has to be able to install the package:
 
 
 
----
+
 
 ### Part 3: Restore
 
@@ -513,7 +513,7 @@ Main takeaway, RSC has to be able to install the package:
 
 
 
----
+
 
 ### Part 3: Restore (daycare rules are different)
 
@@ -528,13 +528,13 @@ RStudio Connect provides process management:
 
 
 
----
+
 
 ## Sandboxing
 
 
 
----
+
 
 
 ### Sandboxing
@@ -549,7 +549,7 @@ This is why Connect needs to run as root!
 ![image](assets/sandbox.png)
 
 
----
+
 
 ### Sandboxing: packages
 
@@ -564,12 +564,12 @@ Typically Connect will look on CRAN and github for these packages.  However, if 
     - You cover this in module 7 and 8 of this course
 
 
----
+
 
 ## "RunAs" User
 
 
----
+
 
 ### Understanding the "RunAs" user
 
@@ -584,11 +584,11 @@ Possible values:
     - See [Current user execution](https://docs.rstudio.com/connect/admin/process-management/#runas) in the connect admin guide
 
 
----
+
 
 ## Redeployment
 
----
+
 
 ### Redeployment
 
@@ -602,7 +602,7 @@ Hint: You can see installation from cache in the deployment log
 
 
 
----
+
 
 ### Define "collaborator"
 
@@ -618,18 +618,18 @@ Hint: You can see installation from cache in the deployment log
 Show an example of publishing to content that someone else deployed (just so they can see what the IDE looks like)
 
 
----
+
 
 ## Content discoverability
 
----
+
 
 ### Content discoverability
 
 ![image](assets/being_disorganized.png)
 
 
----
+
 
 ### Content search by title
 
@@ -646,7 +646,7 @@ Connect allows you to search for content in several ways. The first is a simple 
 ![image](assets/taxonomy.png)
 
 
----
+
 
 ### Creating a tag schema
 
@@ -657,7 +657,7 @@ Connect allows you to search for content in several ways. The first is a simple 
 
 ![image](assets/creating_schema.png)
 
----
+
 
 ### Tags: tagging content
 
@@ -665,7 +665,7 @@ Connect allows you to search for content in several ways. The first is a simple 
 
 ![image](assets/tagging_content.png)
 
----
+
 
 ### Searching by tag
 
@@ -675,12 +675,12 @@ Content **viewers** can search content by tag.
 
 ![image](assets/tag_search.png)
 
----
+
 
 ## Vanity URLs
 
 
----
+
 
 ### Vanity URLs
 
@@ -698,12 +698,12 @@ Viewing a vanity URL
 
 
 
----
+
 
 ## Other content deployment options
 
 
----
+
 
 ### Publishing apps with continuous Integration
 
@@ -722,7 +722,7 @@ Other resources:
 * https://docs.rstudio.com/connect/admin/appendix/ci/
 
 
----
+
 
 ### Publishing apps from git / github
 
@@ -735,11 +735,11 @@ Resources:
 
 * https://solutions.rstudio.com/deploy/methods/#deploying-from-git-repositories
 
----
+
 
 ## Advanced admin topics
 
----
+
 
 ### Managing Connect in an offline environment
 
@@ -755,7 +755,7 @@ Several ways to do this, including:
 * [RStudio Package Manager](https://www.rstudio.com/products/package-manager/)
 
 
----
+
 
 ### Backup and migration
 
@@ -769,11 +769,11 @@ Migrations:
 * A bit tricker because of all those installed packages that have been cached. 
 * Follow the admin guide instructions.
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

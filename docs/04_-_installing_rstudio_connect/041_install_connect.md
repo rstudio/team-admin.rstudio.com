@@ -9,11 +9,11 @@ In this sessions, you:
 * Download and install Connect
 
 
----
+
 
 ## The mental model of Connect
 
----
+
 
 ### Climbing a Mountain vs Cimbing a Tree
 
@@ -24,7 +24,7 @@ In this sessions, you:
 Getting from A to B isn't going to be like climbing a mountain, it's  like climbing a tree (picking which fork to follow amongst numerous branches).
 
 
----
+
 
 ### Finding Information
 
@@ -38,11 +38,11 @@ This course is about teaching you to fish, not giving fish.
 
 * Open up the guide, this will be a resource throughout the course and will help you decide which branch to pick.
 
----
+
 
 ## Installation requirements
 
----
+
 
 ### Installing Connect - Where? 
 
@@ -53,7 +53,7 @@ This course is about teaching you to fish, not giving fish.
 
 Support article: [Configuration and sizing recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations)
 
----
+
 
 ### Installing Connect - Where? 
 
@@ -75,7 +75,7 @@ Typical questions
     * Refer to [Requirements for RStudio Connect](https://docs.rstudio.com/rsc/requirements/)
     * For data science work we recommend Ubuntu
 
----
+
 
 ### Installing Connect - How?
 
@@ -87,11 +87,11 @@ Installation of RStudio Connect requires root permissions.
 * **TL;DR:** Requirement comes from a strict security viewpoint.
 
 
----
+
 
 ## System requirements
 
----
+
 
 ### System requirement: R
 
@@ -107,7 +107,7 @@ Rscript -e 'R.home()'
 
 Notice that neither path includes a version.
 
----
+
 
 ### System requirement: Build R from pre-compiled binaries
 
@@ -125,7 +125,7 @@ To achieve this, RStudio Connect supports **multiple versions of R**.
   - `/opt/R/3.6.0`
   - `/opt/R/3.6.1`
     
----
+
 
 ### Upgrading R
 
@@ -141,11 +141,11 @@ Important: avoid upgrading by using your repository:
 * Avoid `yum upgrade` !!!
 
 
----
+
 
 ## Installing Connect
 
----
+
 
 ### Installing Connect: server sizing?
 
@@ -157,7 +157,7 @@ A: It depends. You should be able to answer this question by the end of the cour
 * It all depends on what your content will be doing in R.
     - Best to learn over time and crawl-walk-run where possible.
 
----
+
 
 ### Installing Connect: Docker?
 
@@ -172,7 +172,7 @@ A: Possible but not recommended.
 * That said, it's possible, but will require a [privileged container](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities). This means some of the process isolation offered by docker will not be available.
 
 
----
+
 
 ### Downloading Connect
 
@@ -180,7 +180,7 @@ Download page links to current version:
 
 [https://docs.rstudio.com/rsc/installation/](https://docs.rstudio.com/rsc/installation/)
 
----
+
 
 ### Screencast: download and install Connect
 
@@ -188,11 +188,11 @@ Download page links to current version:
 <asciinema-player src="../../asciicast/install_connect.cast"></asciinema-player>
 
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

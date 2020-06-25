@@ -6,11 +6,11 @@
 * Learn how to scale a Shiny App
 
 
----
+
 
 ## Accessing a database
 
----
+
 
 ### Connecting to a database
 
@@ -21,7 +21,7 @@ All of the RStudio best practise recommendations for working with databases is s
 ![images](assets/connect_db.png)
 
 
----
+
 
 ### Accessing Remote Data 
 
@@ -37,7 +37,7 @@ This raises three primary concerns:
 
 
 
----
+
 
 ### Database connections
 
@@ -52,7 +52,7 @@ The database connection is defined in two files on your server:
 
 
 
----
+
 
 ### Inside the odbc files
 
@@ -84,7 +84,7 @@ Driver = /opt/rstudio-drivers/postgresql/bin/lib/libpostgresqlodbc_sb64.so
 ```
 
 
----
+
 
 ### The RStudio professional database drivers
 
@@ -99,11 +99,11 @@ For more information:
 ![image](assets/pro_drivers.png)
 
 
----
+
 
 ## Data security
 
----
+
 
 ### Data security data at application level
 
@@ -124,7 +124,7 @@ Cons:
 ![images](assets/securing_data_app_level.png)
 
 
----
+
 
 ### Data security data at data level
 
@@ -154,7 +154,7 @@ Cons:
 
 
 
----
+
 
 ### Deploying
 
@@ -168,12 +168,12 @@ However, identical environments are not necessary.
 ![images](assets/deployment_consistency.png)
 
 
----
+
 
 ## Scaling shiny apps
 
 
----
+
 
 ### Scaling shiny apps
 
@@ -193,7 +193,7 @@ Demo on the instructor server where and how to change the settings for an app.
 
 
 
----
+
 
 ### Video: Shiny app utilization scheduler
 
@@ -206,7 +206,7 @@ Demo on the instructor server where and how to change the settings for an app.
 </video>
 
 
----
+
 
 ### Scaling
 
@@ -226,7 +226,7 @@ In this model:
 
 
 
----
+
 
 ### Multiple connections per R process in a Shiny app
 
@@ -262,14 +262,14 @@ Tie in to databases: Mention the `pool` package and that the https://db.rstudio.
 
 
 
----
+
 
 ### Multiple R processes
 
 ![images](assets/multiple_processes.png)
 
 
----
+
 
 ### Shiny runtime settings
 
@@ -286,7 +286,7 @@ The Connect admin guide explains these settings at:
 
 
 
----
+
 
 ### Conf::2018 video: "Scaling Shiny"
 
@@ -298,11 +298,11 @@ The Connect admin guide explains these settings at:
 * Get the [shinyloadtest](https://github.com/rstudio/shinyloadtest) tools at github.
 
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

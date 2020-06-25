@@ -8,7 +8,7 @@ In this session, you will:
 * Configure multiple repositories in RSPM
 
 
----
+
 
 ## Course outline
 
@@ -25,11 +25,11 @@ In this module:
 * Different types of sources in RSPM
 * Repository configurations in RSPM
 
----
+
 
 ## Administering RSPM
 
----
+
 
 ### Administering RSPM
 
@@ -47,11 +47,11 @@ From the web interface, you can:
 * View package usage
 * Inform users on how to get packages from RSPM
 
----
+
 
 ## Different types of sources in RSPM
 
----
+
 
 ### Single source and single repository
 
@@ -68,7 +68,7 @@ More details on repositories and sources are provided in the documentation on
 
 ![image](assets/rspm-sources-single.png)
 
----
+
 
 ### Multiple sources and single repository
 
@@ -83,13 +83,13 @@ came from.
 
 ![image](assets/rspm-sources-order.png)
 
----
+
 
 ### Multiple sources and multiple repositories
 
 ![image](assets/rspm-sources-multiple.png)
 
----
+
 
 ### Configuring sources
 
@@ -107,11 +107,11 @@ All of these configuration scenarios are described in the documentation on
 [Get Started - Configuration](https://docs.rstudio.com/rspm/admin/quickstarts.html).
 
 
----
+
 
 ## Repository configurations in RSPM
 
----
+
 
 ### Serving CRAN packages
 
@@ -130,7 +130,7 @@ default, RSPM will sync once a day at midnight (in the server’s timezone).
 
 ![image](assets/rspm-source-cran.png)
 
----
+
 
 ### Serving a subset of CRAN packages
 
@@ -143,7 +143,7 @@ discovered and included in the repository.
 
 ![image](assets/rspm-source-cran-subset.png)
 
----
+
 
 ### Serving local packages
 
@@ -158,7 +158,7 @@ package version that is available
 
 ![image](assets/rspm-source-local.png)
 
----
+
 
 ### Serving packages from Git
 
@@ -173,11 +173,11 @@ this process using a git source.
 
 ![image](assets/rspm-source-git.png)
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

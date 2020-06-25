@@ -6,14 +6,14 @@ to the RStudio Team system administration course!
 ![image](assets/r-admins-button-small.png)
 
 
----
+
 
 
 ## How this course works
 
 
 
----
+
 
 ### Initial state
 
@@ -23,7 +23,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 ![image](assets/1-initial-state.png)
 
 
----
+
 
 ### Install R from pre-compiled binaries
 
@@ -31,7 +31,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/2-install-r.png)
 
----
+
 
 ### Install RStudio Server Pro 
 
@@ -39,7 +39,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/3-rsp.png)
 
----
+
 
 
 ### Security - configure LDAP 
@@ -48,7 +48,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/4-security.png)
 
----
+
 
 ### Install and configure RStudio Connect 
 
@@ -56,7 +56,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/5-connect.png)
 
----
+
 
 ### Use RStudio Connect
 
@@ -64,7 +64,7 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/6-use-connect.png)
 
----
+
 
 ### Install and use RStudio Package Manager
 
@@ -72,12 +72,12 @@ When you start the course, you have a mostly empty virtual machine (VM), inside 
 
 ![image](assets/7-rspm.png)
 
----
+
 
 
 ## Training server logistics
 
----
+
 
 
 ### Training server logistics
@@ -90,12 +90,12 @@ During this session you will:
 * SSH into the machine
 * Explore the machine, e.g. to find user files, classroom material, etc.
 
----
+
 
 
 ## Your turn
 
----
+
 
 
 ### Your turn

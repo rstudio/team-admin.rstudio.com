@@ -8,12 +8,12 @@ You have already installed R from pre-compiled binaries.  In this session you:
 * Discuss architecture and some best practices
 
 
----
+
 
 ## General requirements
 
 
----
+
 
 ### Configuration and sizing recommendations
 
@@ -33,7 +33,7 @@ RStudio Package Manager | 2 core / 2G (RAM) / 50 G (Disk) | 2 core / 2 G (RAM) /
 Your mileage may vary!
 
 
----
+
 
 ### General product requirements
 
@@ -51,12 +51,12 @@ Support article:
 * [General product requirements](https://support.rstudio.com/hc/en-us/articles/360015177453-RStudio-professional-product-requirements)
 
 
----
+
 
 
 ## Installation
 
----
+
 
 ### Installation checklist
 
@@ -67,12 +67,12 @@ Please read the support article:
 
 You can also refer to the [Requirements](https://docs.rstudio.com/requirements/) section of the [RStudio product documentation](https://docs.rstudio.com).
 
----
+
 
 
 ## Installing R from pre-compiled binaries
 
----
+
 
 ### One more thing: installing R
 
@@ -89,12 +89,12 @@ Why?
 * [Building Additional Versions from Source](https://docs.rstudio.com/ide/server-pro/r-versions.html#installing-multiple-versions-of-r)
 * RStudio recommends keeping multiple versions for a *deploy-and-forget* mindset (or at least less *line-in-the-sand* upgrade scenarios)
 
----
+
 
 
 ## Your turn
 
----
+
 
 
 ### Your turn

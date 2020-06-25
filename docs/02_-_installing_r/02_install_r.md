@@ -8,7 +8,7 @@
 
 
 
----
+
 
 
 ## Three mechanisms for installing R
@@ -28,7 +28,7 @@ You have three different mechanisms for installing R on a Linux machine:
 
     * Download an install the pre-compiled binaries available from RStudio
 
----
+
 
 ### Method 1: Installing R using yum or apt
 
@@ -46,7 +46,7 @@ This means that using your Linux package manager for installing R in production 
     We recommend you don't use a Linux package manager to install R.
 
 
----
+
 
 ### Method 2: Compile R from source
 
@@ -67,7 +67,7 @@ The downside of installing R from source is that it takes some time for the comp
 
 
 
----
+
 
 ### Method 3: Install from pre-compiled binaries
 
@@ -84,13 +84,13 @@ To install from pre-compiled binaries, follow the instructions at
 !!! tip
     Installing from pre-compiled binaries is the recommended option in most cases
 
----
+
 
 
 ## Summary
 
 
----
+
 
 ### Recommendation
 
@@ -110,7 +110,7 @@ Our suggested order for making a choice of R installation is:
     * Do not use for long-term data science stability
 
 
----
+
 
 ## Your turn
 

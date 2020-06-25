@@ -3,11 +3,11 @@
 
 * Deploy and schedule reports in the form of R Markdown to RStudio Connect.
 
----
+
 
 ## R Markdown Reports
 
----
+
 
 ### Note for non-R users:
 
@@ -19,7 +19,7 @@
     - Then this intermediate Markdown document is converted to the **final format**
 * The final format is typically HTML, but it could also be PDF, Word or Powerpoint, among many other [formats](https://rmarkdown.rstudio.com/formats.html).
 
----
+
 
 
 ### R Markdown Reports
@@ -36,7 +36,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
 
 
 
----
+
 
 ### Solving the copy-and-paste nightmare
 
@@ -47,7 +47,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
 * Rather than manually editing a report, then emailing the report, Connect lets you publish an HTML report, so you can share your work as a content URL.
 
 
----
+
 
 ### Rendering a report
 
@@ -57,7 +57,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
   <source src="https://cdn.rstudio.com/pro-admin/videos/knit.mp4" type="video/mp4">
 </video>
 
----
+
 
 ### Deploying a report to Connect
 
@@ -73,7 +73,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
 ![image](assets/publish_rmd_options.png)
 
 
----
+
 
 ### Deploying a report (with source code) to Connect
 
@@ -82,7 +82,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
 </video>
 
 
----
+
 
 ### Refreshing a report from Connect, and viewing the history
 
@@ -92,7 +92,7 @@ The ultimate report is typically a web page, but many [output formats](https://r
   <source src="https://cdn.rstudio.com/pro-admin/videos/refresh_markdown.mp4" type="video/mp4">
 </video>
 
----
+
 
 ### Other static content
 
@@ -114,11 +114,11 @@ Caveats:
 * Only content generated from an R Markdown document can be emailed. 
 
 
----
+
 
 ## Parameterized Markdown
 
----
+
 
 ### Parameterized Markdown
 
@@ -133,7 +133,7 @@ References:
 RStudio Connect recognizes parameterized Markdown and automatically creates an input pane.
 
 
----
+
 
 ### Knitting with parameters in the IDE
 
@@ -142,7 +142,7 @@ RStudio Connect recognizes parameterized Markdown and automatically creates an i
 </video>
 
 
----
+
 
 ### Parameterized Markdown in Connect
 
@@ -162,7 +162,7 @@ Scheduled and emailed reports:
 
 ![image](assets/creating-variant.png)
 
----
+
 
 ### Creating a variant parameterized Markdown in Connect
 
@@ -173,12 +173,12 @@ Scheduled and emailed reports:
 </video>
 
 
----
+
 
 ## Scheduling
 
 
----
+
 
 ### Scheduling a report
 
@@ -201,7 +201,7 @@ You can change:
 
 
 
----
+
 
 ### Distribution permissions
 
@@ -224,7 +224,7 @@ You can change:
 
 
 
----
+
 
 ### A general purpose scheduler?
 
@@ -240,7 +240,7 @@ Some possibilities:
 ![image](assets/calendar.png)
 
 
----
+
 
 ### Can you give me the same report for XXX?
 
@@ -252,14 +252,14 @@ Create a second scheduled report for your favorite company…
 
 
 
----
+
 
 ### Copy and paste nightmare revisited
 
 ![image](assets/copy_paste_nightmare.png)
 
 
----
+
 
 ### Deployment history
 
@@ -274,12 +274,12 @@ As the Connect sys-admin, you can configure how much history to keep
 * See the [Jobs](https://docs.rstudio.com/connect/admin/appendix/configuration/#Jobs) section of the Admin guide.
 
 
----
+
 
 ## Email
 
 
----
+
 
 ### Emailing reports
 
@@ -298,7 +298,7 @@ A convenient interface is the [blastula](https://rich-iannone.github.io/blastula
 ![image](assets/email-demo.png)
 
 
----
+
 
 ### Further reading on email customization
 
@@ -313,12 +313,12 @@ Study the Connect **user guide** [Chapter 9: R Markdown](https://docs.rstudio.co
 * [Simplifying HTML Email Creation with Blastula](https://docs.rstudio.com/connect/user/rmarkdown/#r-markdown-email-body-blastula)
 
 
----
+
 
 ## Databases and scaling
 
 
----
+
 
 ### Databases and scaling
 
@@ -336,11 +336,11 @@ Do you need to worry about scaling reports?
 
 
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

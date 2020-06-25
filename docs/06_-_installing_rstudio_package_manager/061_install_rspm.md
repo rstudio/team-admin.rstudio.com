@@ -7,12 +7,12 @@ In this session, you will:
 * Learn how RStudio Package Manager (RSPM) solves these problems
 * Install RSPM on a server
 
----
+
 
 
 ## Introduction
 
----
+
 
 ### The problems of R package management
 
@@ -32,7 +32,7 @@ your team, department, or entire organization.
 * How does RStudio Package Manager address these problems?
 * How does RStudio Package Manager fit in with other RStudio products?
 
----
+
 
 ### Workflow for using RStudio Package Manager:
 
@@ -42,7 +42,7 @@ your team, department, or entire organization.
 * End users connect to repositories and download packages
 
 
----
+
 
 ## Overview
 
@@ -52,11 +52,11 @@ In this course, you will set up RStudio Package Manager as a source of R
 packages, then configure RStudio Server Pro and RStudio Connect as consumers of
 the packages.
 
----
+
 
 ## RSPM documentation and resources
 
----
+
 
 ### RSPM documentation and resources
 
@@ -71,11 +71,11 @@ In this course, you will walk through hands-on exercises from the
 The course also touches upon the remaining sections so you know where to go to get the
 information you need after the course.
 
----
+
 
 ## Use cases
 
----
+
 
 ### Use cases
 
@@ -95,7 +95,7 @@ RStudio Package Manager can serve packages from various sources:
 * Internal Packages
 * Packages from Git
 
----
+
 
 ### Walkthrough
 
@@ -115,7 +115,7 @@ RStudio Package Manager:
 * Tracks package usage statistics and metrics
 * Integrates with with R, RStudio Server Pro, and RStudio Connect
 
----
+
 
 ### Data Science with the RStudio toolchain
 
@@ -125,11 +125,11 @@ RStudio Package Manager provides a centralized solution for managing R packages
 for all users within your organization, from development to publishing and
 deployment.
 
----
+
 
 ## Architecture
 
----
+
 
 ### Architecture
 
@@ -138,12 +138,12 @@ installations.
 
 ![image](assets/rspm-architecture.png)
 
----
+
 
 
 ## Requirements
 
----
+
 
 ### System requirements
 
@@ -165,7 +165,7 @@ Disk requirements:
 View more information on [Configuration and Sizing
 Requirements](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations).
 
----
+
 
 ### Other requirements
 
@@ -182,13 +182,13 @@ Root privileges
 * R version 3.0+ is required if you want to build packages from Git
 * RSPM currently serves R source packages
 
----
+
 
 
 ## Your turn
 
 
----
+
 
 
 ### Your turn

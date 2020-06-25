@@ -1,7 +1,7 @@
 
 ## Integrating with your **authentication mechanism**
 
----
+
 
 
 ### RStudio Server Pro authentication modes
@@ -23,7 +23,7 @@ RStudio Server Pro works with your existing authentication service
 
 
 
----
+
 
 ### 1. PAM authentication
 
@@ -41,7 +41,7 @@ Note:
 * Your organization should have a PAM configuration already.
 * This session has exercises for configuring RStudio Server Pro using PAM with LDAP.
 
----
+
 
 ### 2. Proxied authentication
 
@@ -55,7 +55,7 @@ If you are not using PAM, LDAP or Active Directory you should use **Proxied Auth
 
   - This will be defined by your firewall and [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) (virtual private cloud) settings.
 
----
+
 
 ### 3. Token based auth
 
@@ -86,11 +86,11 @@ However, we intend to support **SAML** for many of these auth providers in the f
 
 Note: [RStudio Connect v1.7.4 and later supports SAML](https://blog.rstudio.com/2019/05/14/introducing-saml-in-rstudio-connect/)
 
----
+
 
 ## Integration with Kerberos
 
----
+
 
 ### Kerberos
 
@@ -112,7 +112,7 @@ With Kerberos SSO, users are only prompted once for their user ID and password.
 
 
 
----
+
 
 
 ### Kerberos tickets
@@ -132,7 +132,7 @@ RStudio integration
 * Use **PAM** to initialize and destroy Kerberos tickets
 * Note: Kerberos tickets __can not__ be auto-generated with proxied auth, but users can generate their own Kerberos tickets via the terminal
 
----
+
 
 ### Kerberos: more information
 
@@ -151,11 +151,11 @@ Also, read the support articles:
 * [How to pass authentication credentials to a database using Kerberos](https://support.rstudio.com/hc/en-us/articles/115000259268-How-to-pass-authentication-credentials-to-a-database-using-Kerberos).
 * [Handling long-running sessions in RStudio Server Pro with Kerberos](https://support.rstudio.com/hc/en-us/articles/115013500128-Handling-long-running-sessions-in-RStudio-Server-Pro-with-Kerberos-)
 
----
+
 
 ## Local system accounts
 
----
+
 
 ### RStudio Server Pro requires local system accounts
 
@@ -171,7 +171,7 @@ R programmers can:
 * Download files from the Internet
 * Run apps and authenticate as themselves to databases and other services
 
----
+
 
 ### Provisioning local system accounts
 
@@ -184,11 +184,11 @@ Not all RStudio products require local system accounts.
 
 * RStudio Connect serves end users, not R developers, so it can be configured without local system accounts.
 
----
+
 
 ## Security considerations and concerns
 
----
+
 
 ### General security considerations
 
@@ -207,7 +207,7 @@ RStudio Team products run on premises and in the cloud using:
 
 This implies that many security issues pertain to these systems, not to RStudio!
 
----
+
 
 ### General security concerns
 
@@ -220,11 +220,11 @@ Typical security concerns:
 
 The next section dicusses security features of RStudio Server Pro
 
----
+
 
 ## RStudio Server Pro Security features
 
----
+
 
 ### RStudio Server Pro security features
 
@@ -241,7 +241,7 @@ The next section dicusses security features of RStudio Server Pro
 
 Note: Also refer to the support article [Security features in RStudio Server Pro](https://support.rstudio.com/hc/en-us/articles/221682007-Security-features-in-RStudio-Server-Pro)
 
----
+
 
 ### Transport layer security (SSL, TLS, HTTPS)
 
@@ -253,7 +253,7 @@ Secure browser communications between a client (e.g. browser) and server (RStudi
 
 SSL / TLS / HTTPS requires a certificate
 
----
+
 
 ### Certificates
 
@@ -273,7 +273,7 @@ You can create a certificate yourself, or obtain a certificate from a trusted au
 
 Your organisation most likely have a formal process for obtaining trusted certificates.  Talk to your IT team to provide a certificate for your RStudio products.
 
----
+
 
 ### Running behind a proxy
 
@@ -299,7 +299,7 @@ Apache reverse proxy architecture
 
 
 
----
+
 
 ### Disabling access to some features
 
@@ -321,7 +321,7 @@ In addition, you can also limit:
 
 (Note that you specify these settings in `/etc/rstudio/rsession.conf`.)
 
----
+
 
 ### Why root access?
 
@@ -330,7 +330,7 @@ In addition, you can also limit:
 
 > RStudio Server runs as the system root user during startup and then drops this privilege and runs as a more restricted user. RStudio Server then re-assumes root privilege for a brief instant when creating R sessions on behalf of users (the server needs to call `setresuid` when creating the R session, and this call requires root privilege).
 
----
+
 
 ### Security of open source software
 
@@ -345,12 +345,12 @@ R packages (10,000+) are open source and community driven
 * Indemnification of R packages is very rare
 * RStudio offers a package manager to help curate and manage packages
 
----
+
 
 
 ## Data connectivity
 
----
+
 
 ### Connect to your databases with ODBC
 
@@ -359,7 +359,7 @@ R packages (10,000+) are open source and community driven
 
 ![image](assets/pro_drivers.png)
 
----
+
 
 ### Supported database drivers
 
@@ -384,7 +384,7 @@ The RStudio [Pro database drivers](https://www.rstudio.com/products/drivers/) su
 * MySQL
 
 
----
+
 
 ### Database best practises
 
@@ -395,11 +395,11 @@ To find recommended best practise for database connections, storing credentials,
 ![images](assets/connections-pane.png)
 
 
----
+
 
 ## Exercise: Configure RStudio Server Pro with LDAP
 
----
+
 
 ### Configure RStudio Server Pro with LDAP
 
@@ -413,7 +413,7 @@ Successful completion involves:
 * LDAP users are accessible from the command line
 * LDAP users can login into RStudio Server Pro
 
----
+
 
 ### LDAP: An overview
 
@@ -431,7 +431,7 @@ LDAP is implemented in **many** different ways.
 
     * This is `sssd` magic!
 
----
+
 
 ### Handy Tools
 
@@ -451,11 +451,11 @@ The `pamtester` utility
 * A command line utility
 * Used to test PAM configuration
 
----
+
 
 ## Your turn
 
----
+
 
 class: your-turn-slide
 

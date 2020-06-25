@@ -9,11 +9,11 @@ In this session you will learn:
 
 
 
----
+
 
 ## Introduction
 
----
+
 
 
 ### General troubleshooting tips
@@ -32,7 +32,7 @@ Identify what the error is and where it's coming from
 
 Change **one thing at a time** to try and isolate the issue
 
----
+
 
 ### Things RStudio Support looks at (and you should too):  
 
@@ -47,11 +47,11 @@ Common issues:
 * Authentication  
 * Network issues  
 
----
+
 
 ## Log files
 
----
+
 
 
 ### RStudio log files
@@ -64,7 +64,7 @@ Shiny Server Pro      | `/var/log/shiny-server.log`
 RStudio Connect       | `/var/log/rstudio-connect.log`
 Package Manager       | `/var/log/rstudio-pm.log`
 
----
+
 
 ### System log files
 
@@ -73,7 +73,7 @@ Area                 | Log file
 Server log files     | `/var/log/syslog` <br/> OR <br/> `/var/log/messages`
 Authentication logs  | `/var/log/auth.log` <br/> OR <br/> `/var/log/secure`
 
----
+
 
 ### For RStudio Connect deployment issues:
 
@@ -85,17 +85,17 @@ rsconnect::showLogs()
 ```
 
 
----
+
 
 ### Log file example
 
 ![image](assets/log_file_example.png)
 
----
+
 
 ## Troubleshooting R
 
----
+
 
 ### Troubleshooting R
 
@@ -111,7 +111,7 @@ grep configure R_HOME/etc/Makeconf
 
 ![image](assets/grep_makeconf.png)
         
----
+
 
 ### Troubleshooting R (continued)
 
@@ -131,7 +131,7 @@ namei -l /path/to/R
       
 ![image](assets/perm_check.png)
 
----
+
 
 ### Troubleshooting R (multiple versions)
 
@@ -154,11 +154,11 @@ locate libR.so
 
 If so, see questions above for all versions in addition to checking that the expected version is loaded.
 
----
+
 
 ## Troubleshooting the environment
 
----
+
 
 ### Local environment 
 
@@ -172,7 +172,7 @@ cat /etc/*-release
 
 Are you running with load balancing or in a virtual container such as Docker, etc?
 
----
+
 
 ### Environment variables
 
@@ -191,7 +191,7 @@ R pulls from several startup files
 * Refer to the R Views blog article ["Understanding R’s Startup"](https://rviews.rstudio.com/2017/04/19/r-for-enterprise-understanding-r-s-startup/)
 
 
----
+
 
 ### Configuration
 
@@ -209,17 +209,17 @@ Make sure you're on the right version of the product compared to the admin guide
 
 ![image](assets/connect_error_example.png)
 
----
+
 
 ## Expired licenses
 
----
+
 
 ### Expired license
 
 ![image](assets/license_error.png)
 
----
+
 
 ### Expired license
 
@@ -237,11 +237,11 @@ Make sure you're on the right version of the product compared to the admin guide
 * RStudio is working on improvements
 
 
----
+
 
 ## Authentication
 
----
+
 
 ### Authentication
 
@@ -262,11 +262,11 @@ sudo /usr/lib/rstudio-server/bin/pamtester \
 * Check connections to any external authentication providers
     - Kerberos, Active Directory, etc.
 
----
+
 
 ## Network issues
 
----
+
 
 ### Network issues
 
@@ -284,11 +284,11 @@ Things to check:
 
 ![image](assets/connect_network_error.png)
 
----
+
 
 ## Helpful resources
 
----
+
 
 ### Helpful resources
 
@@ -308,11 +308,11 @@ RStudio Community          | https://community.rstudio.com
 RViews blog                | https://rviews.rstudio.com/
 License deactivation app   | http://apps.rstudio.com/deactivate-license/
 
----
+
 
 ## Working with support
 
----
+
 
 ### Working with support
 
@@ -331,18 +331,18 @@ Getting help:
   
   
   
----
+
 
 ### Any questions?
 
 Send an email to [support@rstudio.com](mailto:support@rstudio.com)!
 
----
+
 
 ## Your turn
 
 
----
+
 
 ### Your turn
 
