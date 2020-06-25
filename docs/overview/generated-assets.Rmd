@@ -1,0 +1,72 @@
+---
+title: R code for assets
+---
+
+## Section 7.2 - responsibilities.png 
+
+```{r mental-map, echo=FALSE, message=FALSE, warning=FALSE, fig.height=6, fig.width=8}
+library(ggplot2)
+library(tibble)
+library(ggrepel)
+#library(plotly)
+mm <- tribble(
+  ~x, ~y, ~label, ~Description, ~status,
+  0.1, 0.1, 'Validated', 'Admins test and approve \n a subset of CRAN', TRUE,
+  0.5, 0.5, 'Shared Baseline', 'All or most of CRAN, \n updated with R versions, \n tied to a system library', TRUE,
+  0.5, 0.75, 'Wild West', 'Open access, \n not reproducible, \n how we learn', FALSE,
+  0.8,0.8, 'Snapshot', 'Open access, user or system \n records per-project dependencies', TRUE,
+  0.75, 0.2, 'Blocked', 'Backdoor package access, \n offline systems without a strategy', FALSE,
+  0.2, 0.8, 'Ticket System', 'Admins involved, \n no testing, \n slow updates, \n high risk of breakage', FALSE
+)
+bad1 <- tribble(
+  ~x, ~y, ~label, ~Description, ~status,
+  0, 0.2, NA, NA, NA,
+  0, 1,NA, NA, NA,
+  0.8, 1, NA, NA, NA
+)
+bad2 <- tribble(
+  ~x, ~y, ~label, ~Description, ~status,
+  0.2, 0, NA, NA, NA,
+  1, 0,NA, NA, NA,
+  1, 0.8, NA, NA, NA
+)
+good <- tribble(
+  ~x, ~y, ~label, ~Description, ~status,
+  0, -0.2,NA, NA, NA,
+  1, 0.8, NA, NA, NA,
+  0.8, 1, NA, NA, NA,
+  0, 0.2, NA, NA, NA
+)
+good2 <- tribble(
+  ~x, ~y, ~label, ~Description, ~status,
+  0, 0,NA, NA, NA,
+  0, 0.2, NA, NA, NA,
+  1, 0.8, NA, NA, NA,
+  0.2, 0, NA, NA, NA
+)
+p <- ggplot(mm, aes(x, y)) + 
+  geom_abline(slope = 1, intercept = 0.2, alpha = 0.2) + 
+  geom_polygon(aes(x,y, text = Description), fill = "red", data=bad1, alpha = 0.1) + 
+  geom_polygon(aes(x,y, text = Description), fill = "green", data=good, alpha = 0.1) + 
+  geom_polygon(aes(x,y, text = NULL), fill = "green", data=good2, alpha = 0.1) + 
+  geom_polygon(aes(x,y, text = Description), fill = "red", data=bad2, alpha = 0.1) +
+  geom_abline(slope = 1, intercept = -0.2, alpha = 0.2) + 
+  geom_point(aes(x, y, color = status, text = Description)) + 
+  geom_text(aes(x, y, label = label), nudge_y = 0.025, nudge_x  = 0.025) + 
+  scale_x_continuous(limits = c(0,1), breaks = seq(0,1,0.25), labels = c("Admins","", "", "", "Users")) +
+  scale_y_continuous(limits = c(0,1), breaks = seq(0,1,0.25), labels =  c("Locked Down","", "", "", "Open")) +
+  theme_minimal() +
+  scale_color_manual(breaks = NULL, values = c("#ff0000","#a3c586")) + 
+  
+  labs(
+    x = "Who is Responsible for Reproducing the Environment?",
+    y = "Package Access",
+    color = NULL
+  ) # + 
+  # theme(axis.line = element_line(linetype = 'solid', arrow = grid::arrow(length = grid::unit(1, units = 'mm'))))
+p
+# ggplotly(p, tooltip = c('text')) %>% 
+#   config(displayModeBar = FALSE) %>% 
+#   style(hoverinfo = 'skip', traces = 1:5) %>% 
+#   hide_legend()
+```

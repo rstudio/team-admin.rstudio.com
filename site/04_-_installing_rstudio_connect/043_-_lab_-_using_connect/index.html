@@ -1,0 +1,1616 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.4">
+    
+    
+      
+        <title>4.3 - Lab - Using RStudio Connect - RStudio Pro Admin Training</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4007cdc.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../asciinema-player.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task-allow-pop-ups-in-your-browser" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="RStudio Pro Admin Training" class="md-header-nav__button md-logo" aria-label="RStudio Pro Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            RStudio Pro Admin Training
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              4.3 - Lab - Using RStudio Connect
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RStudio Pro Admin Training" class="md-nav__button md-logo" aria-label="RStudio Pro Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    RStudio Pro Admin Training
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Overview" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/concept_map/" title="Concept map" class="md-nav__link">
+      Concept map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/course_goals/" title="Course goals" class="md-nav__link">
+      Course goals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/assumptions/" title="Assumptions" class="md-nav__link">
+      Assumptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/pre-requirements/" title="Pre-requirements" class="md-nav__link">
+      Pre-requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/how_the_course_works/" title="How the course works" class="md-nav__link">
+      How the course works
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      1 - Getting Started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="1 - Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        1 - Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01_-_getting_started/01_how_it_works/" title="1.1 - Getting started" class="md-nav__link">
+      1.1 - Getting started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01_-_getting_started/01_-_lab_-_ssh_in/" title="1.1 - Lab - SSH" class="md-nav__link">
+      1.1 - Lab - SSH
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      2 - Installing R
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2 - Installing R" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        2 - Installing R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02_-_installing_r/02_install_r/" title="2.1 - Installing R" class="md-nav__link">
+      2.1 - Installing R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02_-_installing_r/02_-_lab_-_install_r/" title="2.1 - Lab - Installing R" class="md-nav__link">
+      2.1 - Lab - Installing R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      3 - RStudio Server Pro
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="3 - RStudio Server Pro" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        3 - RStudio Server Pro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/031_install_rsp/" title="3.1 - Install RStudio Server Pro" class="md-nav__link">
+      3.1 - Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/031_-_lab_-_install_rsp/" title="3.1 - Lab - Install RStudio Server Pro" class="md-nav__link">
+      3.1 - Lab - Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/032_security/" title="3.2 - RStudio Server Pro Security" class="md-nav__link">
+      3.2 - RStudio Server Pro Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/032_-_lab_-_security/" title="3.2 - Lab - RStudio Server Pro Security" class="md-nav__link">
+      3.2 - Lab - RStudio Server Pro Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/033_startup_and_packages/" title="3.3 - RStudio Server Pro Startup and packages" class="md-nav__link">
+      3.3 - RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03_-_rstudio_server_pro/033_-_lab_-_startup_and_packages/" title="3.3 - Lab - RStudio Server Pro Startup and packages" class="md-nav__link">
+      3.3 - Lab - RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      4 - RStudio Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="4 - RStudio Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        4 - RStudio Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../041_install_connect/" title="4.1 - Installing RStudio Connect" class="md-nav__link">
+      4.1 - Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../041_-_lab_-_install_connect/" title="4.1 - Lab - Installing RStudio Connect" class="md-nav__link">
+      4.1 - Lab - Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../042_configure_connect/" title="4.2 - Configuring RStudio Connect" class="md-nav__link">
+      4.2 - Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../042_-_lab_-_configure_connect/" title="4.2 - Lab - Configuring RStudio Connect" class="md-nav__link">
+      4.2 - Lab - Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../043_using_connect/" title="4.3 - Using RStudio Connect" class="md-nav__link">
+      4.3 - Using RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4.3 - Lab - Using RStudio Connect
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="4.3 - Lab - Using RStudio Connect" class="md-nav__link md-nav__link--active">
+      4.3 - Lab - Using RStudio Connect
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-allow-pop-ups-in-your-browser" class="md-nav__link">
+    Task: Allow pop-ups in your browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-connect-your-ide-to-connect" class="md-nav__link">
+    Task: Connect your IDE to Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-copy-the-example-apps" class="md-nav__link">
+    Task: Copy the example apps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_0" class="md-nav__link">
+    Task: Deploy app_0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-failure" class="md-nav__link">
+    Deployment failure?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-content-settings-panel" class="md-nav__link">
+    Explore the content settings panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_1" class="md-nav__link">
+    Task: Deploy app_1
+  </a>
+  
+    <nav class="md-nav" aria-label="Task: Deploy app_1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-and-deploy-app_1" class="md-nav__link">
+    Run and deploy app_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-redeploy-app_1" class="md-nav__link">
+    Task: Redeploy app_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-browse-the-local-connect-deployment-record" class="md-nav__link">
+    Task: Browse the local Connect deployment record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_2" class="md-nav__link">
+    Task: Deploy app_2
+  </a>
+  
+    <nav class="md-nav" aria-label="Task: Deploy app_2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-diagnose-a-failed-deployment" class="md-nav__link">
+    How to diagnose a failed deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-run-app_02" class="md-nav__link">
+    Task: Run app_02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-deploy-app_02" class="md-nav__link">
+    Task: Deploy app_02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ponder-sandboxing-on-connect" class="md-nav__link">
+    Ponder: sandboxing on Connect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      5 - Deploying to Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="5 - Deploying to Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        5 - Deploying to Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/051_deploy_shiny/" title="5.1 - Deploying Shiny Apps" class="md-nav__link">
+      5.1 - Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/051_-_lab_-_deploy_shiny/" title="5.1 - Lab - Deploying Shiny Apps" class="md-nav__link">
+      5.1 - Lab - Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/052_deploy_markdown/" title="5.2 - Deploying Rmarkdown" class="md-nav__link">
+      5.2 - Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/052_-_lab_-_deploy_markdown/" title="5.2 - Lab - Deploying Rmarkdown" class="md-nav__link">
+      5.2 - Lab - Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/053_deploy_plumber/" title="5.3 - Deploying plumber APIs" class="md-nav__link">
+      5.3 - Deploying plumber APIs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05_-_using_rstudio_connect/053_-_lab_-_deploy_plumber/" title="5.3 - Lab - Deploying plumber APIs" class="md-nav__link">
+      5.3 - Lab - Deploying plumber APIs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      6 - RStudio Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="6 - RStudio Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        6 - RStudio Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../06_-_installing_rstudio_package_manager/061_install_rspm/" title="6.1 - Installing RStudio Package Manager" class="md-nav__link">
+      6.1 - Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../06_-_installing_rstudio_package_manager/061_-_lab_-_install_rspm/" title="6.1 - Lab - Installing RStudio Package Manager" class="md-nav__link">
+      6.1 - Lab - Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../06_-_installing_rstudio_package_manager/062_configure_rspm/" title="6.2 - Configuring RStudio Package Manager" class="md-nav__link">
+      6.2 - Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../06_-_installing_rstudio_package_manager/062_-_lab_-_configure_rspm/" title="6.2 - Lab - Configuring RStudio Package Manager" class="md-nav__link">
+      6.2 - Lab - Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      7 - Using Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="7 - Using Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        7 - Using Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07_-_using_rstudio_package_manager/071_using_rspm_repositories/" title="7.1 - Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.1 - Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07_-_using_rstudio_package_manager/071_-_lab_-_using_rspm_repositories/" title="7.1 - Lab - Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.1 - Lab - Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07_-_using_rstudio_package_manager/072_using_rspm_packages/" title="7.2 - Using RStudio Package Manager Packages" class="md-nav__link">
+      7.2 - Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07_-_using_rstudio_package_manager/072_-_lab_-_using_rspm_packages/" title="7.2 - Lab - Using RStudio Package Manager Packages" class="md-nav__link">
+      7.2 - Lab - Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      9 - Troubleshooting
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="9 - Troubleshooting" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        9 - Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09_-_troubleshooting/091_troubleshoot/" title="9 - Troubleshooting" class="md-nav__link">
+      9 - Troubleshooting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09_-_troubleshooting/091_-_lab_-_troubleshoot/" title="9 - Lab - Troubleshooting" class="md-nav__link">
+      9 - Lab - Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Extra Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extra Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Extra Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html" title="Cheat sheet" class="md-nav__link">
+      Cheat sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://docs.rstudio.com" title="Official RStudio Documentation" class="md-nav__link">
+      Official RStudio Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-allow-pop-ups-in-your-browser" class="md-nav__link">
+    Task: Allow pop-ups in your browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-connect-your-ide-to-connect" class="md-nav__link">
+    Task: Connect your IDE to Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-copy-the-example-apps" class="md-nav__link">
+    Task: Copy the example apps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_0" class="md-nav__link">
+    Task: Deploy app_0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-failure" class="md-nav__link">
+    Deployment failure?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-the-content-settings-panel" class="md-nav__link">
+    Explore the content settings panel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_1" class="md-nav__link">
+    Task: Deploy app_1
+  </a>
+  
+    <nav class="md-nav" aria-label="Task: Deploy app_1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-and-deploy-app_1" class="md-nav__link">
+    Run and deploy app_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-redeploy-app_1" class="md-nav__link">
+    Task: Redeploy app_1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-browse-the-local-connect-deployment-record" class="md-nav__link">
+    Task: Browse the local Connect deployment record
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-deploy-app_2" class="md-nav__link">
+    Task: Deploy app_2
+  </a>
+  
+    <nav class="md-nav" aria-label="Task: Deploy app_2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-diagnose-a-failed-deployment" class="md-nav__link">
+    How to diagnose a failed deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-run-app_02" class="md-nav__link">
+    Task: Run app_02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-deploy-app_02" class="md-nav__link">
+    Task: Deploy app_02
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ponder-sandboxing-on-connect" class="md-nav__link">
+    Ponder: sandboxing on Connect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/rstudio/team-admin.rstudio.com/edit/master/docs/04_-_installing_rstudio_connect/043_-_lab_-_using_connect.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>4.3 - Lab - Using RStudio Connect</h1>
+                
+                <h2 id="task-allow-pop-ups-in-your-browser">Task: Allow pop-ups in your browser</h2>
+<p>When you connect your IDE to Connect, a choreographed <strong>dance</strong> starts.  During this dance you provide your Connect credentials to RStudio Server Pro.</p>
+<p>The dance includes a pop-up window that is blocked by most modern browsers.</p>
+<p>In the browser tab that contains RStudio Server, configure the browser to allow pop-ups from this site.</p>
+<p>Video review:</p>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/enable_browser_popups.mp4" type="video/mp4">
+</video>
+
+<h2 id="task-connect-your-ide-to-connect">Task: Connect your IDE to Connect</h2>
+<p>Use the "Global Options" menu in RStudio Server to configure a connection to your Connect instance. You need the host name or IP address.</p>
+<pre><code>RStudio
+  --&gt; Tools
+    --&gt; Global Options
+      --&gt; Publishing 
+        --&gt; Connect
+</code></pre>
+
+<p>Enter: <code>http://&lt;host_name&gt;/rsconnect</code></p>
+<p><img alt="image" src="../assets/ip_address.png" /></p>
+<p>Video review:</p>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/connect_ide_to_connect.mp4" type="video/mp4">
+</video>
+
+<h2 id="task-copy-the-example-apps">Task: Copy the example apps</h2>
+<p><strong>Perform this task from your SSH console</strong></p>
+<p>You can find the example apps for this classroom at <code>/usr/share/class/pro_admin_training_assets</code></p>
+<pre><code class="sh">ls -l /usr/share/class/pro_admin_training_assets/
+</code></pre>
+
+<p><strong>Your task is to copy these files to <code>jen</code>'s home folder</strong></p>
+<p>Remember:</p>
+<ul>
+<li>Think carefully about where you are logged in as which user</li>
+<li>You are probably:<ul>
+<li>logged in as <code>admin-user</code> in SSH</li>
+<li>logged in as <code>jen</code> in RStudio Server Pro </li>
+</ul>
+</li>
+</ul>
+<p>So, with your permissions as the <code>admin-user</code>, you must copy the course files to the home folder of the RStudio Server user, and set the file ownership so that <code>jen</code> owns these files.</p>
+<pre><code class="sh">sudo cp -r /usr/share/class/pro_admin_training_assets/ /home/jen
+sudo chown -R jen: /home/jen
+</code></pre>
+
+<p>Alternatively you can use the <code>Terminal</code> tab within RStudio Server, which provides you with a terminal session for user <code>jen</code>:</p>
+<pre><code class="sh">cp -r /usr/share/class/pro_admin_training_assets/ ~
+</code></pre>
+
+<pre><code class="sh">ls -l /home/jen/pro_admin_training_assets/
+</code></pre>
+
+<pre><code>total 92960
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 00_app
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 01_app
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 02_app
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 03_databases
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 04_report
+drwxr-xr-x 3 jen root     4096 Oct 22 11:42 05_api
+drwxr-xr-x 2 jen root     4096 Oct 22 11:42 06_troubleshooting
+-rw-r--r-- 1 jen root      199 Oct 22 11:42 README.md
+-rw-r--r-- 1 jen root      795 Oct 22 11:42 _prereqs.R
+-rw-r--r-- 1 jen root      289 Oct 22 11:42 answer.txt
+-rw-r--r-- 1 jen root 95123524 Oct 22 11:42 babynames.csv
+-rw-r--r-- 1 jen root      248 Oct 22 11:42 config.txt
+-rw-r--r-- 1 jen root      229 Oct 22 11:42 pro_admin_training_assets.Rproj
+-rw-r--r-- 1 jen root      847 Oct 22 11:42 rstudio-session-sssd
+-rw-r--r-- 1 jen root      471 Oct 22 11:42 rstudio-sssd
+-rw-r--r-- 1 jen root     1313 Oct 22 11:42 s-answer.txt
+-rw-r--r-- 1 jen root     1258 Oct 22 11:42 s-template.txt
+</code></pre>
+
+<h2 id="task-deploy-app_0">Task: Deploy app_0</h2>
+<p>Now open RStudio Server Pro and navigate to <code>~/pro_admin_training_assets</code> in the files tab (where you are logged in as <code>jen</code>)</p>
+<p><img alt="image" src="../assets/home_folder_jen.png" /></p>
+<p>Do the following</p>
+<ul>
+<li>Navigate to <code>00_app</code> and open <code>app_0.R</code></li>
+<li>You may get a ribbon that says "shiny is required but not installed"<ul>
+<li>If you get this banner, click to install the <code>shiny</code> package.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image" src="../assets/shiny_required.png" /></p>
+<ul>
+<li>
+<p>Click the "Run App" button <img alt="image" src="../assets/run_app_button.png" /></p>
+</li>
+<li>
+<p>Does the app run locally?</p>
+</li>
+</ul>
+<p><img alt="image" src="../assets/app_0_old_faithful.png" /></p>
+<ul>
+<li>
+<p>Close the app and return to the code pane</p>
+</li>
+<li>
+<p>Find the "publish" button in the upper-right hand corner of the <strong>code pane</strong>:</p>
+</li>
+</ul>
+<p><img alt="image" src="../assets/deploy_app_button_location.png" /></p>
+<ul>
+<li>
+<p>Click the <code>publish app</code> button <img alt="image" src="../assets/deploy_app_button.png" /></p>
+</li>
+<li>
+<p>Publish the app to Connect</p>
+</li>
+</ul>
+<p>/publish_app_0.png)</p>
+<p>While the app deploys, observe:</p>
+<ul>
+<li>How long does it take?</li>
+<li>Can you see what happens?</li>
+</ul>
+<p>After deployment to Connect:</p>
+<ul>
+<li>Does the app run in Connect?</li>
+</ul>
+<h2 id="deployment-failure">Deployment failure?</h2>
+<p>If you get the following error message during publication, you've clicked the "wrong" publishing button.</p>
+<p><img alt="image" src="../assets/deployment_failure.png" /></p>
+<p>It is possible to publish apps in several ways from the IDE:</p>
+<ul>
+<li>From the <strong>code pane</strong>:<ul>
+<li>This method is reliable, and works for any document, regardless of what  file name you gave the document (app or report).</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image" src="../assets/deploy_app_button_location.png" /></p>
+<ul>
+<li>From the running <strong>shiny app</strong> pane:<ul>
+<li>This method only work in special cases.</li>
+<li>Specifically, it assumes you named your shiny app <code>app.R</code>.</li>
+</ul>
+</li>
+</ul>
+<p>So, to fix this problem, use the publish button in the <strong>code pane</strong>.</p>
+<h2 id="explore-the-content-settings-panel">Explore the content settings panel</h2>
+<p>After successful deployment, a new browser tab will open, with your running Connect app.</p>
+<p>Notice that as the publisher you can change some settings for your newly deployed app.</p>
+<p>In the top right hand corner of the Connect screen you will see a ribbon of action buttons:</p>
+<p><img alt="image" src="../assets/action_buttons.png" /></p>
+<p>Explore each of these action buttons:</p>
+<ul>
+<li><strong>Info</strong> provides usage stats for the previous 30 days, and allows you to upload a cover image for the content</li>
+<li><strong>Access</strong> allows you to change access control and edit the custom URL</li>
+<li><strong>Runtime</strong> lets you scale a Shiny app to multiple processes (in parallel)</li>
+<li><strong>Schedule</strong> allows you to run a Report at scheduled times (not applicable for apps)</li>
+<li><strong>Vars</strong> let's you change environment variables</li>
+<li><strong>Logs</strong> displays the deployment log and any errors</li>
+</ul>
+<p>For more help, refer to the Connect <a href="https://docs.rstudio.com/connect/user/content-settings/">user guide</a>.</p>
+<h2 id="task-deploy-app_1">Task: Deploy app_1</h2>
+<h3 id="run-and-deploy-app_1">Run and deploy app_1</h3>
+<p>Now for a more complex example</p>
+<ul>
+<li>Navigate to <code>01_app</code> and open <code>app_1.R</code></li>
+<li>Select "Run App"</li>
+<li>Does the app run locally?</li>
+</ul>
+<p><img alt="image" src="../assets/run_app_2.png" /></p>
+<ul>
+<li>Close the running app</li>
+<li>Click the "publish" button in the code pane to deploy the app to Connect.</li>
+</ul>
+<p>While the app deploys, observe:</p>
+<ul>
+<li>Can you see what happens?<ul>
+<li>Observe the "Deploy" pane in RStudio Server Pro:
+<img alt="image" src="../assets/deploy_pane.png" /></li>
+<li>Specifically, notice the bundle id and document id</li>
+</ul>
+</li>
+<li>How long does it take?<ul>
+<li>The deployment process can take several minutes, while Connects installs every R package that was used in the app.</li>
+</ul>
+</li>
+</ul>
+<p>After deployment to Connect:</p>
+<ul>
+<li>Does the app run in Connect?</li>
+</ul>
+<h3 id="task-redeploy-app_1">Task: Redeploy app_1</h3>
+<p>That was pretty easy!</p>
+<p>Next, take a look at the redeployment process.</p>
+<p>To do this, make any trivial change to the code, e.g. by inserting a new line after the <code>library(...)</code> statements.</p>
+<p>Then save the file and deploy the same app again.</p>
+<p>Observe:</p>
+<ul>
+<li>
+<p>How long does it take to deploy the 2nd time?</p>
+<ul>
+<li>It should much faster than the first time</li>
+<li>The reason is that Connect caches R packages, so will fetch from the cache every subsequent time an app uses the same package (and same version of the package)</li>
+<li>See the Connect admin guide on <code>r href("package caching", "https://docs.rstudio.com/connect/admin/r/package-management/")</code> for more information.</li>
+</ul>
+</li>
+<li>
+<p>Does the deployment succeed?</p>
+</li>
+</ul>
+<h3 id="task-browse-the-local-connect-deployment-record">Task: Browse the local Connect deployment record</h3>
+<p>Notice that after your deployment, you have a new folder called <code>rsconnect</code> in your application folder (in RStudio Server).</p>
+<ul>
+<li>Explore this folder until you find the file <code>app_01.dcf</code>.</li>
+</ul>
+<p><img alt="image" src="../assets/app_1_dcf.png" /></p>
+<ul>
+<li>Open this file</li>
+</ul>
+<p><img alt="image" src="../assets/app_1_dcf_contents.png" /></p>
+<ul>
+<li>Can you recognise:<ul>
+<li>The app title?</li>
+<li>Your app id?</li>
+<li>Your bundle id?</li>
+<li>Your user name, account and server?</li>
+</ul>
+</li>
+</ul>
+<h2 id="task-deploy-app_2">Task: Deploy app_2</h2>
+<h3 id="how-to-diagnose-a-failed-deployment">How to diagnose a failed deployment</h3>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/incomplete_deployment.mp4" type="video/mp4">
+</video>
+
+<h3 id="task-run-app_02">Task: Run app_02</h3>
+<ul>
+<li>
+<p>Attempt to run <code>02_app/app_02.R</code> locally</p>
+</li>
+<li>
+<p>Note that the execution fails</p>
+</li>
+<li>
+<p>The missing package is available in the course materials and can be installed using</p>
+</li>
+</ul>
+<pre><code class="r">install.packages(&quot;~/pro_admin_training_assets/packages/rstudiointernal_0.2.0.tar.gz&quot;, repos = NULL)
+</code></pre>
+
+<ul>
+<li>Does the app work locally after installing this package?</li>
+</ul>
+<h3 id="task-deploy-app_02">Task: Deploy app_02</h3>
+<ul>
+<li>Attempt to deploy <code>02_app/app_02.R</code></li>
+<li>
+<p>Note that the deployment fails</p>
+</li>
+<li>
+<p>Do not try to fix this, but try to spot the failure messages in your own deployment log.</p>
+</li>
+</ul>
+<h3 id="ponder-sandboxing-on-connect">Ponder: sandboxing on Connect</h3>
+<p>By inspecting the deployment log, attempt to answer:</p>
+<ul>
+<li>What is going wrong and where?<ul>
+<li>At home?</li>
+<li>At daycare?</li>
+</ul>
+</li>
+<li>What are your options for fixing this?</li>
+</ul>
+<p>You don't have to fix the issue - just identify the root cause</p>
+<p>Answer hints:</p>
+<ul>
+<li>Which package is causing a problem?</li>
+<li>How was this package installed?</li>
+<li>How can you install a private package on Connect?<ul>
+<li><a href="https://docs.rstudio.com/connect/admin/r/package-management/#external-package-installation">External Package Installation</a></li>
+</ul>
+</li>
+<li>Find some references in the Connect admin guide about internal repos and white listing.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../043_using_connect/" title="4.3 - Using RStudio Connect" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                4.3 - Using RStudio Connect
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../05_-_using_rstudio_connect/051_deploy_shiny/" title="5.1 - Deploying Shiny Apps" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5.1 - Deploying Shiny Apps
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../asciinema-player.js"></script>
+      
+    
+  </body>
+</html>
