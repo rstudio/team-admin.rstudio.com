@@ -5,11 +5,11 @@ In this sesssion you:
 
 * Deploy an API to Connect
 
----
+
 
 ## Introducing APIs
 
----
+
 
 ### What is an API?
 
@@ -20,7 +20,7 @@ Machine-to-machine communication
 ![images](assets/api_robot_2.png)
 
 
----
+
 
 ### What is an API?
 
@@ -38,7 +38,7 @@ A mechanism to:
 * Receive a response
 * Hide the implementation detail
 
----
+
 
 ### What is a REST API?
 
@@ -52,7 +52,7 @@ From [WikiPedia](https://en.wikipedia.org/wiki/Representational_state_transfer):
 
 In R, you can use the `plumber` package to turn an R function into REST API.
 
----
+
 
 ### Why APIs from R?
 
@@ -79,11 +79,11 @@ In R, you can use the `plumber` package to turn an R function into REST API.
 
 
 
----
+
 
 ## Hosting an API on Connect
 
----
+
 
 ### Articles about plumber APIs
 
@@ -93,7 +93,7 @@ In R, you can use the `plumber` package to turn an R function into REST API.
 * [REST APIs and Plumber](https://rviews.rstudio.com/2018/07/23/rest-apis-and-plumber/)
 
 
----
+
 
 ### Turning an R function into an API
 
@@ -115,7 +115,7 @@ function(name = default, req) {
 
 ![images](assets/plumber_lady.png)
 
----
+
 
 ### APIs on Connect
 
@@ -136,7 +136,7 @@ This allows you to run the appropriate number of R processes to scale your capac
 
 
 
----
+
 
 ### Running an API from the IDE
 
@@ -148,7 +148,7 @@ This allows you to run the appropriate number of R processes to scale your capac
 </video>
 
 
----
+
 
 ### Swagger documentation
 
@@ -164,7 +164,7 @@ From [WikiPedia](https://en.wikipedia.org/wiki/Swagger_(software))
 
 ![images](assets/plumber_swagger.png)
 
----
+
 
 ### Deploying an API to Connect from the IDE
 
@@ -174,7 +174,7 @@ From [WikiPedia](https://en.wikipedia.org/wiki/Swagger_(software))
 </video>
 
 
----
+
 
 ### Deploy API 
 
@@ -185,11 +185,11 @@ rsconnect::deployAPI(".", server = ..., account = ...)
 ```
 
 
----
+
 
 ## API authentication
 
----
+
 
 
 ### API authentication
@@ -206,7 +206,7 @@ Authorization: Key ABCDEFGHIJKLMNO
 ```
 
 
----
+
 
 ### Generating an API key on Connect
 
@@ -215,7 +215,7 @@ Authorization: Key ABCDEFGHIJKLMNO
 </video>
 
 
----
+
 
 ### Authenticated Request
 
@@ -230,11 +230,11 @@ curl -X GET "<server_address>/mpg?new_hp=300"
 
 
 
----
+
 
 ## Scaling APIs
 
----
+
 
 ### Scaling APIs
 
@@ -248,7 +248,7 @@ How do APIs scale?
 * (You still might want more than one in some cases, and prep work can still help).
 
 
----
+
 
 ### Connect runtime settings for APIs
 
@@ -262,12 +262,12 @@ To control the number of processes available to your API in Connect, use the Run
 
 ![images](assets/api_runtime.png)
 
----
+
 
 ## Your turn
 
 
----
+
 
 ### Your turn
 

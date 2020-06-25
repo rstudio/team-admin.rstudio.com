@@ -7,7 +7,7 @@ In this session, you will:
 * Configure RStudio Server Pro to point to RSPM package repository
 
 
----
+
 
 ### Course outline
 
@@ -25,11 +25,11 @@ In this module:
 * Admin global config of RStudio IDE / RStudio Server Pro
 * Publishing to RSC
 
----
+
 
 ## RSPM for end users
 
----
+
 
 ### RSPM for end users
 
@@ -55,7 +55,7 @@ users can access and install packages using their regular R functions:
 * binary are best when RStudio binary R installation is used
 * R 3.6 needs special treetment w.r.t. HTTP headers to make sure that the R version is present
 
----
+
 
 ### Connecting to RSPM repositories
 
@@ -76,7 +76,7 @@ Example: Using binary packages from a fixed version of a repository:
 * For example, `http://rstudio-pm.company.com/prod-cran/__linx__/binoic/131`
 * `{LINUX-DIST}` is for the distribution on the server running RSP, not RSPM!
 
----
+
 
 ### Options for configuring repositories in RStudio
 
@@ -96,7 +96,7 @@ Repositories can be configured in RStudio in different ways, for example:
 * For all users - Setting repo(s) in `Rprofile.site`
 * **For all users - Setting repo(s) in RSP `rsession.conf` globally**
 
----
+
 
 ### Configuring RSP 1.1 with RSPM for a single user
 
@@ -122,7 +122,7 @@ You can also set this globally for all users with `Rprofile.site`.
 Or, you can set this for all users in the RStudio Server Pro
 configuration file, as shown in one of the following sections.
 
----
+
 
 ### Configuring RSP 1.2+ with RSPM for a single user
 
@@ -136,7 +136,7 @@ Steps for configuring RStudio Server Pro 1.2+ with RSPM for a single user:
 In the `Packages` submenu, copy the repository URL into the "Primary CRAN repo"
 field or click `Add` to include this repository as a secondary repo.
 
----
+
 
 ### Configuring RSP with RSPM for all users
 
@@ -164,7 +164,7 @@ More details on configuring RStudio Server Pro with RSPM are provided in the
 documentation on
 [Configuring RStudio Server](https://docs.rstudio.com/rspm/admin/rstudio-server.html).
 
----
+
 
 ### Publishing projects to RStudio Connect
 
@@ -178,7 +178,7 @@ This means that the same versions of packages will be served from a centralized
 source (RSPM) whether users are working in development or publishing to
 production.
 
----
+
 
 ### Using RSPM with Docker for reproducibility
 
@@ -205,15 +205,15 @@ RUN R -e 'install.packages(repos = "https://r-pkgs.example.com/cran/189")'
 CMD <some process>
 ```
 
----
+
 
 ## Your turn
 
----
+
 
 ## Summary
 
----
+
 
 ### RStudio Package Manager summary
 
@@ -229,7 +229,7 @@ RStudio Package Manager allow you to:
     * Local packages
     * Packages from Git
 
----
+
 
 ### Maintenance plan
 
@@ -239,7 +239,7 @@ RStudio Package Manager allow you to:
 * Explore package details and dependencies
 * Inform users on how to get packages from RSPM
 
----
+
 
 ### Resources
 
@@ -260,7 +260,7 @@ RSPM Webinar:
 
 * [Introduction to RStudio Package Manager](https://resources.rstudio.com/webinars/introduction-to-the-rstudio-package-manager-sean-lopp)
 
----
+
 
 ### Resources (continued)
 
@@ -280,7 +280,7 @@ Configuration and sizing recommendations:
 
 * [https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations)
 
----
+
 
 ### Reproducing Environments: Strategies and Danger Zones
 
@@ -311,12 +311,12 @@ Configuration and sizing recommendations:
 
 
 
----
+
 
 ## Your turn
 
 
----
+
 
 ### Your turn
 

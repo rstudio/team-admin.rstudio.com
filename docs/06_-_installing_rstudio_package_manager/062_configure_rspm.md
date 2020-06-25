@@ -9,7 +9,7 @@ In this session, you will:
 
 
 
----
+
 
 ## Course outline
 
@@ -23,7 +23,7 @@ Workflow for using RStudio Package Manager:
 
 * End users connect to repositories and download packages
 
----
+
 
 ## In this module
 
@@ -35,11 +35,11 @@ Workflow for using RStudio Package Manager:
 
 * Maintaining RSPM
 
----
+
 
 ## Configuration overview
 
----
+
 
 ### Configuration options
 
@@ -64,7 +64,7 @@ Configured via RSPM configuration file:
 * Security settings
 
 
----
+
 
 ### Configuration file
 
@@ -87,11 +87,11 @@ Listen = :80
 
 All of the RSPM settings are documented in the Appendix on [Configuration Options](https://docs.rstudio.com/rspm/admin/appendix-configuration.html).
 
----
+
 
 ## Starting, stopping and restarting
 
----
+
 
 ### Starting, stopping and restarting
 
@@ -122,11 +122,11 @@ More details on stopping and starting RSPM are provided in the documentation on
 [Server Management - Stopping and Starting](https://docs.rstudio.com/rspm/admin/server-management.html#stopping-starting).
 
 
----
+
 
 ## Maintaining RSPM
 
----
+
 
 ### Upgrading
 
@@ -144,7 +144,7 @@ Upgrading does not affect packages or other variable data.
 More details on upgrades are provided in the documentation on
 [Server Management - Upgrading](https://docs.rstudio.com/rspm/admin/server-management.html#upgrading).
 
----
+
 
 ### Backing up
 
@@ -165,7 +165,7 @@ same time as the file backup.
 More details on backups are provided in the documentation on
 [Server Management - Backups](https://docs.rstudio.com/rspm/admin/server-management.html#backups).
 
----
+
 
 ### Logs
 
@@ -186,7 +186,7 @@ Find more information in the RSPM admin guide:
 * [Access Logs](https://docs.rstudio.com/rspm/admin/files-directories.html#access-logs), and
 * [Repository Versioning](https://docs.rstudio.com/rspm/admin/repositories.html#repo-versions).
 
----
+
 
 ### Licensing
 
@@ -217,7 +217,7 @@ activate-offline, activate-offline-request, begin-evaluation-offline,
 More details on licensing are provided in the documentation on
 [Licensing](https://docs.rstudio.com/rspm/admin/licensing.html).
 
----
+
 
 ### High availability and load balancing
 
@@ -237,7 +237,7 @@ More details on high availability are provided in the documentation on
 * Shared data directory requirements
 * Updating HA nodes
 
----
+
 
 ### Reminder about RSPM command line
 
@@ -266,12 +266,12 @@ Flags:
 Use "rspm [command] --help" for more information about a command.
 ```
 
----
+
 
 ## Your turn
 
 
----
+
 
 ### Your turn
 

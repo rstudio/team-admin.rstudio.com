@@ -6,11 +6,11 @@ In this session you:
 * Review the R startup sequence and how the admin can modify this
 * How to use RStudio Package Manager for fast package install from binaries
 
----
+
 
 ## Understanding the R startup sequence
 
----
+
 
 ### How R starts up
 
@@ -25,11 +25,11 @@ For a very good introduction, read the RViews article [R for Enterprise: Underst
 ![image](assets/r-startup.jpg)
 
 
----
+
 
 ## Installing binary packages
 
----
+
 
 ### Introduction to RStudio Package Manager
 
@@ -42,7 +42,7 @@ You will cover RStudio Package Manager later in this course, but for now it's su
 
 In addition, RStudio Package Manager can serve binary versions of these packages, meaning your users don't have to install all packages from source.
 
----
+
 
 ### Installing binary packages from RStudio Package Manager
 
@@ -60,11 +60,11 @@ You can read the announcement of binary packages at the RStudio blog: [Package M
 
 
 
----
+
 
 ## Your turn
 
----
+
 
 ### Your turn
 

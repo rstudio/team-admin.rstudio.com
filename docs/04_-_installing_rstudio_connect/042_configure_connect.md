@@ -8,11 +8,11 @@ In this session you:
 * Activate a license using the RStudio Floating License manager
 
 
----
+
 
 ## Configuration
 
----
+
 
 
 ### Configuration
@@ -45,7 +45,7 @@ Provider = LDAP
 
 
 
----
+
 
 ### Initial configuration
 
@@ -70,7 +70,7 @@ Address = ...
 SenderEmail = ...
 ```
 
----
+
 
 ### Server Address
 
@@ -99,7 +99,7 @@ The server address implies many choices:
 For now, you need the name of the training server (that you got earlier in the course)
 
 
----
+
 
 ###  Server SenderEmail
 
@@ -123,7 +123,7 @@ This field does not complete email setup!
 * Later in this course, during the exercises, you will use SMTP to send email.
 
 
----
+
 
 ### http NoWarning 
 
@@ -137,7 +137,7 @@ NoWarning
 ![images](assets/http_no_warning.png)
 
 
----
+
 
 ### Configuration
 
@@ -156,7 +156,7 @@ Homework:
 * Like the dentist: boring, important, and you should do it once a year.
 
 
----
+
 
 ### Starting and Stopping
 
@@ -184,7 +184,7 @@ Note:
 * only system settings flagged with `Reloadable: true` will be affected if you use `reload` instead of `restart`.
 * See the [admin guide appendix](https://docs.rstudio.com/connect/admin/appendix/configuration/#reloadable-properties).
 
----
+
 
 ### Server Logs 
 
@@ -201,7 +201,7 @@ sudo tail /var/log/rstudio-connect.log
 
 Run the commands and discuss the log output
 
----
+
 
 ### Licensing
 
@@ -211,7 +211,7 @@ Run the commands and discuss the log output
 ![images](assets/ip_address.png)
 
 
----
+
 
 ### Licensing: online and offline
 
@@ -232,7 +232,7 @@ sudo /opt/rstudio-connect/bin/license-manager activate KEY
 [http://apps.rstudio.com/offline-activation/](http://apps.rstudio.com/offline-activation/)
 
 
----
+
 
 ### Licensing: floating
 
@@ -251,7 +251,7 @@ Download: [https://www.rstudio.com/floating-license-servers/](https://www.rstudi
 Chapter 3.7 of the Connect admin guide discusses [Floating Licenses](https://docs.rstudio.com/connect/admin/licensing/#floating-licenses)
 
 
----
+
 
 ### It's Alive! Can I use it?
 
@@ -260,11 +260,11 @@ Not yet. More choices to make:
 * Initial Configuration
 * Auth Provider
 
----
+
 
 ## User Management and Authentication
 
----
+
 
 ### User Management and Authentication
 
@@ -277,7 +277,7 @@ Nr     | Part            | Description
 3.     | ACL             | What can a user do to a piece of content on RStudio Connect
 
 
----
+
 
 ### Part 1: Authentication
 
@@ -288,7 +288,7 @@ Who can access RStudio Connect? (Authentication)
 Irrevocable choice, but an easy choice.
 
 
----
+
 
 ### Authentication
 
@@ -304,7 +304,7 @@ Google | Configure Connect to get user information from Google OAuth2.
 Azure AD, Okta, OneLogin, other SAML | Configure Connect with SAML
 Somewhere else | Going to need proxied auth. 
 
----
+
 
 ### LDAP 
 
@@ -320,7 +320,7 @@ Log = ldap
 ```
 
 
----
+
 
 ### Other Users?
 
@@ -341,7 +341,7 @@ PermittedLoginGroup
 ```
 
 
----
+
 
 !!! note "Using the email print provider"
     A secret trick
@@ -366,7 +366,7 @@ PermittedLoginGroup
 
 
 
----
+
 
 ### Other Users - LDAP?
 
@@ -381,7 +381,7 @@ PermittedLoginGroup
 ```
 
 
----
+
 
 ### Other Users - Other Providers?
 
@@ -398,7 +398,7 @@ dat %>%
     Where does information come from?
 
 
----
+
 
 ### Authentication - Other Methods
 
@@ -416,7 +416,7 @@ Proxied Authentication
 
 
 
----
+
 
 ### Authentication - Groups
 
@@ -428,11 +428,11 @@ Connect supports groups, but only for some authentication schemas:
 
 
 
----
+
 
 ## User roles
 
----
+
 
 ### User Roles
 
@@ -450,7 +450,7 @@ Connect allows 4 different types of user roles:
 
 [https://docs.rstudio.com/connect/admin/user-management/#user-roles](https://docs.rstudio.com/connect/admin/user-management/#user-roles)
 
----
+
 
 
 ### Configuration of user roles
@@ -481,11 +481,11 @@ DefaultUserRole
 
 
 
----
+
 
 ## Other advanced topics
 
----
+
 
 ### Security Best Practices 
 
@@ -509,7 +509,7 @@ What about data governance? Later in the course you will become familiar with sa
 
 The last line is about reassurance, RStudio has done many security audits internally and with big name customers.
 
----
+
 
 ### Upgrading Connect
 
@@ -520,7 +520,7 @@ Same process as the initial installation.
     - Will restart the service.
 
 
----
+
 
 ### Load balancing / High availability 
 
@@ -538,11 +538,11 @@ Only 3 changes to your setup.
 Connect Admin Guide: [High Availability and Load Balancing](https://docs.rstudio.com/connect/admin/load-balancing/)
 
 
----
+
 
 ## Summary
 
----
+
 
 ### Summary
 
@@ -556,11 +556,11 @@ The exercises will guide you through these steps for one specific branch:
 
 In subsequent chapters you will start using RStudio Connect and deploying content to your machine.
 
----
+
 
 ## Your turn
 
----
+
 
 
 ### Your turn
