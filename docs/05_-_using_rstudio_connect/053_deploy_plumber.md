@@ -121,8 +121,8 @@ function(name = default, req) {
 
 Connect supports the `plumber` package.  RStudio Connect automatically:
 
-  * manages the dependent packages and files of your API
-  * recreates an environment closely mimicking your local development environment on the server.
+    * manages the dependent packages and files of your API
+    * recreates an environment closely mimicking your local development environment on the server.
   
 In other words, Connect deploys the same bundling strategy as for Shiny apps
 

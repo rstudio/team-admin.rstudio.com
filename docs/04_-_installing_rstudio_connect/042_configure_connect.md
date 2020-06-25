@@ -114,9 +114,12 @@ This is the "From" address, i.e. the email address that Connect uses to send ema
 This field does not complete email setup!
 
 * You must also configure a mail server, using either:
+
     * [sendmail](https://en.wikipedia.org/wiki/Sendmail)
     * [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)
+    
 * Your organisation will already have a an email gateway, and you should use this on your Connect instances.
+
 * Later in this course, during the exercises, you will use SMTP to send email.
 
 
@@ -281,6 +284,7 @@ Nr     | Part            | Description
 Who can access RStudio Connect? (Authentication) 
 
 ![image](assets/fork_in_the_road.png)
+
 Irrevocable choice, but an easy choice.
 
 
@@ -329,10 +333,11 @@ Now that you're logged in, what about other users?
 
 * For password auth an admin can register a user. But where does the password come from? Email setup.   
 * For LDAP:
-    - Users must self-register (but you can limit who can self register via
+    - Users must self-register (but you can limit who can self register via the `PermittedLoginGroup` setting:
 
 ```
-[LDAP].PermittedLoginGroup)
+[LDAP]
+PermittedLoginGroup
 ```
 
 
@@ -564,6 +569,6 @@ Next complete the exercise.
 
 Signs of success:
 
-  * You have a running instance of RStudio Connect
-  * You have working email integration
-  * You have multiple users, and you can log in using their LDAP credentials
+    * You have a running instance of RStudio Connect
+    * You have working email integration
+    * You have multiple users, and you can log in using their LDAP credentials

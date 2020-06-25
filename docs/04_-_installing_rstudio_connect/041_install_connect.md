@@ -60,20 +60,20 @@ Support article: [Configuration and sizing recommendations](https://support.rstu
 Typical questions
 
 * How big a server?
-  * It all depends on what your content will be doing in R.
-  * It is best to learn over time and crawl-walk-run where possible.
-  * The support article [Configuration and sizing recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations) provides some suggestions.
+    * It all depends on what your content will be doing in R.
+    * It is best to learn over time and crawl-walk-run where possible.
+    * The support article [Configuration and sizing recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations) provides some suggestions.
 
 * Docker?
-  * Connect is designed to run on a persistent server, think SharePoint.
-  * As you will see, it internally runs and isolates user submitted code, manages processes, sandboxes permissions, etc.
-  * You will get into this more, but all these aspects make it a bit of an odd fit for Docker. That said, it's possible, but must be run in a [privileged container](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities).
-  * Running in a privileged container may reduce the amount of process isolation that Docker offers. Whether it is still worth dockerizing is a choice you must make.
+    * Connect is designed to run on a persistent server, think SharePoint.
+    * As you will see, it internally runs and isolates user submitted code, manages processes, sandboxes permissions, etc.
+    * You will get into this more, but all these aspects make it a bit of an odd fit for Docker. That said, it's possible, but must be run in a [privileged container](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities).
+    * Running in a privileged container may reduce the amount of process isolation that Docker offers. Whether it is still worth dockerizing is a choice you must make.
 
 * What operating system?
-  * Connect is supported on RHEL, Ubuntu and SUSE
-  * Refer to [Requirements for RStudio Connect](https://docs.rstudio.com/rsc/requirements/)
-  * For data science work we recommend Ubuntu
+    * Connect is supported on RHEL, Ubuntu and SUSE
+    * Refer to [Requirements for RStudio Connect](https://docs.rstudio.com/rsc/requirements/)
+    * For data science work we recommend Ubuntu
 
 ---
 

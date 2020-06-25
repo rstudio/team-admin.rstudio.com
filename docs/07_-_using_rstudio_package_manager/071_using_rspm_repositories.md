@@ -149,12 +149,12 @@ discovered and included in the repository.
 
 * Many teams have a handful of internally built packages.
 
-  * You can create a bundled version of each package and copy the resulting package files to the RStudio Package Manager server.
+    * You can create a bundled version of each package and copy the resulting package files to the RStudio Package Manager server.
 
 * RStudio Package Manager will ensure that the latest version is the default
 package version that is available
 
-  * But will keep older versions available in the repository's archive for users who want to use specific versions.
+    * But will keep older versions available in the repository's archive for users who want to use specific versions.
 
 ![image](assets/rspm-source-local.png)
 

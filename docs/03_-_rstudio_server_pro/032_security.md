@@ -260,10 +260,13 @@ SSL / TLS / HTTPS requires a certificate
 You can create a certificate yourself, or obtain a certificate from a trusted authority. 
 
 * Self-signed certificate
+
     * Server generates its own certificate
     * Easy to generate, but every client has to be configured manually
     * **Your server will not automatically be trusted by other clients**
+
 * Certified authority
+
     * Trusted authority generates certificate
     * Configuration at the network level
     * **Your server will be trusted by all clients in your network** 
@@ -280,8 +283,8 @@ RStudio Server Pro is commonly run behind a [reverse proxy](<https://en.wikipedi
 
 * Common proxies include
 
-  * [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
-  * [Nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+    * [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
+    * [Nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
 
 
 For more information, see the support articles:
@@ -426,7 +429,7 @@ LDAP is implemented in **many** different ways.
 * Makes LDAP a system identity and authentication provider
 * This means that **all** local system accounts are **technically** already provisioned even if they do not **actually** exist yet
 
-  * This is `sssd` magic!
+    * This is `sssd` magic!
 
 ---
 

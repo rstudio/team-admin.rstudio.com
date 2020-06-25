@@ -280,9 +280,9 @@ Next complete the exercise.
 
 Signs of success:
 
-  * You know how to use the RSPM CLI
+    * You know how to use the RSPM CLI
 
-  * You understand the different administrative tasks in RSPM
+    * You understand the different administrative tasks in RSPM
   
-  * You can run diagnostics!
+    * You can run diagnostics!
 
