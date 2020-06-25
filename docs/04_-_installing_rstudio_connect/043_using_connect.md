@@ -325,7 +325,7 @@ Building R Markdown document...
 
 You can download the bundle from Connect, and the bundle id corresponds to the information in the deployment log:
 
-!!! note "Notice:""
+!!! note "Notice:"
 
     * Both bundles `2` and `6` appear in `Source Versions`
     * You can view, download or activate any previous bundle

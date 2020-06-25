@@ -104,5 +104,5 @@ Next complete the exercise.
 
 Signs of success:
 
-  * You can `ssh` into the Virtual Machine
-  
+* You can `ssh` into the Virtual Machine
+

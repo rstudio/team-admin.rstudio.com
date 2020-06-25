@@ -224,12 +224,16 @@ Make sure you're on the right version of the product compared to the admin guide
 ### Expired license
 
 * Things to try:
+
     - Check time and time zone  `timedatectl`
     - Resync if needed, e.g. `sudo hwclock -w`
     - Restart
+
 * Deactivation tool: http://apps.rstudio.com/deactivate-license/
+
 * Long-term solutions
     - Consider switching to offline setup
+
 * RStudio is working on improvements
 
 
@@ -244,6 +248,7 @@ Make sure you're on the right version of the product compared to the admin guide
 * Difficult for RStudio Support to troubleshoot as it depends on external configuration values unknown to us.
 
 * Does it work outside of the RStudio product?
+
     * Often possible to copy over working setup from other systems or services.
     * For RStudio Server Pro
     * `pamtester` utility lets you test outside RStudio systems.
@@ -322,7 +327,9 @@ Things that help:
 Getting help:
 
 * Email the support team at [support@rstudio.com](mailto:support@rstudio.com), OR
-* File a ticket at https://support.rstudio.com/hc/en-us/requests/new
+* File a ticket at [https://support.rstudio.com/hc/en-us/requests/new](https://support.rstudio.com/hc/en-us/requests/new)
+  
+  
   
 ---
 

@@ -14,24 +14,19 @@
 ## Three mechanisms for installing R
 
 
----
-
-### Three mechanisms
-
-
 You have three different mechanisms for installing R on a Linux machine:
 
 * Install from a Linux package manager
 
-  * For example `yum` on Red Hat or `apt` on Ubuntu
-  
+    * For example `yum` (Red Hat) or `apt` (Ubuntu)
+
 * Compile from source
 
-  * Download the R source code and compile using the relevant GCC compiler
+    * Download the R source code and compile using the relevant GCC compiler
 
 * Install from pre-compiled binaries provided by RStudio
 
-  * Download an install the pre-compiled binaries available from RStudio
+    * Download an install the pre-compiled binaries available from RStudio
 
 ---
 
@@ -47,7 +42,7 @@ For data science work in production, it is important to provide code stability b
 
 This means that using your Linux package manager for installing R in production is not a good idea.
 
-!!! warning "Recommedation"
+!!! tip "Recommendation"
     We recommend you don't use a Linux package manager to install R.
 
 
@@ -60,9 +55,9 @@ For data science work in production, it is important to provide code stability b
 You can achieve this by installing R from source.
 
 * Download the source code
-* Create a make configuration
+* Create a "make" configuration
 * Run `make`
-* Run `make` install
+* Run `make install`
 
 This offers maximum flexibility, because you can specify the location of the installed package and you can optimize for your hardware.
 
@@ -79,14 +74,15 @@ The downside of installing R from source is that it takes some time for the comp
 RStudio recommends that in most cases you install R from pre-compiled binaries. 
 
 This gives you the benefit of:
+
 * Side-by-side installation of multiple versions of R
 * It is quick, since the compilation step has previously been completed
 
 To install from pre-compiled binaries, follow the instructions at 
 [Install R](https://docs.rstudio.com/resources/install-r/)
 
-!!! warning
-    This is the recommended option in most cases
+!!! tip
+    Installing from pre-compiled binaries is the recommended option in most cases
 
 ---
 
@@ -101,29 +97,26 @@ To install from pre-compiled binaries, follow the instructions at
 Our suggested order for making a choice of R installation is:
 
 1. Install from [pre-compiled binaries](https://docs.rstudio.com/resources/install-r/)
-  * to get multiple R versions side-by-side
+
+    * to get multiple R versions side-by-side
   
 2. Compile from source
-  * gives more flexibility but takes longer
+
+    * gives more flexibility but takes longer
   
 3. Use `yum` or `apt`
-  * Does not allow side-by-side install
-  * Do not use for long-term data science stability
+
+    * Does not allow side-by-side install
+    * Do not use for long-term data science stability
 
 
 ---
 
 ## Your turn
 
----
-
-
-### Your turn
 
 Next complete the exercise.
 
-Signs of success:
+!!! success "Signs of success"
 
-  * R is running
-  
-  
+* R is running

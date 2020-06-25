@@ -63,12 +63,12 @@ The ultimate report is typically a web page, but many [output formats](https://r
 
 * When you deploy a report to Connect, you have choice between publishing:
 
-  * With source code
+    * With source code
   
       - Giving you the option to schedule the report on Connect
       - This is the more flexible option!!!
   
-  * Finished document only
+    * Finished document only
  
 ![image](assets/publish_rmd_options.png)
 
@@ -348,7 +348,7 @@ Next complete the exercise.
 
 Signs of success:
 
-  * You deployed a Markdown report to Connect
-  * You created a scheduled update
-  * You triggered a run of the report and found the email in your Roundcube inbox
+    * You deployed a Markdown report to Connect
+    * You created a scheduled update
+    * You triggered a run of the report and found the email in your Roundcube inbox
   
