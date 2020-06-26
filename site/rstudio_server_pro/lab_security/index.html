@@ -1,0 +1,1867 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.4">
+    
+    
+      
+        <title>Lab: RStudio Server Pro Security - RStudio Team Admin Training</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4007cdc.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/custom.css">
+    
+      <link rel="stylesheet" href="../../assets/asciinema-player.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="RStudio Team Admin Training" class="md-header-nav__button md-logo" aria-label="RStudio Team Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            RStudio Team Admin Training
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lab:  RStudio Server Pro Security
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RStudio Team Admin Training" class="md-nav__button md-logo" aria-label="RStudio Team Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    RStudio Team Admin Training
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      1. Getting started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="1. Getting started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        1. Getting started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/how_it_works/" title="How the course works" class="md-nav__link">
+      How the course works
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/lab_ssh_in/" title="Lab: SSH in" class="md-nav__link">
+      Lab: SSH in
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      2. R
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. R" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        2. R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r/install_r/" title="2.1 Installing R" class="md-nav__link">
+      2.1 Installing R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r/lab_install_r/" title="Lab: Installing R" class="md-nav__link">
+      Lab:  Installing R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      3. RStudio Server Pro
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="3. RStudio Server Pro" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        3. RStudio Server Pro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install_rsp/" title="3.1 Install RStudio Server Pro" class="md-nav__link">
+      3.1 Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab_install_rsp/" title="Lab: Install RStudio Server Pro" class="md-nav__link">
+      Lab:  Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="3.2 RStudio Server Pro Security" class="md-nav__link">
+      3.2 RStudio Server Pro Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab:  RStudio Server Pro Security
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Lab: RStudio Server Pro Security" class="md-nav__link md-nav__link--active">
+      Lab:  RStudio Server Pro Security
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-get-server-information" class="md-nav__link">
+    Part 1: Get server information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-ldapsearch" class="md-nav__link">
+    Introduction to ldapsearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returning-a-single-element" class="md-nav__link">
+    Returning a single element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-the-output" class="md-nav__link">
+    Inspect the output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-get-a-list-of-all-users" class="md-nav__link">
+    Task: Get a list of all users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-get-a-specific-user" class="md-nav__link">
+    Task: Get a specific user
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-and-groups" class="md-nav__link">
+    Users and groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-configure-server" class="md-nav__link">
+    Part 2: Configure server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-create-sssdconf-file" class="md-nav__link">
+    Task: Create sssd.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-edit-the-sssdconf-file" class="md-nav__link">
+    Task: Edit the sssd.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-test-sssd-is-working" class="md-nav__link">
+    Task: Test sssd is working
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signs-of-success-sssd-configured" class="md-nav__link">
+    Signs of success: sssd configured
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-configure-rsp" class="md-nav__link">
+    Part 3: Configure RSP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-set-up-pam-profiles" class="md-nav__link">
+    Task: Set up PAM Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-test-authentication" class="md-nav__link">
+    Task: Test authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-create-user-accounts" class="md-nav__link">
+    Task: Create user accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signs-of-success-rstudio-works" class="md-nav__link">
+    Signs of success: RStudio works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure" class="md-nav__link">
+    Failure ?!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-thought-security-best-practices" class="md-nav__link">
+    Closing thought: Security best practices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../startup_and_packages/" title="3.3 RStudio Server Pro Startup and packages" class="md-nav__link">
+      3.3 RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab_startup_and_packages/" title="Lab: RStudio Server Pro Startup and packages" class="md-nav__link">
+      Lab:  RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      4. RStudio Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="4. RStudio Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        4. RStudio Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/install_connect/" title="4.1 Installing RStudio Connect" class="md-nav__link">
+      4.1 Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_install_connect/" title="4.2 Lab: Installing RStudio Connect" class="md-nav__link">
+      4.2 Lab:  Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/configure_connect/" title="4.3 Configuring RStudio Connect" class="md-nav__link">
+      4.3 Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_configure_connect/" title="4.4 Lab: Configuring RStudio Connect" class="md-nav__link">
+      4.4 Lab:  Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/using_connect/" title="4.5 Using RStudio Connect" class="md-nav__link">
+      4.5 Using RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_using_connect/" title="4.6 Lab: Using RStudio Connect" class="md-nav__link">
+      4.6 Lab:  Using RStudio Connect
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      5. Deploying to Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="5. Deploying to Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        5. Deploying to Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/deploy_shiny/" title="5.1 Deploying Shiny Apps" class="md-nav__link">
+      5.1 Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/lab_deploy_shiny/" title="5.2 Lab: Deploying Shiny Apps" class="md-nav__link">
+      5.2 Lab:  Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/deploy_markdown/" title="5.3 Deploying Rmarkdown" class="md-nav__link">
+      5.3 Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/lab_deploy_markdown/" title="5.4 Lab: Deploying Rmarkdown" class="md-nav__link">
+      5.4 Lab:  Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/deploy_plumber/" title="5.5 Deploying plumber APIs" class="md-nav__link">
+      5.5 Deploying plumber APIs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_connect/lab_deploy_plumber/" title="5.6 Lab: Deploying plumber APIs" class="md-nav__link">
+      5.6 Lab:  Deploying plumber APIs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      6. RStudio Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="6. RStudio Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        6. RStudio Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/install_rspm/" title="6.1 Installing RStudio Package Manager" class="md-nav__link">
+      6.1 Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/lab_install_rspm/" title="6.2 Lab: Installing RStudio Package Manager" class="md-nav__link">
+      6.2 Lab:  Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/configure_rspm/" title="6.3 Configuring RStudio Package Manager" class="md-nav__link">
+      6.3 Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/lab_configure_rspm/" title="6.4 Lab: Configuring RStudio Package Manager" class="md-nav__link">
+      6.4 Lab:  Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      7. Using Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="7. Using Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        7. Using Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/using_rspm_repositories/" title="7.1 Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.1 Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/lab_using_rspm_repositories/" title="7.2 Lab: Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.2 Lab:  Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/using_rspm_packages/" title="7.3 Using RStudio Package Manager Packages" class="md-nav__link">
+      7.3 Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/lab_using_rspm_packages/" title="7.4 Lab: Using RStudio Package Manager Packages" class="md-nav__link">
+      7.4 Lab:  Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      9. Troubleshooting
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="9. Troubleshooting" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        9. Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/troubleshoot/" title="9.1 Troubleshooting" class="md-nav__link">
+      9.1 Troubleshooting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/lab_troubleshoot/" title="9.2 Lab: Troubleshooting" class="md-nav__link">
+      9.2 Lab:  Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Extra Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extra Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Extra Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html" title="Cheat sheet" class="md-nav__link">
+      Cheat sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://docs.rstudio.com" title="Official RStudio Documentation" class="md-nav__link">
+      Official RStudio Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-get-server-information" class="md-nav__link">
+    Part 1: Get server information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-ldapsearch" class="md-nav__link">
+    Introduction to ldapsearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returning-a-single-element" class="md-nav__link">
+    Returning a single element
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-the-output" class="md-nav__link">
+    Inspect the output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-get-a-list-of-all-users" class="md-nav__link">
+    Task: Get a list of all users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-get-a-specific-user" class="md-nav__link">
+    Task: Get a specific user
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users-and-groups" class="md-nav__link">
+    Users and groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-configure-server" class="md-nav__link">
+    Part 2: Configure server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-create-sssdconf-file" class="md-nav__link">
+    Task: Create sssd.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-edit-the-sssdconf-file" class="md-nav__link">
+    Task: Edit the sssd.conf file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-test-sssd-is-working" class="md-nav__link">
+    Task: Test sssd is working
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signs-of-success-sssd-configured" class="md-nav__link">
+    Signs of success: sssd configured
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-configure-rsp" class="md-nav__link">
+    Part 3: Configure RSP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-set-up-pam-profiles" class="md-nav__link">
+    Task: Set up PAM Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-test-authentication" class="md-nav__link">
+    Task: Test authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-create-user-accounts" class="md-nav__link">
+    Task: Create user accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signs-of-success-rstudio-works" class="md-nav__link">
+    Signs of success: RStudio works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure" class="md-nav__link">
+    Failure ?!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-thought-security-best-practices" class="md-nav__link">
+    Closing thought: Security best practices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/rstudio/team-admin.rstudio.com/edit/master/docs/rstudio_server_pro/lab_security.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Lab:  RStudio Server Pro Security</h1>
+                
+                <div class="admonition question">
+<p class="admonition-title">Quiz: Authentication protocols</p>
+<p>Which authentication protocols are supported by RStudio Server Pro?",</p>
+<p>Choose five answers from the following list:</p>
+<ul>
+<li>Operating system</li>
+<li>Proxy</li>
+<li>PAM</li>
+<li>LDAP</li>
+<li>Google OAuth</li>
+<li>OAuth 2</li>
+<li>SAML</li>
+</ul>
+</div>
+<details class="example"><summary>Answer:</summary><p>The correct answer is: Operating system, Proxy, PAM, LDAP and Google OAuth.</p>
+<p>SAML is not currently supported and OAuth 2 is not supported, though the Google specific variant is.
+In both cases we recommend you use proxied authentication instead.</p>
+</details>
+<h2 id="introduction">Introduction</h2>
+<p>Imagine that you are in an organization that standardized authentication using the LDAP protocol and openLDAP.</p>
+<p>In this exercise, we have provided the LDAP server for you. Your task is to configure RStudio Server Pro to integrate with the LDAP server.</p>
+<p>When you are finished, users in the LDAP directory should be able to authenticate into RStudio Server Pro.</p>
+<p><img alt="images" src="../assets/4-security.png" /></p>
+<p>This exercise is broken into three parts:</p>
+<ol>
+<li>Explore LDAP and obtain information from the <code>.ldif</code> file</li>
+<li>Use <code>sssd</code> to configure your server with LDAP</li>
+<li>Use PAM to configure RStudio Server Pro</li>
+</ol>
+<p>Remember you will need to use <code>sudo</code> commands throughout this exercise.</p>
+<h2 id="part-1-get-server-information">Part 1: Get server information</h2>
+<p>In this part, you get information you need to configure your server with LDAP. </p>
+<h2 id="introduction-to-ldapsearch">Introduction to ldapsearch</h2>
+<p>Hint:</p>
+<ul>
+<li>
+<p>Use <code>man ldapsearch</code> to construct your command.</p>
+</li>
+<li>
+<p>You can also find the help for <code>man ldapsearch</code> at <code>r href("https://linux.die.net/man/1/ldapsearch")</code></p>
+</li>
+</ul>
+<p><strong>Important: The LDAP bind password is <code>admin</code>. You will need this for the next steps.</strong></p>
+<p>Use the <code>ldapsearch</code> terminal utility to retrieve an example user from the LDAP credential store. Construct a command with the inputs below. </p>
+<p>The most important things you’ll need to know about your LDAP server are:</p>
+<ul>
+<li>hostname or IP address</li>
+<li>LDAP port number</li>
+<li>base bind DN (disinguished name)</li>
+</ul>
+<p>This information allows you to write an <code>ldapsearch</code> query in the format:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -h <span class="m">1</span>.2.3.4 -p <span class="m">123</span> -D <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>com <span class="o">[</span>query<span class="o">]</span>
+</code></pre></div>
+
+<p>In this classroom, the hostname is <code>leader.example.org</code>, and the base bind DN is "admin.example.org".</p>
+<p>It will also help to know a few of the <a href="https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format">LDIF format abbreviations</a> for search criteria in LDAP:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Code</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">dn</td>
+<td align="left">distinguished name</td>
+</tr>
+<tr>
+<td align="left">dc</td>
+<td align="left">domain component</td>
+</tr>
+<tr>
+<td align="left">ou</td>
+<td align="left">organizational unit</td>
+</tr>
+<tr>
+<td align="left">cn</td>
+<td align="left">common name</td>
+</tr>
+</tbody>
+</table>
+<p>In these codes:</p>
+<ul>
+<li>The <strong><code>dn</code></strong> refers to the <strong>distinguished name</strong> that uniquely identifies an entry in the directory.</li>
+<li>The <strong><code>dc</code></strong> refers to each <strong>component of the domain</strong>. For example <code>www.mydomain.com</code> would be written as <code>dc=www,dc=mydomain,dc=com</code></li>
+<li>The <strong><code>ou</code></strong> refers to the <strong>organizational unit</strong> (or sometimes the user group) that the user is part of. A user can be part of more than one group, for example: <code>ou=Lawyer,ou= Judge</code>.</li>
+<li>The <strong><code>cn</code></strong> refers to the individual object, for example person's name, meeting room, job title, etc.</li>
+</ul>
+<p>This means that <code>admin.example.org</code> can be written as <code>cn=admin,dc=example,dc=org</code>.</p>
+<p>And now you have the essential information for an ldap query:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Argument</th>
+<th align="left">ldapsearch</th>
+<th align="left">Value</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Bind Password</td>
+<td align="left">-w</td>
+<td align="left">admin</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Hostname</td>
+<td align="left">-h</td>
+<td align="left">leader.example.org</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Port</td>
+<td align="left">-p</td>
+<td align="left">389</td>
+<td align="left">default value, can be omitted</td>
+</tr>
+<tr>
+<td align="left">Bind DN</td>
+<td align="left">-D</td>
+<td align="left">cn=admin, dc=example, dc=org</td>
+<td align="left">DN means "distinguished name"</td>
+</tr>
+</tbody>
+</table>
+<p>Note that it is considered unsafe to provide passwords on the commandline. Outside of this training course you should use <code>-W</code> to get a password prompt instead.</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+</code></pre></div>
+
+<p>If you issue this LDAP command, you should get:</p>
+<div class="highlight"><pre><span></span><code># extended LDIF
+#
+# LDAPv3
+# base &lt;&gt; (default) with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# search result
+search: 2
+result: 32 No such object
+
+# numResponses: 1
+</code></pre></div>
+
+<p>This query doesn't return any useful information, so you want to restrict the starting point of the query, by setting the <code>searchbase</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Argument</th>
+<th align="left">ldapsearch</th>
+<th align="left">Value</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Search Base</td>
+<td align="left">-b</td>
+<td align="left">dc=example, dc=org</td>
+<td align="left">Use searchbase as the starting point for the search instead of the default</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org
+</code></pre></div>
+
+<p>Note that this returns <strong>all</strong> elements in the LDAP database!</p>
+<h2 id="returning-a-single-element">Returning a single element</h2>
+<p>Now that you know how to return the entire database, you can add additional elements to the <code>[query]</code>.  </p>
+<p>Remember that the generic query format looks like this:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -h <span class="m">1</span>.2.3.4 -p <span class="m">123</span> -D <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>com <span class="o">[</span>query<span class="o">]</span>
+</code></pre></div>
+
+<p>And you have already tried</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org
+</code></pre></div>
+
+<p>By adding a query term at the end, you can search for specific elements.</p>
+<p>For example, search for a user named "Joe".  You already know that <code>cn</code> indicates the "common name", so try running a query for <code>cn=joe</code>:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>joe
+</code></pre></div>
+
+<p>You should get:</p>
+<div class="highlight"><pre><span></span><code># joe, engineering.example.org
+dn: cn=joe,dc=engineering,dc=example,dc=org
+cn: joe
+gidNumber: 5000
+givenName: Joe
+homeDirectory: /home/joe
+loginShell: /bin/sh
+mail: joe@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Golly
+uid: joe
+uidNumber: 10000
+userPassword:: e01ENX1qL01raWZrdk0wRm1sTDZQM0MxTUlnPT0=
+</code></pre></div>
+
+<h2 id="inspect-the-output">Inspect the output</h2>
+<p>Each object in an LDAP directory has at least one <strong>object class</strong> associated with it. The object class determines the characteristics of this object, in particular the set of attributes which the object can have (and the ones it must have).</p>
+<p>The object classes are defined in the LDAP directory schema - they constitute a class hierarchy there, there is one central top level class (which is called 'top'), all other classes are derived from that</p>
+<p><img alt="image" src="../assets/object-class.png" /></p>
+<p>Repeat your previous <code>ldapsearch</code> command, this time for the user `julie:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>julie
+</code></pre></div>
+
+<p>Here is an extract for the user named <code>Julie</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># julie, engineering.example.org</span>
+dn: <span class="nv">cn</span><span class="o">=</span>julie,dc<span class="o">=</span>engineering,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+cn: julie
+gidNumber: <span class="m">5000</span>
+givenName: Julie
+homeDirectory: /home/julie
+loginShell: /bin/sh
+mail: julie@example.org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+sn: Jolly
+uid: julie
+uidNumber: <span class="m">10001</span>
+userPassword:: <span class="nv">e01ENX1GdkV2WG9ONTRpdnBsZVVGNi93YmhBPT0</span><span class="o">=</span>
+</code></pre></div>
+
+<p>Note, in particular, the <code>objectClass</code> line:</p>
+<div class="highlight"><pre><span></span><code>objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+</code></pre></div>
+
+<p>This means that users have the attribute: <code>inetOrgPerson</code>, <code>posixAccount</code> and <code>top</code>.</p>
+<h2 id="task-get-a-list-of-all-users">Task: Get a list of all users</h2>
+<p>You can use your knowledge that users have the attribute  <code>inetOrgPerson</code> in a follow-up <code>ldapsearch</code> to get all usernames (<code>uid</code>).</p>
+<p>Refine your search to return only <code>inetOrgperson</code> entries:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">objectClass</span><span class="o">=</span>inetOrgperson
+</code></pre></div>
+
+<p>And then refine the search once more to return only the <code>uid</code> entries:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">objectClass</span><span class="o">=</span>inetOrgperson uid
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is much easier to read and understand the resulting list, making it easier to determine which users are in the system.</p>
+</div>
+<h2 id="task-get-a-specific-user">Task: Get a specific user</h2>
+<p>Now you can get the information you need to configure the server. Query LDAP for information about <code>julie</code>. You will use this information in the next step.</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>julie
+</code></pre></div>
+
+<p>You can expand your query to include all user and operational attributes</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>julie <span class="se">\*</span> <span class="se">\+</span>
+</code></pre></div>
+
+<p>Explanation:</p>
+<ul>
+<li>This returns all information about a single user.</li>
+<li>Searching with <code>\*</code> shows all user attributes</li>
+<li>Searching with <code>\+</code> shows all operational attributes</li>
+</ul>
+<p>In the results:</p>
+<ul>
+<li><code>entryUUID</code> is the <em>unique identifier</em> of a record in openLDAP</li>
+</ul>
+<h2 id="users-and-groups">Users and groups</h2>
+<p>What is the difference between a <strong>user</strong> and a <strong>group</strong> in this LDAP server?</p>
+<ul>
+<li>Specifically, if you look at an LDAP directory entry, how do you tell if it is a user or a group entry?</li>
+</ul>
+<p>As an example, here is the entry for <code>julie</code>:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>julie <span class="se">\*</span> <span class="se">\+</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># julie, engineering.example.org</span>
+dn: <span class="nv">cn</span><span class="o">=</span>julie,dc<span class="o">=</span>engineering,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+structuralObjectClass: inetOrgPerson
+entryUUID: 3a204884-2507-1039-83ea-df23cd78e201
+creatorsName: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+createTimestamp: 20190617045051Z
+entryCSN: <span class="m">20190617045051</span>.770037Z#000000#000#000000
+modifiersName: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+modifyTimestamp: 20190617045051Z
+entryDN: <span class="nv">cn</span><span class="o">=</span>julie,dc<span class="o">=</span>engineering,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+subschemaSubentry: <span class="nv">cn</span><span class="o">=</span>Subschema
+hasSubordinates: FALSE
+</code></pre></div>
+
+<p>And this is the entry for <code>engineering_group</code>:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>engineering_group <span class="se">\*</span> <span class="se">\+</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># engineering_group, example.org</span>
+dn: <span class="nv">cn</span><span class="o">=</span>engineering_group,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+structuralObjectClass: posixGroup
+entryUUID: 3a1a7ff8-2507-1039-83e4-df23cd78e201
+creatorsName: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+createTimestamp: 20190617045051Z
+entryCSN: <span class="m">20190617045051</span>.732134Z#000000#000#000000
+modifiersName: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+modifyTimestamp: 20190617045051Z
+entryDN: <span class="nv">cn</span><span class="o">=</span>engineering_group,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+subschemaSubentry: <span class="nv">cn</span><span class="o">=</span>Subschema
+hasSubordinates: FALSE
+</code></pre></div>
+
+<p>Task:</p>
+<ul>
+<li>Identify the attributes that might indicate that <code>julie</code> is a person and <code>engineering_group</code> is a group</li>
+</ul>
+<p>Hint: look at the differing values for <code>structuralObjectClass</code></p>
+<h2 id="part-2-configure-server">Part 2: Configure server</h2>
+<p>In this part, you configure your server with <code>sssd</code>. </p>
+<h2 id="task-create-sssdconf-file">Task: Create sssd.conf file</h2>
+<p><code>sssd</code> helps you integrate your Linux system with LDAP. The configuration template is in your workshop materials.</p>
+<p><strong>Important: You can find the workshop materials at <code>/usr/share/class/pro_admin_training_assets/</code>.</strong></p>
+<p>Tasks:</p>
+<ul>
+<li>Copy the configuration template <code>s-template.txt</code> to <code>/etc/sssd/sssd.conf</code>.</li>
+</ul>
+<details class="note"><summary>Show me how...</summary><div class="highlight"><pre><span></span><code>sudo cp /usr/share/class/pro_admin_training_assets/s-template.txt /etc/sssd/sssd.conf
+</code></pre></div>
+
+</details>
+<h2 id="task-edit-the-sssdconf-file">Task: Edit the sssd.conf file</h2>
+<p>Task:</p>
+<ul>
+<li>Fill out the missing values in <code>sssd.conf</code> using the example output from the LDAP server in the previous task</li>
+</ul>
+<p>These are the values you must complete:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ldap_user_object_class</span> <span class="o">=</span> posixAccount
+<span class="nv">ldap_user_name</span> <span class="o">=</span> cn
+<span class="nv">ldap_user_uuid</span> <span class="o">=</span> entryUUID
+<span class="nv">ldap_user_shell</span> <span class="o">=</span> loginShell
+<span class="nv">ldap_user_home_directory</span> <span class="o">=</span> homeDirectory
+<span class="nv">ldap_user_uid_number</span> <span class="o">=</span> uidNumber
+</code></pre></div>
+
+<p>And the meaning of these fields (<a href="https://linux.die.net/man/5/sssd-ldap">source</a>)</p>
+<table>
+<thead>
+<tr>
+<th>Configuration option</th>
+<th>The LDAP attribute that...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ldap_user_object_class</td>
+<td>specifies the object class of a user entry in LDAP</td>
+</tr>
+<tr>
+<td>ldap_user_name</td>
+<td>corresponds to the user's login name</td>
+</tr>
+<tr>
+<td>ldap_user_uuid</td>
+<td>contains the UUID/GUID of an LDAP user object.</td>
+</tr>
+<tr>
+<td>ldap_user_shell</td>
+<td>contains the path to the user's default shell.</td>
+</tr>
+<tr>
+<td>ldap_user_home_directory</td>
+<td>contains the name of the user's home directory</td>
+</tr>
+<tr>
+<td>ldap_user_uid_number</td>
+<td>corresponds to the user's id</td>
+</tr>
+</tbody>
+</table>
+<p>If you get stuck, you can find a full example configuration of <code>sssd.conf</code> in <code>s-answer.txt</code>.</p>
+<h2 id="task-test-sssd-is-working">Task: Test sssd is working</h2>
+<p>Next, restart the <code>sssd</code> service:</p>
+<div class="highlight"><pre><span></span><code>sudo chown root:root /etc/sssd/sssd.conf
+sudo chmod <span class="m">600</span> /etc/sssd/sssd.conf
+sudo systemctl restart sssd
+sudo systemctl status sssd
+</code></pre></div>
+
+<p>To test that <code>sssd</code> is working correctly, try:</p>
+<div class="highlight"><pre><span></span><code>id julie
+</code></pre></div>
+
+<p>Make sure that the information matches with the ldap search for Julie:</p>
+<div class="highlight"><pre><span></span><code>ldapsearch -w admin -h leader.example.org -D <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org -b <span class="nv">dc</span><span class="o">=</span>example,dc<span class="o">=</span>org <span class="nv">cn</span><span class="o">=</span>julie
+</code></pre></div>
+
+<p>Consider these questions:</p>
+<ul>
+<li>Did you get meaningful output?</li>
+<li>If you did, try a few more users from the LDAP system. Do these users exist on your system?</li>
+<li>Where is the information coming from?</li>
+</ul>
+<h2 id="signs-of-success-sssd-configured">Signs of success: sssd configured</h2>
+<p>You have successfully configured your server to recognize LDAP. PAM can now call the <code>sssd</code> service and find users in the LDAP directory.</p>
+<p>The next step is to configure RStudio Server Pro with PAM.</p>
+<h2 id="part-3-configure-rsp">Part 3: Configure RSP</h2>
+<p>In this part, you configure RStudio Server Pro to connect to LDAP via PAM.</p>
+<h2 id="task-set-up-pam-profiles">Task: Set up PAM Profiles</h2>
+<p>RStudio Server Pro supports PAM sessions. The PAM sessions work with <code>sssd</code> to authenticate users.</p>
+<p>Tasks</p>
+<ol>
+<li>
+<p>Copy the following files (<strong>Remember:</strong> workshop materials are under <code>/usr/share/class/pro_admin_training_assets/</code>.):</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>From:</th>
+<th>To:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PAM profile</td>
+<td><code>rstudio-sssd</code></td>
+<td><code>/etc/pam.d/rstudio</code></td>
+</tr>
+<tr>
+<td>PAM profile</td>
+<td><code>rstudio-session-sssd</code></td>
+<td><code>/etc/pam.d/rstudio-session</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Edit the <code>/etc/rstudio/rserver.conf</code> file. Add the following line:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>auth-pam-sessions-profile<span class="o">=</span>rstudio-session
+</code></pre></div>
+
+<p>Explanation</p>
+<ul>
+<li>PAM offers flexible control over system level authentication</li>
+<li>Specific PAM exploration is outside of the bounds of this course</li>
+<li>Open each file and explore the contents</li>
+</ul>
+<h2 id="task-test-authentication">Task: Test authentication</h2>
+<p>You can use the <code>pamtester</code> utility to test the PAM profile for a specific user.  You cand find documentation for <code>pamtester</code> <a href="https://docs.rstudio.com/ide/server-pro/authenticating-users.html#diagnosing-pam-authentication-problems">here</a></p>
+<p>In this classroom, the password for every user is the same as their user name.  For example:</p>
+<ul>
+<li>User: jen</li>
+<li>Password: jen</li>
+</ul>
+<p>Task</p>
+<ul>
+<li>Use the <code>pamtester</code> utility to test authentication for <code>jen:jen</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo /usr/lib/rstudio-server/bin/pamtester --verbose rstudio jen authenticate
+</code></pre></div>
+
+<ul>
+<li>Enter the password.</li>
+</ul>
+<p>You should get:</p>
+<div class="highlight"><pre><span></span><code>pamtester: successfully authenticated
+</code></pre></div>
+
+<h2 id="task-create-user-accounts">Task: Create user accounts</h2>
+<p>Every RStudio Server user must have a home directory.</p>
+<p>From the <code>r href("admin guide", "https://docs.rstudio.com/ide/server-pro/authenticating-users.html")</code>:</p>
+<blockquote>
+<p>R users require local system accounts regardless of what RStudio authentication method you use. You should set up local system accounts manually and then map authenticating users to these accounts. You can also use PAM Sessions to mount your user home directory to the server.</p>
+</blockquote>
+<ul>
+<li>If a user does not have a home directory, they will get a <code>system error 13
+(Permission Denied)</code> message in their browser when they try to log in</li>
+</ul>
+<p>(It is possible to use the <code>rstudio-session</code> PAM profile to create home directories automatically when a user logs into the server, but that's outside the scope of this course.)</p>
+<p>Tasks:</p>
+<ul>
+<li>Create a local system account for the user <code>jen</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo mkdir /home/jen
+sudo chown jen: /home/jen
+</code></pre></div>
+
+<details class="note"><summary>Why does this work?</summary><p>The linux command <code>chown</code> changes the ownership of a file or folder.  The typical syntax is <code>chown username:groupname ...</code> and you have to specify the new <code>username</code> as well as the new <code>groupname</code>.
+However, there is special syntax for <code>chown</code> that allows you to omit either the <code>username</code> or the <code>groupname</code>.
+In this example, <code>chown jen:</code> omits the groupname, and then the behaviour of <code>chown</code> is to substitute the default groupname.</p>
+</details>
+<p>You can read more in the manual pages for linux, also known as the "man pages", by typing:</p>
+<div class="highlight"><pre><span></span><code>man chown
+</code></pre></div>
+
+<h2 id="signs-of-success-rstudio-works">Signs of success: RStudio works</h2>
+<p>Tasks:</p>
+<p>Restart RStudio Server</p>
+<ul>
+<li>
+<p>Refer to the admin guide, section <a href="https://docs.rstudio.com/ide/server-pro/server-management.html#stopping-and-starting">2.1.2 Stopping and Starting</a></p>
+</li>
+<li>
+<p>To manually stop, start, and restart the server you use the following commands:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo rstudio-server stop
+sudo rstudio-server start
+</code></pre></div>
+
+<p>or just:</p>
+<div class="highlight"><pre><span></span><code>sudo rstudio-server restart
+</code></pre></div>
+
+<p>To check the current stopped/started status of the server:</p>
+<div class="highlight"><pre><span></span><code>sudo rstudio-server status
+</code></pre></div>
+
+<p>Log into RStudio Server Pro in your browser using one of the users from the LDAP
+Server.</p>
+<ul>
+<li>Important: <strong>Since RStudio Server Pro now authenticates only users in LDAP, you must log in as one of those users</strong></li>
+<li>Also, a user home folder must exist, so make sure you've created a home folder!</li>
+<li>practically speaking, this means you must log in as <code>jen</code>, since you created a home folder for <code>jen</code> in the previous step</li>
+</ul>
+<p><img alt="image" src="../assets/login-as-jen.png" /></p>
+<p>Remember:</p>
+<p>In this classroom LDAP server, user passwords are the same as the username, i.e. <code>jen:jen</code>, <code>julie:julie</code>, <code>joe:joe</code>, etc.</p>
+<p>Once you have logged in successfully, you have completed this portion of the exercise!</p>
+<h2 id="failure">Failure ?!</h2>
+<p>Some things that could go wrong:</p>
+<ol>
+<li>You get the warning message:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>WARNINGS: The auth-pam-sessions-enabled option requires the PAM profile /etc/pam.d/rstudio-session however that profile does not exist. Disabling support for PAM sessions.
+</code></pre></div>
+
+<p>This means you forgot to copy the PAM Profile files in the task "Set up PAM profiles", OR you didn't edit the <code>/etc/rstudio/rserver.conf</code> file.</p>
+<ol>
+<li>
+<p>You forgot the URL for your RStudio Server Pro sesion</p>
+</li>
+<li>
+<p>Go back to <code>r href("https://rstd.io/class")</code> and bookmark the landing page.</p>
+</li>
+<li>
+<p>You logged in as <code>admin-user</code></p>
+</li>
+<li>
+<p>Remember that you now use LDAP to authenticate, and <code>admin-user</code> is not an authenticated user in LDAP</p>
+</li>
+<li>Log in as a user that exists, and that has a home folder, e.g. <code>jen</code></li>
+</ol>
+<h2 id="closing-thought-security-best-practices">Closing thought: Security best practices</h2>
+<p>Some notes:</p>
+<ul>
+<li>In this course we supplied a demonstration <code>sssd</code> config file (<code>s-answer.txt</code>), and in this example file encryption is specifically disabled.</li>
+<li>Note that this is a test setup, without encryption enabled and that’s not suggested for anything but testing, as your credentials will pass over the wire in plain text!</li>
+<li>In your own environment, you should get a security expert to review your configuration.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../security/" title="3.2 RStudio Server Pro Security" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3.2 RStudio Server Pro Security
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../startup_and_packages/" title="3.3 RStudio Server Pro Startup and packages" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                3.3 RStudio Server Pro Startup and packages
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/asciinema-player.js"></script>
+      
+    
+  </body>
+</html>

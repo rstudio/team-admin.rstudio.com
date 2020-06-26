@@ -6,9 +6,16 @@
 * RStudio Connect
 * RStudio Package Manager
 
-![image](assets/team_concept_map.svg)
+![image of a concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.svg)
+
 
 ## Course goals
+
+We will provide you with a virtual machine with:
+
+* Ubuntu
+* Roundcube email server
+* LDAP server
 
 During this course you will build a sandbox environment that runs the RStudio Team products:
 
@@ -16,7 +23,7 @@ During this course you will build a sandbox environment that runs the RStudio Te
 
     * Install R from pre-compiled binaries
     * Install RStudio Server Pro
-    * Integrate with authentication (using LDAP)
+    * Integrate with LDAP authentication (for single sign-on)
 
 2. RStudio Connect
 
@@ -29,8 +36,8 @@ During this course you will build a sandbox environment that runs the RStudio Te
     * Install and configure RStudio Package Manager
     * Define package sources and set up repositories
 
-## Assumptions
 
+## Assumptions
 
 The course covers some of the options for configuring RStudio Team products with a **solutions-first approach** that highlights settings and configurations along the way.
 
@@ -42,8 +49,8 @@ However, we expect most students on this course to be:
 * interested in what RStudio products can do AND
 * interested in understanding how to configure the server.
 
-## Pre-requirements
 
+## Pre-requirements
 
 ### Skills you should already have
 
@@ -71,12 +78,12 @@ We will not cover any of these topics in detail:
 
 * You should be able to SSH into an AWS virtual machine.
 
-!!! note "Note"
-    This means you may have to install an SSH client on your laptop
+!!! note
+    This means you may have to install an SSH client on your laptop:
 
     * On **Mac OS** and **Linux** this may well be built into your shell
 
-    * On **Windows**, you may elect to use PuTTy, or some other SSH client, e.g. SuperPuTTy or MobaXterm, or use the Windows Subsystem for Linux (WSL) to access a Linux shell.
+    * On **Windows**, you may elect to use PuTTy or some other SSH client, e.g. SuperPuTTy or MobaXterm, or use the Windows Subsystem for Linux (WSL) to access a Linux shell.
 
 ### Internet access requirements
 
@@ -102,4 +109,4 @@ information, to ensure you can access all the material:
 
 ### Workaround if your organisation doesn't allow SSH terminals
 
-If you create an account on RStudio Cloud, it is possible to create a workspace and project, then use the built-in terminal in RStudio IDE to start an SSH session.
+If you create an account on [RStudio Cloud](https://rstudio.cloud/), it is possible to create a workspace and project, then use the built-in terminal in RStudio IDE to start an SSH session.
