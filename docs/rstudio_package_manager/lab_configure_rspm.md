@@ -29,10 +29,10 @@ What output do you see?
 Refer to the [Try out the CLI](https://docs.rstudio.com/rspm/admin/getting-started.html#try-out-the-cli) 
 documentation section to add your user to the appropriate group for RSPM.
 
-Hint: You can view your current user by typing `whoami` or `echo $USER` in the
-terminal.
+!!! tip "Hint"
+    You can view your current user by typing `whoami` or `echo $USER` in the terminal.
 
-Hint: You will need to log out and back in for the group membership to take
+Remember, you will need to log out and back in for the group membership to take
 effect.
 
 You can verify that the groups are configured correctly by running:
@@ -107,7 +107,8 @@ Let's walk through the commands by functional groups.
 
 ```sh
 sync        Command to initiate an ad-hoc sync of the default cran source
-clear-cran  Command to purge CRAN metadata. Cannot be used if any repos subscribe to CRAN.
+clear-cran  Command to purge CRAN metadata. Cannot be used if any repos 
+              subscribe to CRAN.
 ```
 
 ### Manage repositories and sources
@@ -139,7 +140,8 @@ unsubscribe Command to unsubscribe repos from sources
 ### Utilities
 
 ```sh
-air-gap     Command to print help for setting up an air-gapped RStudio Package Manager service
+air-gap     Command to print help for setting up an air-gapped RStudio Package
+              Manager service
 fetch       Command to initiate eager package fetching
 help        Help about any command
 import      Command to import SSH keys

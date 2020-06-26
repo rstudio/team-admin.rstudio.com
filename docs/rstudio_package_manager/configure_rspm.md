@@ -4,48 +4,20 @@
 In this session, you will:
 
 * Configure RSPM
-
 * Use the RSPM command line interface (CLI)
 
-
-
-
-
-## Course outline
-
-Workflow for using RStudio Package Manager:
-
-* Administrator installs RSPM on a server
-
-* **Administrator performs configuration on RSPM server**
-
-* Administrator creates sources and repositories
-
-* End users connect to repositories and download packages
-
-
-
-## In this module
-
-* Configuration overview
-
-* Administering RSPM via CLI
-
-* Server management
-
-* Maintaining RSPM
+The goal is to gain a good understanding of the configuration, administration and maintenance of RSPM.
 
 
 
 ## Configuration overview
 
 
-
 ### Configuration options
 
-Consider how your RSPM instance will function:
+Consider how your RSPM instance will function. There are numerous ways RSPM can be used to serve packages to your users and they can be used in any combination.
 
-Configured via RSPM CLI:
+Items configured via RSPM CLI:
 
 * Initial CRAN metadata sync
 * Package sources (CRAN, CRAN subset, Git, Local)
@@ -53,8 +25,7 @@ Configured via RSPM CLI:
 * Download / update airgapped packages
 
 
-
-Configured via RSPM configuration file:
+Items configured via RSPM configuration file:
 
 * Lazy or eager package downloads
 * Connectivity via HTTP/HTTPS
@@ -81,7 +52,8 @@ Address = https://rstudio-pm.company.com
 RVersion = /opt/R/3.5.1
 
 [HTTP]
-; RStudio Package Manager will listen on this network address for HTTP connections.
+; RStudio Package Manager will listen on this network address 
+; for HTTP connections.
 Listen = :80
 ```
 
@@ -90,10 +62,6 @@ All of the RSPM settings are documented in the Appendix on [Configuration Option
 
 
 ## Starting, stopping and restarting
-
-
-
-### Starting, stopping and restarting
 
 Occasionally it is necessary to start and stop the RStudio Package Manager
 service.
@@ -210,8 +178,7 @@ sudo /opt/rstudio-pm/bin/license-manager
 
 ```sh
 Supported commands: acquire-lease, acquire-lease-verbose, activate,
-activate-offline, activate-offline-request, begin-evaluation-offline,
-...
+activate-offline, activate-offline-request, begin-evaluation-offline,...
 ```
 
 More details on licensing are provided in the documentation on
@@ -230,16 +197,9 @@ available (HA) and load-balanced configurations.
 More details on high availability are provided in the documentation on
 [High Availability and Load Balancing](https://docs.rstudio.com/rspm/admin/high-availability.html):
 
-* HA checklist
-* HA time synchronization requirements
-* Node management
-* Database requirements
-* Shared data directory requirements
-* Updating HA nodes
 
 
-
-### Reminder about RSPM command line
+## RSPM command line
 
 To use the RSPM command line interface:
 
@@ -270,19 +230,11 @@ Use "rspm [command] --help" for more information about a command.
 
 ## Your turn
 
-
-
-
-
-
-
-Next complete the exercise.
+In the following exercise you'll learn about the tools used to configure your instance of RSPM.
 
 Signs of success:
 
-    * You know how to use the RSPM CLI
-
-    * You understand the different administrative tasks in RSPM
-  
-    * You can run diagnostics!
+* You know how to use the RSPM CLI
+* You understand the different administrative tasks in RSPM
+* You can run diagnostics!
 
