@@ -54,6 +54,7 @@ markdown_extensions:
         permalink: "#"
 theme:
     name: material
+    custom_dir: overrides
 repo_url: https://github.com/rstudio/team-admin.rstudio.com
 markdown_extensions:
     - admonition
