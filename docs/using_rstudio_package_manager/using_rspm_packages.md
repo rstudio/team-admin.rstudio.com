@@ -5,33 +5,11 @@ In this session, you will:
 
 * Learn about different methods for configuring package repositories in RStudio
 * Configure RStudio Server Pro to point to RSPM package repository
-
-
-
-
-### Course outline
-
-Workflow for using RStudio Package Manager:
-
-* Administrator installs RSPM on a server
-* Administrator performs configuration on RSPM server
-* Administrator creates sources and repositories
-* **End users connect to repositories and download packages**
-
-In this module:
-
-* Administration uses
-* End users local config of RStudio IDE / RStudio Server Pro
-* Admin global config of RStudio IDE / RStudio Server Pro
-* Publishing to RSC
+* See how RSPM is used when publishing to RStudio Connect
 
 
 
 ## RSPM for end users
-
-
-
-### RSPM for end users
 
 An administrator should work with end users to determine:
 
@@ -41,6 +19,10 @@ An administrator should work with end users to determine:
 * Whether they want to use latest packages or fixed versions
 * Whether they want to use binary or source versions
 
+!!! note "Remember"
+    Some businesses have rules about what software can be used within the organisation.
+    RSPM can help you ensure those rules are followed.
+
 Repositories in RStudio Package Manager are CRAN-like repositories, which means
 users can access and install packages using their regular R functions:
 
@@ -49,12 +31,10 @@ users can access and install packages using their regular R functions:
 * `packrat` and `renv`
 * `devtools::install()`
 
-???
 
-* binaries currently only for Linux
-* binary are best when RStudio binary R installation is used
-* R 3.6 needs special treetment w.r.t. HTTP headers to make sure that the R version is present
 
+!!! tip
+    Users should use binary package installations from RSPM wherever possible to speed up deployment time.
 
 
 ### Connecting to RSPM repositories
@@ -68,25 +48,22 @@ Information on connecting to repositories:
 Example: Using the latest packages from a repository:
 
 * `http://{RSTUDIO-PM-ADDRESS}/{REPO-NAME}/latest`
-* For example, `http://rstudio-pm.company.com/prod-cran/latest`
+* eg., `http://rstudio-pm.company.com/prod-cran/latest`
 
 Example: Using binary packages from a fixed version of a repository:
 
 * `http://{RSTUDIO-PM-ADDRESS}/{REPO-NAME}/__linux__/{LINUX-DIST}/{REPO-VERSION}`
-* For example, `http://rstudio-pm.company.com/prod-cran/__linx__/binoic/131`
+* eg., `http://rstudio-pm.company.com/prod-cran/__linx__/binoic/131`
 * `{LINUX-DIST}` is for the distribution on the server running RSP, not RSPM!
 
 
 
 ### Options for configuring repositories in RStudio
 
-RSPM provides building blocks for configuring repositories and accessing
-packages. There are a spectrum of options that range from:
+RSPM provides building blocks for configuring repositories and accessing packages. There are a spectrum of options that range from:
 
-* An administrator assembles all packages and sources into a single
-repository, then sets this as only global option in RStudio Server Pro
-* An administrator configures multiple sources and repositories, then allows
-data scientists to set their own repositories as needed
+* An administrator assembles all packages and sources into a single repository, then sets this as only global option in RStudio Server Pro
+* An administrator configures multiple sources and repositories, then allows data scientists to set their own repositories as needed
 
 Repositories can be configured in RStudio in different ways, for example:
 
@@ -95,7 +72,6 @@ Repositories can be configured in RStudio in different ways, for example:
 * **For a single user - Setting repo(s) in RStudio IDE or RSP (RStudio 1.2+)**
 * For all users - Setting repo(s) in `Rprofile.site`
 * **For all users - Setting repo(s) in RSP `rsession.conf` globally**
-
 
 
 ### Configuring RSP 1.1 with RSPM for a single user
@@ -114,13 +90,11 @@ local({
 })
 ```
 
-More details on configuring RStudio for different repositories are provided in the documentation on 
-[Package management in RStudio Connect](https://support.rstudio.com/hc/en-us/articles/226871467-Package-management-in-RStudio-Connect).
+More details on configuring RStudio for different repositories are provided in the documentation on  [Package management in RStudio Connect](https://support.rstudio.com/hc/en-us/articles/226871467-Package-management-in-RStudio-Connect).
 
 You can also set this globally for all users with `Rprofile.site`.
 
-Or, you can set this for all users in the RStudio Server Pro
-configuration file, as shown in one of the following sections.
+Or, you can set this for all users in the RStudio Server Pro configuration file, as shown below.
 
 
 
@@ -185,6 +159,8 @@ production.
 Docker can play an important role in creating reproducible environments, but
 Docker alone is not sufficient to guarantee reproducibility.
 
+Consider the following:
+
 ```docker
 RUN Rscript -e 'install.packages(...)'
 ```
@@ -194,6 +170,8 @@ re-run, which can return different package versions and results over time.
 
 Instead, replace the `install.packages(...)` command with a variation that uses
 a fixed version of a repository in RStudio Package Manager.
+
+For example:
 
 ```docker
 FROM ubuntu
@@ -206,18 +184,13 @@ CMD <some process>
 ```
 
 
-
-## Your turn
-
-
-
 ## Summary
 
 
 
-### RStudio Package Manager summary
+### RStudio Package Manager overview
 
-RStudio Package Manager allow you to:
+RStudio Package Manager allows you to:
 
 * Organize packages in a central repository
 * Perform automatic versioning of the entire repository
@@ -260,9 +233,6 @@ RSPM Webinar:
 
 * [Introduction to RStudio Package Manager](https://resources.rstudio.com/webinars/introduction-to-the-rstudio-package-manager-sean-lopp)
 
-
-
-### Resources (continued)
 
 FAQ:
 
@@ -316,11 +286,7 @@ Configuration and sizing recommendations:
 ## Your turn
 
 
-
-
-
-
-Next complete the exercise.
+In the following exercise you'll configure RStudio Server Pro to use RSPM as it's package source.
 
 Signs of success:
 

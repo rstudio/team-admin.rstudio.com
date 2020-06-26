@@ -30,14 +30,14 @@ nav:
         - "5.6 Lab:  Deploying plumber APIs": using_rstudio_connect/lab_deploy_plumber.md
     - "6. RStudio Package Manager":
         - "6.1 Installing RStudio Package Manager":        rstudio_package_manager/install_rspm.md
-        - "6.2 Lab:  Installing RStudio Package Manager":  rstudio_package_manager/lab_install_rspm.md
-        - "6.3 Configuring RStudio Package Manager":       rstudio_package_manager/configure_rspm.md
-        - "6.4 Lab:  Configuring RStudio Package Manager": rstudio_package_manager/lab_configure_rspm.md
+        - "Lab:  Installing RStudio Package Manager":  rstudio_package_manager/lab_install_rspm.md
+        - "6.2 Configuring RStudio Package Manager":       rstudio_package_manager/configure_rspm.md
+        - "Lab:  Configuring RStudio Package Manager": rstudio_package_manager/lab_configure_rspm.md
     - "7. Using Package Manager":
         - "7.1 Using RStudio Package Manager Repositories":       using_rstudio_package_manager/using_rspm_repositories.md
-        - "7.2 Lab:  Using RStudio Package Manager Repositories": using_rstudio_package_manager/lab_using_rspm_repositories.md
-        - "7.3 Using RStudio Package Manager Packages":           using_rstudio_package_manager/using_rspm_packages.md
-        - "7.4 Lab:  Using RStudio Package Manager Packages":     using_rstudio_package_manager/lab_using_rspm_packages.md
+        - "Lab:  Using RStudio Package Manager Repositories": using_rstudio_package_manager/lab_using_rspm_repositories.md
+        - "7.2 Using RStudio Package Manager Packages":           using_rstudio_package_manager/using_rspm_packages.md
+        - "Lab:  Using RStudio Package Manager Packages":     using_rstudio_package_manager/lab_using_rspm_packages.md
     - "9. Troubleshooting":
         - "9.1 Troubleshooting":       troubleshooting/troubleshoot.md
         - "9.2 Lab:  Troubleshooting": troubleshooting/lab_troubleshoot.md

@@ -8,19 +8,13 @@ In the following exercises, you will:
     * Serving packages from curated CRAN
     * Serving packages from Git
 
-Refer to the  [RSPM Documentation](https://docs.rstudio.com/rspm/admin/)  
-throughout the exercises, specifically the 
- [Getting Started: Configuration](https://docs.rstudio.com/rspm/admin/quickstarts.html) 
-section.
-
+Refer to the  [RSPM Documentation](https://docs.rstudio.com/rspm/admin/) throughout the exercises, specifically the [Getting Started: Configuration](https://docs.rstudio.com/rspm/admin/quickstarts.html) section.
 
 
 
 ## Task: Add a CRAN repository
 
-Follow the documented steps for 
-[Serving CRAN Packages](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-cran) 
-to add a new repository that is subscribed to the CRAN source.
+Follow the documented steps for [Serving CRAN Packages](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-cran) to add a new repository that is subscribed to the CRAN source.
 
 The steps you will perform are outlined as follows:
 
@@ -43,8 +37,7 @@ prod-cran - Access CRAN packages
 
 ## Task: Explore CRAN repository
 
-Navigate to the RSPM web interface in your browser and view the newly created
-`prod-cran` repository.
+Navigate to the RSPM web interface in your browser and view the newly created `prod-cran` repository.
 
 ![image](assets/rspm-cran-repository.png)
 
