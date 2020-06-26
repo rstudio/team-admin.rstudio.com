@@ -6,17 +6,21 @@ In this session, you will:
 * Understand the problems associated with R package management in enterprise environments
 * Learn how RStudio Package Manager (RSPM) solves these problems
 * Install RSPM on a server
+* configure RStudio Server Pro and RStudio Connect as consumers of
+the packages
 
 
 
-
-## Introduction
-
-
+## What role does RStudio Package Manager play?
 
 ### The problems of R package management
 
 Any R administrator is concerned about distributing R packages to their users.
+
+CRAN has more than 15,000 packages and is updated more than 30 times per day and in addition your users may be creating packages of their own, or using development versions of packages from Github.
+
+Some typical things you might consider include; 
+
 How can I:
 
 * ensure **reproducibility** of packages for all of my users?
@@ -24,41 +28,41 @@ How can I:
 * serve R packages in an **airgapped** environment?
 * allow R users not to worry about **package versions** and availability?
 * see which packages and licenses **are in use** in the organization?
-
-
-RStudio Package Manager allows you to organize and centralize R packages across
-your team, department, or entire organization.
-
-* How does RStudio Package Manager address these problems?
-* How does RStudio Package Manager fit in with other RStudio products?
+* speed up package installation across a large number of users?
 
 
 
-### Workflow for using RStudio Package Manager:
-
-* **Administrator installs RSPM on a server**
-* Administrator performs configuration on RSPM server
-* Administrator creates sources and repositories
-* End users connect to repositories and download packages
-
-
-
-
-## Overview
+### Package Manager can help solve these problems
 
 ![image](assets/rspm-packages.png)
 
-In this course, you will set up RStudio Package Manager as a source of R
-packages, then configure RStudio Server Pro and RStudio Connect as consumers of
-the packages.
+RStudio Package Manager allows you to organize and centralize R package management across
+your team, department, or entire organization.
+
+RStudio Package Manager helps:
+
+* Administrators maintain R servers without breaking code
+* IT centralize packages that meet standards
+* Data scientists reproduce results without worrying about packages
+* Developers share their code as private packages
+* Introduce CI/CD for internally developed packages
+* Save Linux and Windows users from compiling packages from source
+
+RStudio Package Manager can serve packages from various sources:
+
+* CRAN
+* Curated CRAN
+* Internal Packages
+* Packages from Git
+
+You can read more about the benefits of RStudio Package Manager [on our website](https://rstudio.com/products/package-manager/).
+
+
 
 
 
 ## RSPM documentation and resources
 
-
-
-### RSPM documentation and resources
 
 The source of truth about RStudio Package Manager is the admin guide:
 
@@ -73,38 +77,14 @@ information you need after the course.
 
 
 
-## Use cases
+## View a live instance of Package Manager
 
+Let's look at the basic functionality of RStudio Package Manager:
 
-
-### Use cases
-
-CRAN has more than 13,000 packages and is updated more than 30 times per day.
-
-RStudio Package Manager helps:
-
-* Administrators maintain R servers without breaking code
-* IT centralize packages that meet standards
-* Data scientists reproduce results without worrying about packages
-* Developers share their code as private packages
-
-RStudio Package Manager can serve packages from various sources:
-
-* CRAN
-* Curated CRAN
-* Internal Packages
-* Packages from Git
-
-
-
-### Walkthrough
-
-Let's walk though the basic functionality of RStudio Package Manager:
-
-[https://demo.rstudiopm.com](https://demo.rstudiopm.com)
+RStudio maintains a public instance of Package Manager which is free to use. The only difference between this and the version that you install youself if that you're not able to use any of the customizations mentioned above. We can use this to view in the interface and see how it looks to an end user. Visit [https://packagemanager.rstudio.com](https://packagemanager.rstudio.com) and explore the following:
 
 * View different repositories
-* Explore package usage statistics
+* View package usage statistics
 * Get more details on a specific package in a repository
 * Review steps to configure and install packages from a repository
 
@@ -121,17 +101,13 @@ RStudio Package Manager:
 
 ![image](assets/rstudio-toolchain.png)
 
-RStudio Package Manager provides a centralized solution for managing R packages
-for all users within your organization, from development to publishing and
+RStudio Package Manager supports all other uses of R within your organization, from development to publishing and
 deployment.
 
 
 
 ## Architecture
 
-
-
-### Architecture
 
 RSPM can be used with direct access to CRAN or in air-gapped / offline
 installations.
@@ -175,12 +151,15 @@ Support for various network setups:
 * Proxied network access to https://rspm-sync.rstudio.com
 * Airgapped / offline systems
 
-Root privileges
+Root privileges:
 
 * By default, root privileges are required to install, start, stop RSPM and activate license, but there is a `Minimal Root Use` installation path
 * By default, RSPM creates and runs under a service account, `rstudio-pm`
+
+Other useful information:
+
 * R version 3.0+ is required if you want to build packages from Git
-* RSPM currently serves R source packages
+* RSPM currently serves R source packages (All platforms) and binary packages (Linux and Windows only)
 
 
 
@@ -188,13 +167,9 @@ Root privileges
 ## Your turn
 
 
-
-
-
-
-
-Next complete the exercise.
+In the following exercise, you'll install RSPM to your server.
 
 Signs of success:
 
 * RStudio Package Manager is up and running!
+
