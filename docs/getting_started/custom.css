@@ -1,0 +1,9 @@
+img[src*='#center'] { 
+    display: block;
+    margin: auto;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
