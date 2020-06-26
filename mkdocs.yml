@@ -3,47 +3,47 @@ nav:
     - Overview: overview.md
     - "1. Getting started":
         - "How the course works": getting_started/how_it_works.md
-        - "Lab: SSH in": getting_started/lab_ssh_in.md
-    - "2. Installing R":
-        - "2.1 Installing R": "02_-_installing_r/02_install_r.md"
-        - "2.1 Lab - Installing R": "02_-_installing_r/02_-_lab_-_install_r.md"
+        - "Lab: SSH in":          getting_started/lab_ssh_in.md
+    - "2. R":
+        - "2.1 Installing R":   r/install_r.md
+        - "Lab:  Installing R": r/lab_install_r.md
     - "3. RStudio Server Pro":
-        - "3.1 Install RStudio Server Pro": "03_-_rstudio_server_pro/031_install_rsp.md"
-        - "3.1 Lab - Install RStudio Server Pro": "03_-_rstudio_server_pro/031_-_lab_-_install_rsp.md"
-        - "3.2 RStudio Server Pro Security": "03_-_rstudio_server_pro/032_security.md"
-        - "3.2 Lab - RStudio Server Pro Security": "03_-_rstudio_server_pro/032_-_lab_-_security.md"
-        - "3.3 RStudio Server Pro Startup and packages": "03_-_rstudio_server_pro/033_startup_and_packages.md"
-        - "3.3 Lab - RStudio Server Pro Startup and packages": "03_-_rstudio_server_pro/033_-_lab_-_startup_and_packages.md"
+        - "3.1 Install RStudio Server Pro":                rstudio_server_pro/install_rsp.md
+        - "Lab:  Install RStudio Server Pro":              rstudio_server_pro/lab_install_rsp.md
+        - "3.2 RStudio Server Pro Security":               rstudio_server_pro/security.md
+        - "Lab:  RStudio Server Pro Security":             rstudio_server_pro/lab_security.md
+        - "3.3 RStudio Server Pro Startup and packages":   rstudio_server_pro/startup_and_packages.md
+        - "Lab:  RStudio Server Pro Startup and packages": rstudio_server_pro/lab_startup_and_packages.md
     - "4. RStudio Connect":
-        - "4.1 Installing RStudio Connect": "04_-_installing_rstudio_connect/041_install_connect.md"
-        - "4.1 Lab - Installing RStudio Connect": "04_-_installing_rstudio_connect/041_-_lab_-_install_connect.md"
-        - "4.2 Configuring RStudio Connect": "04_-_installing_rstudio_connect/042_configure_connect.md"
-        - "4.2 Lab - Configuring RStudio Connect": "04_-_installing_rstudio_connect/042_-_lab_-_configure_connect.md"
-        - "4.3 Using RStudio Connect": "04_-_installing_rstudio_connect/043_using_connect.md"
-        - "4.3 Lab - Using RStudio Connect": "04_-_installing_rstudio_connect/043_-_lab_-_using_connect.md"
+        - "4.1 Installing RStudio Connect":        rstudio_connect/install_connect.md
+        - "4.2 Lab:  Installing RStudio Connect":  rstudio_connect/lab_install_connect.md
+        - "4.3 Configuring RStudio Connect":       rstudio_connect/configure_connect.md
+        - "4.4 Lab:  Configuring RStudio Connect": rstudio_connect/lab_configure_connect.md
+        - "4.5 Using RStudio Connect":             rstudio_connect/using_connect.md
+        - "4.6 Lab:  Using RStudio Connect":       rstudio_connect/lab_using_connect.md
     - "5. Deploying to Connect":
-        - "5.1 Deploying Shiny Apps": "05_-_using_rstudio_connect/051_deploy_shiny.md"
-        - "5.1 Lab - Deploying Shiny Apps": "05_-_using_rstudio_connect/051_-_lab_-_deploy_shiny.md"
-        - "5.2 Deploying Rmarkdown": "05_-_using_rstudio_connect/052_deploy_markdown.md"
-        - "5.2 Lab - Deploying Rmarkdown": "05_-_using_rstudio_connect/052_-_lab_-_deploy_markdown.md"
-        - "5.3 Deploying plumber APIs": "05_-_using_rstudio_connect/053_deploy_plumber.md"
-        - "5.3 Lab - Deploying plumber APIs": "05_-_using_rstudio_connect/053_-_lab_-_deploy_plumber.md"
+        - "5.1 Deploying Shiny Apps":         using_rstudio_connect/deploy_shiny.md
+        - "5.2 Lab:  Deploying Shiny Apps":   using_rstudio_connect/lab_deploy_shiny.md
+        - "5.3 Deploying Rmarkdown":          using_rstudio_connect/deploy_markdown.md
+        - "5.4 Lab:  Deploying Rmarkdown":    using_rstudio_connect/lab_deploy_markdown.md
+        - "5.5 Deploying plumber APIs":       using_rstudio_connect/deploy_plumber.md
+        - "5.6 Lab:  Deploying plumber APIs": using_rstudio_connect/lab_deploy_plumber.md
     - "6. RStudio Package Manager":
-        - "6.1 Installing RStudio Package Manager": "06_-_installing_rstudio_package_manager/061_install_rspm.md"
-        - "6.1 Lab - Installing RStudio Package Manager": "06_-_installing_rstudio_package_manager/061_-_lab_-_install_rspm.md"
-        - "6.2 Configuring RStudio Package Manager": "06_-_installing_rstudio_package_manager/062_configure_rspm.md"
-        - "6.2 Lab - Configuring RStudio Package Manager": "06_-_installing_rstudio_package_manager/062_-_lab_-_configure_rspm.md"
+        - "6.1 Installing RStudio Package Manager":        rstudio_package_manager/install_rspm.md
+        - "6.2 Lab:  Installing RStudio Package Manager":  rstudio_package_manager/lab_install_rspm.md
+        - "6.3 Configuring RStudio Package Manager":       rstudio_package_manager/configure_rspm.md
+        - "6.4 Lab:  Configuring RStudio Package Manager": rstudio_package_manager/lab_configure_rspm.md
     - "7. Using Package Manager":
-        - "7.1 Using RStudio Package Manager Repositories": "07_-_using_rstudio_package_manager/071_using_rspm_repositories.md"
-        - "7.1 Lab - Using RStudio Package Manager Repositories": "07_-_using_rstudio_package_manager/071_-_lab_-_using_rspm_repositories.md"
-        - "7.2 Using RStudio Package Manager Packages": "07_-_using_rstudio_package_manager/072_using_rspm_packages.md"
-        - "7.2 Lab - Using RStudio Package Manager Packages": "07_-_using_rstudio_package_manager/072_-_lab_-_using_rspm_packages.md"
+        - "7.1 Using RStudio Package Manager Repositories":       using_rstudio_package_manager/using_rspm_repositories.md
+        - "7.2 Lab:  Using RStudio Package Manager Repositories": using_rstudio_package_manager/lab_using_rspm_repositories.md
+        - "7.3 Using RStudio Package Manager Packages":           using_rstudio_package_manager/using_rspm_packages.md
+        - "7.4 Lab:  Using RStudio Package Manager Packages":     using_rstudio_package_manager/lab_using_rspm_packages.md
     - "9. Troubleshooting":
-        - "9 Troubleshooting": "09_-_troubleshooting/091_troubleshoot.md"
-        - "9 Lab - Troubleshooting": "09_-_troubleshooting/091_-_lab_-_troubleshoot.md"
+        - "9.1 Troubleshooting":       troubleshooting/troubleshoot.md
+        - "9.2 Lab:  Troubleshooting": troubleshooting/lab_troubleshoot.md
     - "Extra Resources":
-        - "Cheat sheet": "https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html"
-        - "Official RStudio Documentation": "https://docs.rstudio.com"
+        - "Cheat sheet": https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
+        - "Official RStudio Documentation": https://docs.rstudio.com
 markdown_extensions:
     - toc:
         permalink: "#"
@@ -54,8 +54,10 @@ repo_url: https://github.com/rstudio/team-admin.rstudio.com
 markdown_extensions:
     - admonition
     - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.magiclink
 extra_css:
-    - custom.css
-    - asciinema-player.css
+    - assets/custom.css
+    - assets/asciinema-player.css
 extra_javascript:
-    - asciinema-player.js
+    - assets/asciinema-player.js

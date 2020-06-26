@@ -3,10 +3,6 @@ Welcome to the RStudio Team system administration course!
 
 ![image](assets/r-admins-button-small.png#center)
 
-
-
-
-
 ## How this course works
 
 ### Initial state

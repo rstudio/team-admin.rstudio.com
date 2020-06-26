@@ -1,4 +1,4 @@
-![image](01_-_getting_started/assets/r-admins-button-small.png)
+![image](getting_started/assets/r-admins-button-small.png)
 
 Welcome to the RStudio Team administrator training course.
 
