@@ -9,29 +9,8 @@ In this session, you will:
 
 
 
-
-## Course outline
-
-Workflow for using RStudio Package Manager:
-
-* Administrator installs RSPM on a server
-* Administrator performs configuration on RSPM server
-* **Administrator creates sources and repositories**
-* End users connect to repositories and download packages
-
-In this module:
-
-* Administering RSPM via the CLI and web interface
-* Different types of sources in RSPM
-* Repository configurations in RSPM
-
-
-
 ## Administering RSPM
 
-
-
-### Administering RSPM
 
 From the CLI, you can:
 
@@ -60,7 +39,7 @@ Package sources can be one of the following types:
 * `cran`, `curated cran`, `local`, `git`
 
 Package repositories use a database and specialized web server to handle HTTP
-requests from R and serve a source package, archived source package, or
+requests from R and serve a package, archived package, or
 `PACKAGES` file.
 
 More details on repositories and sources are provided in the documentation on
@@ -178,10 +157,7 @@ this process using a git source.
 ## Your turn
 
 
-
-
-
-Next complete the exercise.
+In the following lab you will configure your instance of RSPM.
 
 Signs of success:
 
