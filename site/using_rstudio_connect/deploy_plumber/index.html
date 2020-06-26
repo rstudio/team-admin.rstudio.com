@@ -1,0 +1,1546 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.4">
+    
+    
+      
+        <title>5.5 Deploying plumber APIs - RStudio Team Admin Training</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c4007cdc.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/custom.css">
+    
+      <link rel="stylesheet" href="../../assets/asciinema-player.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#in-this-session" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="RStudio Team Admin Training" class="md-header-nav__button md-logo" aria-label="RStudio Team Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            RStudio Team Admin Training
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              5.5 Deploying plumber APIs
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RStudio Team Admin Training" class="md-nav__button md-logo" aria-label="RStudio Team Admin Training">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    RStudio Team Admin Training
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/rstudio/team-admin.rstudio.com/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      1. Getting started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="1. Getting started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        1. Getting started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/how_it_works/" title="How the course works" class="md-nav__link">
+      How the course works
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting_started/lab_ssh_in/" title="Lab: SSH in" class="md-nav__link">
+      Lab: SSH in
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      2. R
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. R" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        2. R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r/install_r/" title="2.1 Installing R" class="md-nav__link">
+      2.1 Installing R
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../r/lab_install_r/" title="Lab: Installing R" class="md-nav__link">
+      Lab:  Installing R
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      3. RStudio Server Pro
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="3. RStudio Server Pro" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        3. RStudio Server Pro
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/install_rsp/" title="3.1 Install RStudio Server Pro" class="md-nav__link">
+      3.1 Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/lab_install_rsp/" title="Lab: Install RStudio Server Pro" class="md-nav__link">
+      Lab:  Install RStudio Server Pro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/security/" title="3.2 RStudio Server Pro Security" class="md-nav__link">
+      3.2 RStudio Server Pro Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/lab_security/" title="Lab: RStudio Server Pro Security" class="md-nav__link">
+      Lab:  RStudio Server Pro Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/startup_and_packages/" title="3.3 RStudio Server Pro Startup and packages" class="md-nav__link">
+      3.3 RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_server_pro/lab_startup_and_packages/" title="Lab: RStudio Server Pro Startup and packages" class="md-nav__link">
+      Lab:  RStudio Server Pro Startup and packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      4. RStudio Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="4. RStudio Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        4. RStudio Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/install_connect/" title="4.1 Installing RStudio Connect" class="md-nav__link">
+      4.1 Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_install_connect/" title="4.2 Lab: Installing RStudio Connect" class="md-nav__link">
+      4.2 Lab:  Installing RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/configure_connect/" title="4.3 Configuring RStudio Connect" class="md-nav__link">
+      4.3 Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_configure_connect/" title="4.4 Lab: Configuring RStudio Connect" class="md-nav__link">
+      4.4 Lab:  Configuring RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/using_connect/" title="4.5 Using RStudio Connect" class="md-nav__link">
+      4.5 Using RStudio Connect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_connect/lab_using_connect/" title="4.6 Lab: Using RStudio Connect" class="md-nav__link">
+      4.6 Lab:  Using RStudio Connect
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      5. Deploying to Connect
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="5. Deploying to Connect" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        5. Deploying to Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_shiny/" title="5.1 Deploying Shiny Apps" class="md-nav__link">
+      5.1 Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab_deploy_shiny/" title="5.2 Lab: Deploying Shiny Apps" class="md-nav__link">
+      5.2 Lab:  Deploying Shiny Apps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deploy_markdown/" title="5.3 Deploying Rmarkdown" class="md-nav__link">
+      5.3 Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab_deploy_markdown/" title="5.4 Lab: Deploying Rmarkdown" class="md-nav__link">
+      5.4 Lab:  Deploying Rmarkdown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.5 Deploying plumber APIs
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="5.5 Deploying plumber APIs" class="md-nav__link md-nav__link--active">
+      5.5 Deploying plumber APIs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-session" class="md-nav__link">
+    In this session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-apis" class="md-nav__link">
+    Introducing APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducing APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-api" class="md-nav__link">
+    What is an API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-api_1" class="md-nav__link">
+    What is an API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-rest-api" class="md-nav__link">
+    What is a REST API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-apis-from-r" class="md-nav__link">
+    Why APIs from R?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosting-an-api-on-connect" class="md-nav__link">
+    Hosting an API on Connect
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosting an API on Connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#articles-about-plumber-apis" class="md-nav__link">
+    Articles about plumber APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turning-an-r-function-into-an-api" class="md-nav__link">
+    Turning an R function into an API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis-on-connect" class="md-nav__link">
+    APIs on Connect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-an-api-from-the-ide" class="md-nav__link">
+    Running an API from the IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swagger-documentation" class="md-nav__link">
+    Swagger documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-an-api-to-connect-from-the-ide" class="md-nav__link">
+    Deploying an API to Connect from the IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-api" class="md-nav__link">
+    Deploy API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-authentication" class="md-nav__link">
+    API authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="API authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-authentication_1" class="md-nav__link">
+    API authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-api-key-on-connect" class="md-nav__link">
+    Generating an API key on Connect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-request" class="md-nav__link">
+    Authenticated Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-apis" class="md-nav__link">
+    Scaling APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-apis_1" class="md-nav__link">
+    Scaling APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-runtime-settings-for-apis" class="md-nav__link">
+    Connect runtime settings for APIs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lab_deploy_plumber/" title="5.6 Lab: Deploying plumber APIs" class="md-nav__link">
+      5.6 Lab:  Deploying plumber APIs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      6. RStudio Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="6. RStudio Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        6. RStudio Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/install_rspm/" title="6.1 Installing RStudio Package Manager" class="md-nav__link">
+      6.1 Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/lab_install_rspm/" title="6.2 Lab: Installing RStudio Package Manager" class="md-nav__link">
+      6.2 Lab:  Installing RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/configure_rspm/" title="6.3 Configuring RStudio Package Manager" class="md-nav__link">
+      6.3 Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rstudio_package_manager/lab_configure_rspm/" title="6.4 Lab: Configuring RStudio Package Manager" class="md-nav__link">
+      6.4 Lab:  Configuring RStudio Package Manager
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      7. Using Package Manager
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="7. Using Package Manager" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        7. Using Package Manager
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/using_rspm_repositories/" title="7.1 Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.1 Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/lab_using_rspm_repositories/" title="7.2 Lab: Using RStudio Package Manager Repositories" class="md-nav__link">
+      7.2 Lab:  Using RStudio Package Manager Repositories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/using_rspm_packages/" title="7.3 Using RStudio Package Manager Packages" class="md-nav__link">
+      7.3 Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_rstudio_package_manager/lab_using_rspm_packages/" title="7.4 Lab: Using RStudio Package Manager Packages" class="md-nav__link">
+      7.4 Lab:  Using RStudio Package Manager Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      9. Troubleshooting
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="9. Troubleshooting" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        9. Troubleshooting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/troubleshoot/" title="9.1 Troubleshooting" class="md-nav__link">
+      9.1 Troubleshooting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../troubleshooting/lab_troubleshoot/" title="9.2 Lab: Troubleshooting" class="md-nav__link">
+      9.2 Lab:  Troubleshooting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Extra Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extra Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Extra Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html" title="Cheat sheet" class="md-nav__link">
+      Cheat sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://docs.rstudio.com" title="Official RStudio Documentation" class="md-nav__link">
+      Official RStudio Documentation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-this-session" class="md-nav__link">
+    In this session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-apis" class="md-nav__link">
+    Introducing APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducing APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-api" class="md-nav__link">
+    What is an API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-an-api_1" class="md-nav__link">
+    What is an API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-rest-api" class="md-nav__link">
+    What is a REST API?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-apis-from-r" class="md-nav__link">
+    Why APIs from R?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosting-an-api-on-connect" class="md-nav__link">
+    Hosting an API on Connect
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosting an API on Connect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#articles-about-plumber-apis" class="md-nav__link">
+    Articles about plumber APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turning-an-r-function-into-an-api" class="md-nav__link">
+    Turning an R function into an API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apis-on-connect" class="md-nav__link">
+    APIs on Connect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-an-api-from-the-ide" class="md-nav__link">
+    Running an API from the IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swagger-documentation" class="md-nav__link">
+    Swagger documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploying-an-api-to-connect-from-the-ide" class="md-nav__link">
+    Deploying an API to Connect from the IDE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-api" class="md-nav__link">
+    Deploy API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-authentication" class="md-nav__link">
+    API authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="API authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-authentication_1" class="md-nav__link">
+    API authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-an-api-key-on-connect" class="md-nav__link">
+    Generating an API key on Connect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticated-request" class="md-nav__link">
+    Authenticated Request
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-apis" class="md-nav__link">
+    Scaling APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaling-apis_1" class="md-nav__link">
+    Scaling APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-runtime-settings-for-apis" class="md-nav__link">
+    Connect runtime settings for APIs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-turn" class="md-nav__link">
+    Your turn
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/rstudio/team-admin.rstudio.com/edit/master/docs/using_rstudio_connect/deploy_plumber.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>5.5 Deploying plumber APIs</h1>
+                
+                <h2 id="in-this-session">In this session</h2>
+<p>In this sesssion you:</p>
+<ul>
+<li>Deploy an API to Connect</li>
+</ul>
+<h2 id="introducing-apis">Introducing APIs</h2>
+<h3 id="what-is-an-api">What is an API?</h3>
+<p>Human-to-machine communication
+<img alt="images" src="../assets/api_robot_1.png" /></p>
+<p>Machine-to-machine communication
+<img alt="images" src="../assets/api_robot_2.png" /></p>
+<h3 id="what-is-an-api_1">What is an API?</h3>
+<p><strong>Application programming interface</strong></p>
+<p>From <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Wikipedia</a>:</p>
+<blockquote>
+<p>"In computer programming, an application programming interface (API) is a set of subroutine definitions, communication protocols, and tools for building software. In general terms, it is a set of clearly defined methods of communication between various components"</p>
+</blockquote>
+<p>A mechanism to:</p>
+<ul>
+<li>Send a request</li>
+<li>Receive a response</li>
+<li>Hide the implementation detail</li>
+</ul>
+<h3 id="what-is-a-rest-api">What is a REST API?</h3>
+<p>From <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">WikiPedia</a>:</p>
+<blockquote>
+<p>Representational state transfer (<strong>REST</strong>) is a software architectural style that defines a set of constraints to be used for creating Web services.</p>
+<p>Web services that <strong>conform to the REST architectural style</strong>, called <strong>RESTful Web services</strong>, provide interoperability between computer systems on the Internet.</p>
+<p>RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations.</p>
+</blockquote>
+<p>In R, you can use the <code>plumber</code> package to turn an R function into REST API.</p>
+<h3 id="why-apis-from-r">Why APIs from R?</h3>
+<p><strong>Without Connect</strong></p>
+<ul>
+<li>Data science team generates insight. Insight results in a trained model </li>
+<li>Model is tossed over the cubicle wall to IT team.</li>
+<li>2 months later model is translated into Java from R</li>
+<li>Java model is extensively validated against original model </li>
+<li>Java model is plugged into front-end and used for predictions. </li>
+<li>Model needs to be updated. Repeat and recycle.</li>
+</ul>
+<p><strong>&gt;&gt; Feedback cycle measured in months</strong></p>
+<p><strong>With Connect</strong></p>
+<ul>
+<li>Data science team generates insight. Insight results in a trained model</li>
+<li>Users create API and deploy in a matter of days</li>
+<li>Front-end uses the same API calls for predictions</li>
+</ul>
+<p><strong>&gt;&gt; Model is updated regularly</strong></p>
+<h2 id="hosting-an-api-on-connect">Hosting an API on Connect</h2>
+<h3 id="articles-about-plumber-apis">Articles about plumber APIs</h3>
+<ul>
+<li><a href="https://rviews.rstudio.com/2018/08/30/slack-and-plumber-part-one/">Slack and Plumber, Part One</a></li>
+<li><a href="https://rviews.rstudio.com/2018/11/27/slack-and-plumber-part-two/">Slack and Plumber, Part Two</a></li>
+<li><a href="https://rviews.rstudio.com/2019/08/13/plumber-logging/">Plumber Logging</a></li>
+<li><a href="https://rviews.rstudio.com/2018/07/23/rest-apis-and-plumber/">REST APIs and Plumber</a></li>
+</ul>
+<h3 id="turning-an-r-function-into-an-api">Turning an R function into an API</h3>
+<p>The <code>plumber</code> package lets you create a REST API by merely decorating your existing R source code with special comments</p>
+<p><a href="https://www.rplumber.io/docs/">https://www.rplumber.io/docs/</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1">## Comment Decorators</span>
+<span class="c1">#* @post /endpoint                          </span>
+<span class="c1">#* @param name:type description</span>
+<span class="nf">function</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">default</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># deserialize json request</span>
+  <span class="c1"># do R stuff</span>
+  <span class="c1"># serialize result to json</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><img alt="images" src="../assets/plumber_lady.png" /></p>
+<h3 id="apis-on-connect">APIs on Connect</h3>
+<p>Connect supports the <code>plumber</code> package.  RStudio Connect automatically:</p>
+<pre><code>* manages the dependent packages and files of your API
+* recreates an environment closely mimicking your local development environment on the server.
+</code></pre>
+<p>In other words, Connect deploys the same bundling strategy as for Shiny apps</p>
+<p>In addition, Connect manages parallel processes:</p>
+<ul>
+<li>automatically manages the number of R processes necessary to handle the current load</li>
+<li>balances incoming traffic across all available processes</li>
+<li>It can also shut down idle processes when they’re not in use.</li>
+</ul>
+<p>This allows you to run the appropriate number of R processes to scale your capacity to accommodate the current load.</p>
+<h3 id="running-an-api-from-the-ide">Running an API from the IDE</h3>
+<ul>
+<li>When you click "Run API" in the RStudio IDE, the script will run and you will get a swagger documentation page.</li>
+</ul>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/run_plumber.mp4" type="video/mp4">
+</video>
+
+<h3 id="swagger-documentation">Swagger documentation</h3>
+<p>When you test or deploy a plumber API, you get a <a href="https://swagger.io/">swagger</a> documentation page.</p>
+<p>From <a href="https://en.wikipedia.org/wiki/Swagger_(software)">WikiPedia</a></p>
+<blockquote>
+<p>Swagger is an open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful web services.</p>
+<p>While most users identify Swagger by the Swagger UI tool, the Swagger toolset includes support for automated documentation, code generation, and test-case generation</p>
+</blockquote>
+<p><img alt="images" src="../assets/plumber_swagger.png" /></p>
+<h3 id="deploying-an-api-to-connect-from-the-ide">Deploying an API to Connect from the IDE</h3>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/deploy_plumber.mp4" type="video/mp4">
+</video>
+
+<h3 id="deploy-api">Deploy API</h3>
+<p>You can also deploy an API programmatically using the <code>rsconnect</code> package.</p>
+<div class="highlight"><pre><span></span><code><span class="n">rsconnect</span><span class="o">::</span><span class="nf">deployAPI</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="kc">...</span><span class="p">,</span> <span class="n">account</span> <span class="o">=</span> <span class="kc">...</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="api-authentication">API authentication</h2>
+<h3 id="api-authentication_1">API authentication</h3>
+<p>When submitting an API request, the sender must authenticate with an API Key:</p>
+<ul>
+<li>API Keys are tied to users, not APIs<ul>
+<li>Service Accounts are OK</li>
+<li>Treat them like passwords!</li>
+</ul>
+</li>
+<li>Request Header:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Authorization: Key ABCDEFGHIJKLMNO
+</code></pre></div>
+
+<h3 id="generating-an-api-key-on-connect">Generating an API key on Connect</h3>
+<video width="100%" controls>
+  <source src="https://cdn.rstudio.com/pro-admin/videos/connect_api_key.mp4" type="video/mp4">
+</video>
+
+<h3 id="authenticated-request">Authenticated Request</h3>
+<ul>
+<li>Restrict access to the sample API to your user.</li>
+<li>Set up an API key</li>
+<li>Make a request:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl -X GET <span class="s2">&quot;&lt;server_address&gt;/mpg?new_hp=300&quot;</span> 
+   -H  <span class="s2">&quot;accept: application/json&quot;</span>  -H <span class="s2">&quot;Authorization: Key &lt;&gt;&quot;</span> 
+</code></pre></div>
+
+<h2 id="scaling-apis">Scaling APIs</h2>
+<h3 id="scaling-apis_1">Scaling APIs</h3>
+<p>How do APIs scale?</p>
+<p><img alt="images" src="../assets/chef.png" />
+<img alt="images" src="../assets/bartender.png" /></p>
+<ul>
+<li>APIs are stateless... and they should do small amounts of work.</li>
+<li>So, back to the analogy, they are more like a bartender than a chef.</li>
+<li>(You still might want more than one in some cases, and prep work can still help).</li>
+</ul>
+<h3 id="connect-runtime-settings-for-apis">Connect runtime settings for APIs</h3>
+<p>To control the number of processes available to your API in Connect, use the Runtime settings.</p>
+<ul>
+<li>These settings are analogous to the runtime settings for Shiny apps.</li>
+<li>Refer to <a href="https://docs.rstudio.com/connect/admin/process-management/#applications-and-apis">Applications &amp; APIs</a> in the Connect Admin Guide</li>
+</ul>
+<p><img alt="images" src="../assets/api_runtime.png" /></p>
+<h2 id="your-turn">Your turn</h2>
+<p>Next complete the exercise.</p>
+<p>Signs of success:</p>
+<ul>
+<li>You have published an API to Connect</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../lab_deploy_markdown/" title="5.4 Lab: Deploying Rmarkdown" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                5.4 Lab:  Deploying Rmarkdown
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../lab_deploy_plumber/" title="5.6 Lab: Deploying plumber APIs" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5.6 Lab:  Deploying plumber APIs
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../assets/asciinema-player.js"></script>
+      
+    
+  </body>
+</html>
