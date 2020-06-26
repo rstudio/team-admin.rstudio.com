@@ -552,40 +552,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-configure-rstudio-server-pro-with-ldap" class="md-nav__link">
-    Exercise: Configure RStudio Server Pro with LDAP
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercise: Configure RStudio Server Pro with LDAP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configure-rstudio-server-pro-with-ldap" class="md-nav__link">
-    Configure RStudio Server Pro with LDAP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldap-an-overview" class="md-nav__link">
-    LDAP: An overview
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#handy-tools" class="md-nav__link">
-    Handy Tools
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#your-turn" class="md-nav__link">
     Your turn
   </a>
@@ -1302,40 +1268,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercise-configure-rstudio-server-pro-with-ldap" class="md-nav__link">
-    Exercise: Configure RStudio Server Pro with LDAP
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercise: Configure RStudio Server Pro with LDAP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configure-rstudio-server-pro-with-ldap" class="md-nav__link">
-    Configure RStudio Server Pro with LDAP
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ldap-an-overview" class="md-nav__link">
-    LDAP: An overview
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#handy-tools" class="md-nav__link">
-    Handy Tools
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#your-turn" class="md-nav__link">
     Your turn
   </a>
@@ -1674,52 +1606,6 @@ Painting of <a href="https://en.wikipedia.org/wiki/Cerberus">Cerberus</a>, by Bl
 <li>Visit <a href="https://db.rstudio.com/">https://db.rstudio.com/</a></li>
 </ul>
 <p><img alt="images" src="../assets/connections-pane.png" /></p>
-<h2 id="exercise-configure-rstudio-server-pro-with-ldap">Exercise: Configure RStudio Server Pro with LDAP</h2>
-<h3 id="configure-rstudio-server-pro-with-ldap">Configure RStudio Server Pro with LDAP</h3>
-<p>We have set up an LDAP server for you.</p>
-<ul>
-<li>First, configure LDAP</li>
-<li>Second, use PAM to configure RStudio Server Pro </li>
-</ul>
-<p>Successful completion involves:</p>
-<ul>
-<li>LDAP users are accessible from the command line</li>
-<li>LDAP users can login into RStudio Server Pro</li>
-</ul>
-<h3 id="ldap-an-overview">LDAP: An overview</h3>
-<p>LDAP is a <strong>protocol</strong>.</p>
-<p>LDAP is implemented in <strong>many</strong> different ways.</p>
-<ul>
-<li>Active Directory uses LDAP to communicate</li>
-<li>OpenLDAP has different standards than Active Directory, for instance</li>
-</ul>
-<p><code>sssd</code> is a system service</p>
-<ul>
-<li>Makes LDAP a system identity and authentication provider</li>
-<li>
-<p>This means that <strong>all</strong> local system accounts are <strong>technically</strong> already provisioned even if they do not <strong>actually</strong> exist yet</p>
-<ul>
-<li>This is <code>sssd</code> magic!</li>
-</ul>
-</li>
-</ul>
-<h3 id="handy-tools">Handy Tools</h3>
-<p>The <code>ldapsearch</code> utility</p>
-<ul>
-<li>A command line utility</li>
-<li>Used to interface with a remote ldap identity provider</li>
-<li>Query for LDAP entries</li>
-</ul>
-<p>Files in the <code>.ldif</code> format</p>
-<ul>
-<li>LDAP Data Interchange Format</li>
-<li>A standard plaintext format for representing LDAP objects</li>
-</ul>
-<p>The <code>pamtester</code> utility</p>
-<ul>
-<li>A command line utility</li>
-<li>Used to test PAM configuration</li>
-</ul>
 <h2 id="your-turn">Your turn</h2>
 <p>class: your-turn-slide</p>
 <p>Next complete the exercise.</p>
