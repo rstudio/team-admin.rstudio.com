@@ -1,20 +1,12 @@
 
-## Troubleshooting RStudio Team products
+In this session you learn:
 
-In this session you will learn:
-
-* First-hand from the RStudio Support team about common pitfalls
-* About tools for identifying the root cause
-* Other tips and techniques to stay on the happy path
-
-
-
+* about common pitfalls
+* about tools for identifying the root cause
+* other tips and techniques to stay on the happy path
 
 
 ## Introduction
-
-
-
 
 ### General troubleshooting tips
 
@@ -23,14 +15,19 @@ Identify what the error is and where it's coming from
 * An error reported in the IDE might arise from:
     - User code, an R package, or R itself
     - The RStudio IDE
-* How widespread is this issue? Does it affect one user, the entire server, or the whole cluster?
+
+* How widespread is this issue?
+    - Does it affect one user, the entire server, or the whole cluster?
+
 * Can you reproduce the problem?
+
 * Identify the root cause of the error
     - Any recent changes?
     - Specific users or groups involved?
     - Specific code being run? 
 
-Change **one thing at a time** to try and isolate the issue
+!!! tip
+    Change **one thing at a time** to try and isolate the issue
 
 
 
@@ -49,55 +46,47 @@ Common issues:
 
 
 
-## Log files
+## Log file locations
+
+1. RStudio log files
+
+
+    Product               | Log file
+    --------------------  | ------------------
+    RStudio Server Pro    | `/var/lib/rstudio-server/monitor/log/rstudio-server.log`
+    Shiny Server Pro      | `/var/log/shiny-server.log`
+    RStudio Connect       | `/var/log/rstudio-connect.log`
+    Package Manager       | `/var/log/rstudio-pm.log`
 
 
 
+2. System log files
 
-### RStudio log files
-
-
-Product               | Log file
---------------------  | ------------------
-RStudio Server Pro    | `/var/lib/rstudio-server/monitor/log/rstudio-server.log`
-Shiny Server Pro      | `/var/log/shiny-server.log`
-RStudio Connect       | `/var/log/rstudio-connect.log`
-Package Manager       | `/var/log/rstudio-pm.log`
+    Area                 | Log file
+    -------------------  | ----------------------------------------------------
+    Server log files     | `/var/log/syslog` <br/> OR <br/> `/var/log/messages`
+    Authentication logs  | `/var/log/auth.log` <br/> OR <br/> `/var/log/secure`
 
 
 
-### System log files
+3. For RStudio Connect deployment issues:
 
-Area                 | Log file
--------------------  | ----------------------------------------------------
-Server log files     | `/var/log/syslog` <br/> OR <br/> `/var/log/messages`
-Authentication logs  | `/var/log/auth.log` <br/> OR <br/> `/var/log/secure`
+    You can view the generated deployment log in the R console, or retrieve from R using the `rsconnect` package:
 
-
-
-### For RStudio Connect deployment issues:
-
-* Deployment log generated in the console or retrieved with
-
-```R
-library(rsconnect)
-rsconnect::showLogs()
-```
+    ```R
+    library(rsconnect)
+    rsconnect::showLogs()
+    ```
 
 
-
-
-### Log file example
-
-![image](assets/log_file_example.png)
+    !!! example
+        ![image](assets/log_file_example.png)
 
 
 
 ## Troubleshooting R
 
-
-
-### Troubleshooting R
+### R runs correctly
 
 * Almost all RStudio products depend on R being installed successfully to run.
     - Look for errors related to R in the server logs
@@ -112,8 +101,6 @@ grep configure R_HOME/etc/Makeconf
 ![image](assets/grep_makeconf.png)
         
 
-
-### Troubleshooting R (continued)
 
 Are all necessary dependencies installed? 
 
@@ -133,7 +120,7 @@ namei -l /path/to/R
 
 
 
-### Troubleshooting R (multiple versions)
+### Multiple versions of R
 
       
 Are there multiple versions of R on the system?
@@ -157,8 +144,6 @@ If so, see questions above for all versions in addition to checking that the exp
 
 
 ## Troubleshooting the environment
-
-
 
 ### Local environment 
 
@@ -213,15 +198,8 @@ Make sure you're on the right version of the product compared to the admin guide
 
 ## Expired licenses
 
-
-
-### Expired license
-
 ![image](assets/license_error.png)
 
-
-
-### Expired license
 
 * Things to try:
 
@@ -241,9 +219,6 @@ Make sure you're on the right version of the product compared to the admin guide
 
 ## Authentication
 
-
-
-### Authentication
 
 * Difficult for RStudio Support to troubleshoot as it depends on external configuration values unknown to us.
 
@@ -267,10 +242,6 @@ sudo /usr/lib/rstudio-server/bin/pamtester \
 ## Network issues
 
 
-
-### Network issues
-
-
 Network issues are outsidet the scope of the [RStudio support SLA](https://rstudio.com/about/support-agreement/).
 
 This means we're limited on the help we can provide.
@@ -288,9 +259,6 @@ Things to check:
 
 ## Helpful resources
 
-
-
-### Helpful resources
 
 RStudio documentation
 
@@ -313,38 +281,23 @@ License deactivation app   | http://apps.rstudio.com/deactivate-license/
 ## Working with support
 
 
-
-### Working with support
-
 Things that help:
 
 * Describe error messages / what users are seeing
 * Describe system information
-    - OS, R version, product version
-* Attach server log files
-* Attach configuration files
+    - Operating System
+    - R version
+    - product version
+* Attach:
+    - server log files
+    - configuration files
+    - deployment logs
 
-Getting help:
-
-* Email the support team at [support@rstudio.com](mailto:support@rstudio.com), OR
-* File a ticket at [https://support.rstudio.com/hc/en-us/requests/new](https://support.rstudio.com/hc/en-us/requests/new)
-  
-  
-  
-
-
-### Any questions?
-
-Send an email to [support@rstudio.com](mailto:support@rstudio.com)!
-
+!!! info "Getting help"
+    * Email the support team at [support@rstudio.com](mailto:support@rstudio.com), OR
+    * File a ticket at [https://support.rstudio.com/hc/en-us/requests/new](https://support.rstudio.com/hc/en-us/requests/new)
 
 
 ## Your turn
 
-
-
-
-
-
 Next complete the exercise.
-
