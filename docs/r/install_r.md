@@ -26,7 +26,7 @@ You have three different mechanisms for installing R on a Linux machine:
 
 * Install from pre-compiled binaries provided by RStudio
 
-    * Download an install the pre-compiled binaries available from RStudio
+    * Download and install the pre-compiled binaries available from RStudio
 
 
 
