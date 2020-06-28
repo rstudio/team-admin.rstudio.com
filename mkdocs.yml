@@ -1,64 +1,71 @@
 site_name: RStudio Team Admin Training
-nav:
-    - Overview: overview.md
-    - "1. Getting started":
-        - "How the course works": getting_started/how_it_works.md
-        - "Lab: SSH in":          getting_started/lab_ssh_in.md
-    - "2. R":
-        - "2.1 Installing R":   r/install_r.md
-        - "Lab:  Installing R": r/lab_install_r.md
-    - "3. RStudio Server Pro":
-        - "3.1 Install RStudio Server Pro":                rstudio_server_pro/install_rsp.md
-        - "Lab:  Install RStudio Server Pro":              rstudio_server_pro/lab_install_rsp.md
-        - "3.2 RStudio Server Pro Security":               rstudio_server_pro/security.md
-        - "Lab:  RStudio Server Pro Security":             rstudio_server_pro/lab_security.md
-        - "3.3 RStudio Server Pro Startup and packages":   rstudio_server_pro/startup_and_packages.md
-        - "Lab:  RStudio Server Pro Startup and packages": rstudio_server_pro/lab_startup_and_packages.md
-    - "4. RStudio Connect":
-        - "4.1 Installing RStudio Connect":        rstudio_connect/install_connect.md
-        - "4.2 Lab:  Installing RStudio Connect":  rstudio_connect/lab_install_connect.md
-        - "4.3 Configuring RStudio Connect":       rstudio_connect/configure_connect.md
-        - "4.4 Lab:  Configuring RStudio Connect": rstudio_connect/lab_configure_connect.md
-        - "4.5 Using RStudio Connect":             rstudio_connect/using_connect.md
-        - "4.6 Lab:  Using RStudio Connect":       rstudio_connect/lab_using_connect.md
-    - "5. Deploying to Connect":
-        - "5.1 Deploying Shiny Apps":         using_rstudio_connect/deploy_shiny.md
-        - "5.2 Lab:  Deploying Shiny Apps":   using_rstudio_connect/lab_deploy_shiny.md
-        - "5.3 Deploying Rmarkdown":          using_rstudio_connect/deploy_markdown.md
-        - "5.4 Lab:  Deploying Rmarkdown":    using_rstudio_connect/lab_deploy_markdown.md
-        - "5.5 Deploying plumber APIs":       using_rstudio_connect/deploy_plumber.md
-        - "5.6 Lab:  Deploying plumber APIs": using_rstudio_connect/lab_deploy_plumber.md
-    - "6. RStudio Package Manager":
-        - "6.1 Installing RStudio Package Manager":        rstudio_package_manager/install_rspm.md
-        - "Lab:  Installing RStudio Package Manager":  rstudio_package_manager/lab_install_rspm.md
-        - "6.2 Configuring RStudio Package Manager":       rstudio_package_manager/configure_rspm.md
-        - "Lab:  Configuring RStudio Package Manager": rstudio_package_manager/lab_configure_rspm.md
-    - "7. Using Package Manager":
-        - "7.1 Using RStudio Package Manager Repositories":       using_rstudio_package_manager/using_rspm_repositories.md
-        - "Lab:  Using RStudio Package Manager Repositories": using_rstudio_package_manager/lab_using_rspm_repositories.md
-        - "7.2 Using RStudio Package Manager Packages":           using_rstudio_package_manager/using_rspm_packages.md
-        - "Lab:  Using RStudio Package Manager Packages":     using_rstudio_package_manager/lab_using_rspm_packages.md
-    - "9. Troubleshooting":
-        - "9.1 Troubleshooting":       troubleshooting/troubleshoot.md
-        - "9.2 Lab:  Troubleshooting": troubleshooting/lab_troubleshoot.md
-    - "Extra Resources":
-        - "Cheat sheet": https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
-        - "Official RStudio Documentation": https://docs.rstudio.com
-markdown_extensions:
-    - toc:
-        permalink: "#"
+repo_url: https://github.com/rstudio/team-admin.rstudio.com
+copyright: RStudio, PBC. All Rights Reserved.
+
 theme:
     name: material
     custom_dir: overrides
     logo: assets/rstudio-logo-round.png
-repo_url: https://github.com/rstudio/team-admin.rstudio.com
+
+nav:
+    - Home: index.md
+    - Overview: overview.md
+    - 1. Getting started:
+        - How the course works: getting_started/how_it_works.md
+        - "Lab: SSH in":        getting_started/lab_ssh_in.md
+    - 2. R:
+        - 2.1 Installing R:     r/install_r.md
+        - Lab:                  r/lab_install_r.md
+    - 3. RStudio Server Pro:
+        - 3.1 Install RStudio Server Pro:                rstudio_server_pro/install_rsp.md
+        - 3.1 Lab:                                       rstudio_server_pro/lab_install_rsp.md
+        - 3.2 RStudio Server Pro Security:               rstudio_server_pro/security.md
+        - 3.2 Lab:                                       rstudio_server_pro/lab_security.md
+        - 3.3 RStudio Server Pro Startup and packages:   rstudio_server_pro/startup_and_packages.md
+        - 3.3 Lab:                                       rstudio_server_pro/lab_startup_and_packages.md
+    - 4. RStudio Connect:
+        - 4.1 Installing RStudio Connect:   rstudio_connect/install_connect.md
+        - 4.1 Lab:                          rstudio_connect/lab_install_connect.md
+        - 4.2 Configuring RStudio Connect:  rstudio_connect/configure_connect.md
+        - 4.2 Lab:                          rstudio_connect/lab_configure_connect.md
+        - 4.3 Using RStudio Connect:        rstudio_connect/using_connect.md
+        - 4.3 Lab:                          rstudio_connect/lab_using_connect.md
+    - 5. Deploying to Connect:
+        - 5.1 Deploying Shiny Apps:         using_rstudio_connect/deploy_shiny.md
+        - 5.2 Lab:                          using_rstudio_connect/lab_deploy_shiny.md
+        - 5.3 Deploying Rmarkdown:          using_rstudio_connect/deploy_markdown.md
+        - 5.4 Lab:                          using_rstudio_connect/lab_deploy_markdown.md
+        - 5.5 Deploying plumber APIs:       using_rstudio_connect/deploy_plumber.md
+        - 5.6 Lab:                          using_rstudio_connect/lab_deploy_plumber.md
+    - 6. RStudio Package Manager:
+        - 6.1 Installing Package Manager:    rstudio_package_manager/install_rspm.md
+        - 6.1 Lab:                           rstudio_package_manager/lab_install_rspm.md
+        - 6.2 Configuring Package Manager:   rstudio_package_manager/configure_rspm.md
+        - 6.2 Lab:                           rstudio_package_manager/lab_configure_rspm.md
+    - 7. Using Package Manager:
+        - 7.1 Administering Package Manager: using_rstudio_package_manager/using_rspm_repositories.md
+        - 7.1 Lab:                           using_rstudio_package_manager/lab_using_rspm_repositories.md
+        - 7.2 Using Package Manager:         using_rstudio_package_manager/using_rspm_packages.md
+        - 7.2 Lab:                           using_rstudio_package_manager/lab_using_rspm_packages.md
+    - 9. Troubleshooting:
+        - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
+        - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
+    - ────────────── : separator.md
+    - Extra Resources:
+        - Cheat sheet: https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
+        - Official RStudio Documentation: https://docs.rstudio.com
+
 markdown_extensions:
+    - toc:
+        permalink: "#"
     - admonition
     - pymdownx.details
     - pymdownx.superfences
     - pymdownx.magiclink
+
 extra_css:
     - assets/custom.css
     - assets/asciinema-player.css
+
 extra_javascript:
     - assets/asciinema-player.js
