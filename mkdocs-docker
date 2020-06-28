@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-if [ "${1}" == "serve" ] && [ -z ${2} ]; then
-    ARGS="serve -a 0.0.0.0:8000"
-else
-    ARGS="${@}"
-fi
-docker run --rm -p 8000:8000 -v ${PWD}:/workspace sellorm/mkdocs ${ARGS}
