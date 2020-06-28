@@ -1,0 +1,94 @@
+{#-
+  Make footer navigation stops at separators
+  Remove mkdocs links
+-#}
+{% import "partials/language.html" as lang with context %}
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  {% if page.previous_page or page.next_page %}
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+
+        <!-- Link to previous page -->
+        {% if page.previous_page %}
+          {% if page.previous_page.title != "---" %}
+            {% set previous_page = page.previous_page %}
+
+            <a href="{{ previous_page.url | url }}"
+              title="{{ previous_page.title }}"
+              class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back
+                    md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  {{ lang.t("footer.previous") }}
+                </span>
+                {{ previous_page.title }}
+              </span>
+            </div>
+          </a>
+          {% endif %}
+
+        {% endif %}
+
+        <!-- Link to next page -->
+        {% if page.next_page %}
+          {% if page.next_page.title != "---" %}
+            {% set next_page = page.next_page %}
+
+            <a href="{{ next_page.url | url }}"
+                title="{{ next_page.title }}"
+                class="md-flex md-footer-nav__link md-footer-nav__link--next"
+                rel="next">
+              <div class="md-flex__cell md-flex__cell--stretch
+                    md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span class="md-footer-nav__direction">
+                    {{ lang.t("footer.next") }}
+                  </span>
+                  {{ next_page.title }}
+                </span>
+              </div>
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-forward
+                      md-footer-nav__button"></i>
+              </div>
+            </a>
+            {% endif %}
+        {% endif %}
+      </nav>
+    </div>
+  {% endif %}
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          Copyright © 1998 - <script type="text/javascript">
+                document.write(new Date().getFullYear());
+              </script>
+              <a href="https://rstudio.com"> RStudio, PBC</a>.
+          <br />
+          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+        </div>
+      </div>
+
+      <!-- Social links -->
+      {% include "partials/social.html" %}
+    </div>
+  </div>
+
+
+
+</footer>
