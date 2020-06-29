@@ -62,11 +62,7 @@ You can also refer to the [Requirements](https://docs.rstudio.com/requirements/)
 
 
 
-## Installing R :fontawesome-brands-r-project:
-
-:fontawesome-brands-r-project:
-:fontawesome-solid-laptop-code:
-:fontawesome-regular-laugh-wink:
+## Installing R
 
 !!! note 
     You have already installed R in the previous exercise, but it's worth repeating the point.
