@@ -1,6 +1,4 @@
 
-## Objectives
-
 In this session you:
 
 * Review the R startup sequence and how the admin can modify this
@@ -8,11 +6,7 @@ In this session you:
 
 
 
-## Understanding the R startup sequence
-
-
-
-### How R starts up
+## How R starts up
 
 As the R admin or system administrator for the R environment, you should understand the startup sequence of R.
 
@@ -27,11 +21,7 @@ For a very good introduction, read the RViews article [R for Enterprise: Underst
 
 
 
-## Installing binary packages
-
-
-
-### Introduction to RStudio Package Manager
+## Introduction to RStudio Package Manager
 
 You will cover RStudio Package Manager later in this course, but for now it's sufficient to know that you can use Package manager to:
 
@@ -44,9 +34,9 @@ In addition, RStudio Package Manager can serve binary versions of these packages
 
 
 
-### Installing binary packages from RStudio Package Manager
+## Installing binary packages
 
-Now is a good time to introduce one powerful benefit of package manager:
+Now is a good time to introduce one powerful benefit of RStudio Package Manager:
 
 * You can serve binary versions of R packages using RStudio Package Manager
 * This has a substantial performance benefit for users, since they don't have to compile all packages from source
@@ -63,10 +53,6 @@ You can read the announcement of binary packages at the RStudio blog: [Package M
 
 
 ## Your turn
-
-
-
-
 
 Next complete the exercise.
 
