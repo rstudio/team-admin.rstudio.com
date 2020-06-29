@@ -51,9 +51,8 @@ nav:
         - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
         - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
     - ────────────── : separator.md
-    - Extra Resources:
-        - Cheat sheet: https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
-        - Official RStudio Documentation: https://docs.rstudio.com
+    - Cheat sheet:   cheatsheet.md
+    - Documentation: documentation.md
 
 markdown_extensions:
     - toc:
@@ -62,10 +61,14 @@ markdown_extensions:
     - pymdownx.details
     - pymdownx.superfences
     - pymdownx.magiclink
+    - meta
 
 extra_css:
     - assets/custom.css
+    - assets/cheatsheet.css
     - assets/asciinema-player.css
+    - assets/animated-r.css
+    - assets/responsive-xaringan-iframe.css
 
 extra_javascript:
     - assets/asciinema-player.js
