@@ -1,5 +1,4 @@
-
-## In this session
+# Installing RStudio Server Pro
 
 You have already installed R from pre-compiled binaries.  In this session you:
 
@@ -8,19 +7,17 @@ You have already installed R from pre-compiled binaries.  In this session you:
 * Discuss architecture and some best practices
 
 
-
-
-## General requirements
+## Requirements
 
 
 
 
-### Configuration and sizing recommendations
+### Configuration and sizing
 
 
 The support article [Configuration and sizing recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations) provides some guidelines on recommended server sizes.
 
-The answer is it depends, but in summary:
+The answer is it depends, but as a general guideline:
 
 
 Product                 | Minimum (CPU / Memory) | Recommended (CPU / Memory) |
@@ -30,18 +27,16 @@ RStudio Connect         |            2 core / 4G |   8 - 16 core / 32G - 128G |
 Shiny Server Pro        |            2 core / 4G |      4 - 8 core / 4G - 64G |
 RStudio Package Manager | 2 core / 2G (RAM) / 50 G (Disk) | 2 core / 2 G (RAM) / 200 G (Disk) |
 
-Your mileage may vary!
 
 
 
-
-### General product requirements
+### Pre-requirements
 
 To install RStudio Server Pro you need:
 
 * **Root privileges** for installing and running
 * Access to the **R programming language** (we recommend [installing from pre-compiled binaries](https://docs.rstudio.com/resources/install-r/))
-* Access to an R package repository, e.g. [CRAN](https://cran.r-project.org/)
+* Access to an R **package repository**, e.g. [CRAN](https://cran.r-project.org/)
 * Configuration for a **user authentication scheme**, e.g LDAP or PAM
 
 
@@ -54,11 +49,8 @@ Support article:
 
 
 
-## Installation
+## Installation checklist
 
-
-
-### Installation checklist
 
 Please read the support article:
 
@@ -70,11 +62,11 @@ You can also refer to the [Requirements](https://docs.rstudio.com/requirements/)
 
 
 
-## Installing R from pre-compiled binaries
+## Installing R :fontawesome-brands-r-project:
 
-
-
-### One more thing: installing R
+:fontawesome-brands-r-project:
+:fontawesome-solid-laptop-code:
+:fontawesome-regular-laugh-wink:
 
 !!! note 
     You have already installed R in the previous exercise, but it's worth repeating the point.
@@ -93,11 +85,6 @@ Why?
 
 
 ## Your turn
-
-
-
-
-
 
 Next complete the exercise.
 
