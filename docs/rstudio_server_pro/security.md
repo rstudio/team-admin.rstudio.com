@@ -1,5 +1,6 @@
+# Security
 
-## Integrating with your **authentication mechanism**
+## Authentication
 
 
 RStudio Server Pro works with your existing authentication service
@@ -23,7 +24,7 @@ RStudio Server Pro works with your existing authentication service
 
 ### PAM
 
-The most common authentication mode is **PAM** with **LDAP** or **Active Directory**.
+The most common authentication mode for RStudio Server Pro is **PAM** (pluggable authentication module).  You can configure PAM with **LDAP** or **Active Directory**.
 
 * LDAP
 
@@ -43,7 +44,7 @@ The most common authentication mode is **PAM** with **LDAP** or **Active Directo
 
 ### Proxied authentication
 
-If you are not using PAM, LDAP or Active Directory you should use **Proxied Auth**.
+If you are not using PAM, LDAP or Active Directory, you should use **Proxied Auth**.
 
 * In proxied auth mode, RStudio Server Pro trusts the users sent by your existing authentication system (e.g. Shibboleth). 
 
@@ -51,11 +52,11 @@ If you are not using PAM, LDAP or Active Directory you should use **Proxied Auth
 
 * Take precautions to prevent unauthorized traffic from accessing RStudio Server Pro.
 
-  - This will be defined by your firewall and [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) (virtual private cloud) settings.
+    - This will be defined by your firewall and [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) (virtual private cloud) settings.
 
 
 
-### Token based authentication
+### Token based authentication (SAML)
 
 RStudio Server Pro does not natively support token based auth today.  However, we intend to support **SAML** for many of these auth providers in the future:
 
@@ -73,7 +74,7 @@ On premises:
 
 
 
-## Integration with Kerberos
+## Kerberos
 
 Kerberos is a [protocol](https://en.wikipedia.org/wiki/Kerberos_%28protocol%29) that uses tickets to communicate over a network.  It uses secret-key cryptography to provide secure communications over a non-secure network.
 
@@ -81,9 +82,9 @@ Kerberos is a [protocol](https://en.wikipedia.org/wiki/Kerberos_%28protocol%29) 
 The benefits of Kerberos are:
 
 * strong encryption
-* single sign-on (SSO).
+* single sign-on (SSO)
 
-With Kerberos SSO, users are only prompted once for their user ID and password.
+With Kerberos single sign-on, users are only prompted once for their user ID and password.
 
 
 !!! note "Fun fact" 
@@ -101,7 +102,7 @@ With Kerberos SSO, users are only prompted once for their user ID and password.
 Ticket creation
 
 * Kerberos tickets can be created at time of authentication.
-* These are sometimes referred to as **pass through credentials**.
+* These are sometimes referred to as **pass-through credentials**.
 
 Database authentication
 
@@ -115,19 +116,18 @@ RStudio integration
 
 
 
-### More information
+!!! info "More information"
+    For more information about Kerberos with RStudio, refer to the [admin guide](https://docs.rstudio.com/ide/server-pro/r-sessions.html#kerberos).
 
-For more information about Kerberos with RStudio, refer to the [admin guide](https://docs.rstudio.com/ide/server-pro/r-sessions.html#kerberos).
+    For database integration, see
 
-For database integration, see
+    * [Run As the Logged-in User (Kerberos)](https://db.rstudio.com/best-practices/deployment/#run-as-the-logged-in-user-kerberos)
+    * This is part of the [database best practises](https://db.rstudio.com/best-practices/) at [db.rstudio.com](https://db.rstudio.com/)
 
-* [Run As the Logged-in User (Kerberos)](https://db.rstudio.com/best-practices/deployment/#run-as-the-logged-in-user-kerberos)
-* This is part of the [database best practises](https://db.rstudio.com/best-practices/) at [db.rstudio.com](https://db.rstudio.com/)
+    Also, read the support articles:
 
-Also, read the support articles:
-
-* [How to pass authentication credentials to a database using Kerberos](https://support.rstudio.com/hc/en-us/articles/115000259268-How-to-pass-authentication-credentials-to-a-database-using-Kerberos).
-* [Handling long-running sessions in RStudio Server Pro with Kerberos](https://support.rstudio.com/hc/en-us/articles/115013500128-Handling-long-running-sessions-in-RStudio-Server-Pro-with-Kerberos-)
+    * [How to pass authentication credentials to a database using Kerberos](https://support.rstudio.com/hc/en-us/articles/115000259268-How-to-pass-authentication-credentials-to-a-database-using-Kerberos).
+    * [Handling long-running sessions in RStudio Server Pro with Kerberos](https://support.rstudio.com/hc/en-us/articles/115013500128-Handling-long-running-sessions-in-RStudio-Server-Pro-with-Kerberos-)
 
 
 
@@ -163,7 +163,7 @@ You must provision local accounts in one of two ways:
 
 
 
-## RStudio Server Pro Security features
+## Security
 
 RStudio Team products run these open source tools:
 
@@ -191,7 +191,7 @@ The next section dicusses security features of RStudio Server Pro
 
 
 
-### RStudio Server Pro security features
+### RStudio Server Pro Security features
 
 * Clickjacking
     - Will not load inside a browser frame
@@ -294,7 +294,10 @@ In addition, you can also limit:
 * RStudio needs root access to provision sessions on behalf of other users
 * The RStudio Server Pro runs under the `rstudio-server` user in the normal course of operations.
 
-> RStudio Server runs as the system root user during startup and then drops this privilege and runs as a more restricted user. RStudio Server then re-assumes root privilege for a brief instant when creating R sessions on behalf of users (the server needs to call `setresuid` when creating the R session, and this call requires root privilege).
+!!! quote "From the docs"
+    RStudio Server runs as the system root user during startup and then drops this privilege and runs as a more restricted user. RStudio Server then re-assumes root privilege for a brief instant when creating R sessions on behalf of users (the server needs to call `setresuid` when creating the R session, and this call requires root privilege).
+    
+    - https://docs.rstudio.com/ide/server-pro/access-and-security.html#server-permissions
 
 
 
@@ -314,62 +317,26 @@ R packages (10,000+) are open source and community driven
 
 
 
-## Data connectivity
+## RStudio Database drivers
 
 
+There are many ways to access data with R.  One of these mechanisms is to use ODBC to connect to databases from R.
 
-### Connect to your databases with ODBC
 
-* There are many ways to access data with R
-* You can connect to many data sources using ODBC
+The RStudio [Pro database drivers](https://www.rstudio.com/products/drivers/) supports some of the most common data sources:
 
 ![image](assets/pro_drivers.png)
 
 
 
-### Supported database drivers
-
-
-The RStudio [Pro database drivers](https://www.rstudio.com/products/drivers/) supports some of the most common data sources
-
-![images](assets/pro-drivers.png)
-
-* Microsoft SQL Server
-* Oracle
-* Teradata
-* PostgreSQL
-* Apache Hive
-* Apache Impala
-* Apache Cassandra
-* Amazon Athena
-* Amazon Redshift
-* MongoDB
-* Google BigQuery
-* IBM Netezza
-* Salesforce
-* MySQL
-
-
-
-
-### Database best practises
-
-To find recommended best practise for database connections, storing credentials, etc:
-
-* Visit https://db.rstudio.com/
-
-![images](assets/connections-pane.png)
+!!! tip "Database best practises"
+    To find recommended best practise for database connections, storing credentials, etc:
+    * Visit https://db.rstudio.com/
+    ![images](assets/connections-pane.png)
 
 
 
 ## Your turn
-
-
-
-class: your-turn-slide
-
-
-
 
 Next complete the exercise.
 

@@ -218,7 +218,7 @@ You can get the same benefit of fast binary installs on RStudio Connect by setti
 
 To achieve this, you have to configure Connect to point to an instance of RStudio Package Manager.
 
-Since you haven't yet configured RStudio Package Manager on your VM, you will temporarily point Connect to a demonstration instance of RStudio Package Manager at [demo.rstudiopm.com](https://demo.rstudiopm.com)
+Since you haven't yet configured RStudio Package Manager on your VM, you will temporarily point Connect to a demonstration instance of RStudio Package Manager at [packagemanager.rstudio.com](https://packagemanager.rstudio.com)
 
 ### Override the Package Repository
 
@@ -226,7 +226,7 @@ Read the [documentation](https://docs.rstudio.com/connect/admin/getting-started/
 
 ```gcfg
 [RPackageRepository "CRAN"]
-URL = "https://demo.rstudiopm.com/cran/__linux__/bionic/latest"
+URL = "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"
 ```
 
 Then restart RStudio Connect.
