@@ -11,11 +11,11 @@ nav:
     - Home: index.md
     - Overview: overview.md
     - 1. Getting started:
-        - How the course works: getting_started/how_it_works.md
-        - "Lab: SSH in":        getting_started/lab_ssh_in.md
+        - 1.1 How the course works: getting_started/how_it_works.md
+        - 1.2 Lab - SSH in:        getting_started/lab_ssh_in.md
     - 2. R:
         - 2.1 Installing R:     r/install_r.md
-        - Lab:                  r/lab_install_r.md
+        - 2.1 Lab:              r/lab_install_r.md
     - 3. RStudio Server Pro:
         - 3.1 Install RStudio Server Pro:                rstudio_server_pro/install_rsp.md
         - 3.1 Lab:                                       rstudio_server_pro/lab_install_rsp.md
@@ -62,6 +62,9 @@ markdown_extensions:
     - pymdownx.details
     - pymdownx.superfences
     - pymdownx.magiclink
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_css:
     - assets/custom.css
