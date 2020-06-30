@@ -1,7 +1,7 @@
 
 ## Task: Explore the Connections pane
 
-The app `03_databse/app.R` is a Shiny application that reads data from a PostGres database.
+The app `03_databse/app.R` is a Shiny application that reads data from a PostgreSQL database.
 
 The RStudio IDE has a pane for "Connections" that allows you to establish database connections and browse information contained in the database tables.
 
@@ -40,12 +40,12 @@ Deploy `03_database/app.R` to Connect (using the publish button in the Source pa
 
 While you wait, can you figure out how "PostGres Dev" is defined?
 
-Hint:
-
-```sh
-cat /etc/odbc.ini 
-cat /etc/odbcinst.ini
-```
+??? question "Need a hint?"
+    Try both of the following commands:
+    ```sh
+    cat /etc/odbc.ini 
+    cat /etc/odbcinst.ini
+    ```
 
 
 

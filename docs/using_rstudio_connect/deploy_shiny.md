@@ -1,16 +1,14 @@
 
-## In this session:
+## In this session
+
+You will:
 
 * Deploy a shiny app that connects to a database
 * Understand considerations for connecting to data from a Shiny app
 * Learn how to scale a Shiny App
 
 
-
-
 ## Accessing a database
-
-
 
 ### Connecting to a database
 
@@ -25,7 +23,7 @@ All of the RStudio best practise recommendations for working with databases is s
 
 ### Accessing Remote Data 
 
-Content on Connect accesses data via R.  
+Shiny apps on Connect access data via R.  
 
 This raises three primary concerns:
 
@@ -148,7 +146,7 @@ Cons:
 ![images](assets/securing_data_data_level.png)
 
 
-!!! note "Note:
+!!! note Note
     Customers often use [kerberos](https://en.wikipedia.org/wiki/Kerberos_(protocol)) in this scenario
 
 
@@ -172,16 +170,16 @@ However, identical environments are not necessary.
 
 ## Scaling shiny apps
 
-
-
-
-### Scaling shiny apps
-
 Now turn your attention to the second large topic: **Scaling** your Shiny apps.
 
 Multiple users can connect to a single R process. 
 
 ![images](assets/multiple_users.png)
+
+
+Eventually, though, the load on a single R process will become too high fo Shiny to respond to user requests in a timely fashion. For this reason, RStudio Connect is able to run multiple instances of the same app and spread visitors across those instances. This feature is called the "Utilization Scheduler"
+
+
 
 **But R is single threaded...!**
 
@@ -205,7 +203,8 @@ Demo on the instructor server where and how to change the settings for an app.
   <source src="https://cdn.rstudio.com/pro-admin/videos/load_shiny_app.mp4" type="video/mp4">
 </video>
 
-
+For the most part, the default settings will work fine, but it's important to remember that allocating more processes (ie CPU and RAM) to an overloaded and poorly performing shiny app is only half a solution. 
+It's also essential that shiny app developers optimize their applications as necessary to ensure the end users of their applications have as good an experience using them as possible.
 
 
 ### Scaling
@@ -253,12 +252,17 @@ server <- function(input, output){
 
 Support article: [Scaling and Performance Tuning in RStudio Connect](https://support.rstudio.com/hc/en-us/articles/231874748-Scaling-and-Performance-Tuning-in-RStudio-Connect)
 
-???
 
-Briefly discuss how multiple R users can even connect to 1 R process. How are things shared? When can there be contention? Shiny is stateful via the server's R session and the client (websocket communication) … different from other R code and other web frameworks BUT extremely powerful.
+The design of the shiny makes it possible for multiple R users to connect to 1 underlying R process.
+There are some important side effects to this models though. 
+For instance, if one of the actions the shiny app performs takes a long time to execute, this can temporarily block other users. 
+Shiny is stateful via the server's R session and the client (websocket communication), which is different from other R code and other web frameworks BUT extremely powerful.
 
-Tie in to databases: Mention the `pool` package and that the https://db.rstudio.com site has more info
-
+One area in particular where there can be challenges are shiny apps that use connections to databases. 
+Care must be taken to open and close connections to the database in the appropriate manner. 
+Remember that the `server` function of a shiny app is run **every time** the client sends new input, so careful consideration must be given to unnecessarily opening and closing connections. 
+In cases where this is not properly thought through, it's possible to end up with a great many stale database connections over time. 
+It's worth reviewing the information at [db.rstudio.com](https://db.rstudio.com) and the "[pool](https://db.rstudio.com/pool/)" package in particular.
 
 
 
@@ -307,7 +311,7 @@ The Connect admin guide explains these settings at:
 
 
 
-Next complete the exercise.
+Next complete the following exercise.
 
 Signs of success:
 

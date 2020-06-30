@@ -1,7 +1,7 @@
 
 ## In this session:
 
-* Deploy and schedule reports in the form of R Markdown to RStudio Connect.
+You will deploy and schedule reports in the form of R Markdown documents to RStudio Connect.
 
 
 
@@ -19,23 +19,7 @@
     - Then this intermediate Markdown document is converted to the **final format**
 * The final format is typically HTML, but it could also be PDF, Word or Powerpoint, among many other [formats](https://rmarkdown.rstudio.com/formats.html).
 
-
-
-
-### R Markdown Reports
-  
-The ultimate report is typically a web page, but many [output formats](https://rmarkdown.rstudio.com/formats.html) are possible:
-
-* HTML page
-* PDF document
-* Microsoft Word or PowerPoint document
-* Blog
-* Website
-* ...
-
-
-
-
+In essence, it's a powerful way to mix narrative text with code that renders out to a variety of popular and easy to distribute formats suitable for non-R-users.
 
 
 ### Solving the copy-and-paste nightmare
@@ -61,14 +45,13 @@ The ultimate report is typically a web page, but many [output formats](https://r
 
 ### Deploying a report to Connect
 
-* When you deploy a report to Connect, you have choice between publishing:
+When you deploy a report to Connect, you have choice between publishing:
 
-    * With source code
-  
-      - Giving you the option to schedule the report on Connect
-      - This is the more flexible option!!!
-  
-    * Finished document only
+* With source code
+    - Giving you the option to schedule the report on Connect
+    - This is the more flexible option!!!
+* Final document only
+    - This would effectively be a static report
  
 ![image](assets/publish_rmd_options.png)
 
@@ -117,10 +100,6 @@ Caveats:
 
 
 ## Parameterized Markdown
-
-
-
-### Parameterized Markdown
 
 Parameterized reports allow users to specify some parameters to customize the analysis in a report.
 
@@ -236,6 +215,7 @@ Some possibilities:
 * ETL (extract, transform, load)
 * Perform a regular batch job
 * Scrape data from website and store in a database
+    - Assuming you have the legal permission to do so, of course!
 
 ![image](assets/calendar.png)
 
@@ -348,7 +328,7 @@ Next complete the exercise.
 
 Signs of success:
 
-    * You deployed a Markdown report to Connect
-    * You created a scheduled update
-    * You triggered a run of the report and found the email in your Roundcube inbox
+* You deployed a Markdown report to Connect
+* You created a scheduled update
+* You triggered a run of the report and found the email in your Roundcube inbox
   
