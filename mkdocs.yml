@@ -5,7 +5,13 @@ copyright: RStudio, PBC. All Rights Reserved.
 theme:
     name: material
     custom_dir: overrides
-    logo: assets/rstudio-logo-round.png
+    logo: 'images/rstudio-logo.png'
+    favicon: 'images/favicon.ico'
+    palette:
+        primary: white
+        accent: #75AADB
+    font:
+        text: Source Sans Pro
 
 nav:
     - Home: index.md
@@ -51,7 +57,7 @@ nav:
         - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
         - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
     - "---": separator.md
-    - Extra Resources:
+    - Resources:
         - Cheat sheet: https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
         - Official RStudio Documentation: https://docs.rstudio.com
 
