@@ -11,6 +11,8 @@ RStudio Connect admin guide         | https://docs.rstudio.com/connect/admin/
 RStudio Package Manager admin guide | https://docs.rstudio.com/rspm/admin/
 Pro Drivers                         | https://docs.rstudio.com/pro-drivers/
 
+
+
 <!-- Open all external links in a new tab (https://yihui.org/en/2018/09/target-blank/) -->
 <script>
 (function() {
@@ -21,3 +23,4 @@ Pro Drivers                         | https://docs.rstudio.com/pro-drivers/
     }
   }
 })();
+</script>
