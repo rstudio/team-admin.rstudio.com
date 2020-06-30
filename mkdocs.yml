@@ -1,4 +1,4 @@
-site_name: RStudio Team Admin Training
+site_name: "RStudio Team :: Admin Training"
 repo_url: https://github.com/rstudio/team-admin.rstudio.com
 copyright: RStudio, PBC. All Rights Reserved.
 
@@ -50,7 +50,7 @@ nav:
     - 9. Troubleshooting:
         - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
         - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
-    - ────────────── : separator.md
+    - "---": separator.md
     - Extra Resources:
         - Cheat sheet: https://colorado.rstudio.com/rsc/rstudio-team-sysadmin-cheatsheet/sys-admin-cheatsheet.html
         - Official RStudio Documentation: https://docs.rstudio.com
