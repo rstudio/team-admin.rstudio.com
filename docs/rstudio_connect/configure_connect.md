@@ -13,10 +13,6 @@ In this session you:
 ## Configuration
 
 
-
-
-### Configuration
-
 In this chapter you will learn how to make choices to configure RStudio Connect.
 
 ```gcfg
@@ -47,7 +43,7 @@ Provider = LDAP
 
 
 
-### Initial configuration
+## Initial configuration
 
 
 The configuration file is at: `/etc/rstudio-connect/rstudio-connect.gcfg`
@@ -82,21 +78,15 @@ Address
 ![images](assets/server_address.png)
 
 
+This field is the address your end users will enter to get to your RSC instance.
 
-The server address implies many choices:
+This implies a lot of choices:
 
-* Proxies
-* http(s) and browser security
-* Load balancing
+* Proxy?
+* http(s) > Browser Security
+* Load Balancing... Later
 
-
-* This field is the address your end users will enter to get to your RSC instance.
-* Implies a lot of choices.
-    - Proxy?
-    - http(s) > Browser Security
-    - Load Balancing … Later
-
-For now, you need the name of the training server (that you got earlier in the course)
+For now, you need the name of the training server (that you got earlier in the course).
 
 
 
@@ -132,14 +122,14 @@ This field does not complete email setup!
 NoWarning
 ```
 
-(For your sanity during the course. Do not do this in production!)
+(For your sanity during the course. Do not do this in production unless you have a good reason to do so!)
 
 ![images](assets/http_no_warning.png)
 
 
 
 
-### Configuration
+### More configuration options
 
 Connect admin guide [Appendix A: Configuration Options](https://docs.rstudio.com/connect/admin/appendix/configuration/#Server)
 
@@ -157,6 +147,7 @@ Homework:
 
 
 
+## Admin tasks
 
 ### Starting and Stopping
 
@@ -199,21 +190,18 @@ ls /var/log/rstudio-connect.*
 sudo tail /var/log/rstudio-connect.log 
 ```
 
-Run the commands and discuss the log output
+Run the commands and view the log output
 
 
+## Licensing
 
-### Licensing
+### License activation
+
+RStudio Connect supports both online and offline license activation:
 
 * Online: servers can activate automatically
 * Offline: licenses require manual exchange.
 
-![images](assets/ip_address.png)
-
-
-
-
-### Licensing: online and offline
 
 **Online** servers automatically start with a 45 day trial.
 
@@ -234,7 +222,7 @@ sudo /opt/rstudio-connect/bin/license-manager activate KEY
 
 
 
-### Licensing: floating
+### Floating licenses
 
 In special circumstances, there is an alternative licensing mechanism called **floating licenses**.
 
@@ -248,12 +236,12 @@ Some use cases for floating licensing:
 
 Download: [https://www.rstudio.com/floating-license-servers/](https://www.rstudio.com/floating-license-servers/)
 
-Chapter 3.7 of the Connect admin guide discusses [Floating Licenses](https://docs.rstudio.com/connect/admin/licensing/#floating-licenses)
+Chapter 3.7 of the Connect admin guide discusses [Floating Licenses](https://docs.rstudio.com/connect/admin/licensing/#floating-licenses) in more detail.
 
 
 
 
-### It's Alive! Can I use it?
+## It's Alive! Can I use it?
 
 Not yet. More choices to make:
 
@@ -265,10 +253,7 @@ Not yet. More choices to make:
 ## User Management and Authentication
 
 
-
-### User Management and Authentication
-
-Three parts:
+This breaks down into three parts:
 
 Nr     | Part            | Description
 -----  | --------------  | -----------------------
@@ -288,21 +273,17 @@ Who can access RStudio Connect? (Authentication)
 Irrevocable choice, but an easy choice.
 
 
-
-
-### Authentication
-
 To answer **who** can access RStudio Connect, you must first tell Connect **where** users are defined.
 
 
-My user information lives | Then 
-------------------------- | -----
+My user information lives                      | Then 
+-------------------------                      | -----
 Nowhere. I thought Connect would handle users? | Use password auth and manage users in Connect. 
-Active Directory  | Configure Connect to get user information via LDAP. 
+Active Directory                               | Configure Connect to get user information via LDAP. 
 Active Directory AND I need to pass user credentials through Connect to a backend | Connect will rely on local Unix accounts via PAM. Each user will need a local account. 
-Google | Configure Connect to get user information from Google OAuth2. 
-Azure AD, Okta, OneLogin, other SAML | Configure Connect with SAML
-Somewhere else | Going to need proxied auth. 
+Google                                         | Configure Connect to get user information from Google OAuth2. 
+Azure AD, Okta, OneLogin, other SAML           | Configure Connect with SAML
+Somewhere else                                 | Going to need proxied auth. 
 
 
 
@@ -372,7 +353,7 @@ PermittedLoginGroup
 
 For LDAP authentication:
 
-* Users must self-register
+* Users must still self-register
 * but you can limit who can self register by using:
 
 ```gcfg
@@ -386,16 +367,16 @@ PermittedLoginGroup
 ### Other Users - Other Providers?
 
 
-```
-{r, echo=FALSE}
-dat <- read.csv("files/02_server_management/02_02_authentication_providers.csv", header = TRUE, check.names = FALSE)
-dat %>% 
-  gt(rowname_col = "Attribute") %>% 
-  tab_spanner(label = "Auth provider", columns = everything())
-```
+| Attribute  | Built-in Password auth | LDAP | Google OAuth2 | PAM        | SAML | Proxy      |
+|------------|------------------------|------|---------------|------------|------|------------|
+| Unique Key | Internal               | DN   | GoogleID      | Username   | SAML | Username   |
+| Username   | Admin/User             | LDAP | Admin/User    | PAM        | SAML | Proxy      |
+| First Name | Admin/User             | LDAP | OAuth         | Admin/User | SAML | Admin/User |
+| Last Name  | Admin/User             | LDAP | OAuth         | Admin/User | SAML | Admin/User |
+| Passwords  | User                   | LDAP | -             | PAM        | SAML | -          |
+| Email      | Admin/User             | LDAP | OAuth         | Admin/User | SAML | Admin/User |
+| Groups     | Admin                  | LDAP | -             | -          | SAML | -          |
 
-!!! note "Question"
-    Where does information come from?
 
 
 
@@ -406,13 +387,14 @@ dat %>%
 PAM Authentication
 
 * Configuration is limited in Connect, extensive in PAM. 
-* Copy the `ssh` login PAM profile. 
+* Copy the `ssh` login PAM profile as a basis for a custom profile. 
 
 
 Proxied Authentication
 
 * Set up a proxy (e.g. using `nginx` or `Apache`) in front of Connect to handle all user auth.
-* The proxy passes a secure header to tell Connect who the user is.    
+* The proxy passes a secure header to tell Connect who the user is.
+* This will generally require a proxy plug-in to implement the authentication within the proxy layer.
 
 
 
@@ -474,14 +456,6 @@ DefaultUserRole
     * [Connect Admin Guide: CLI](https://docs.rstudio.com/connect/admin/appendix/cli/#usermanager)
 
 
-* Remember the mental model - option 1 is another choice between branches.
-* Show an example of changing the user role in the UI.
-* Pull up the CLI and run the `--help` command just so they can see the options. (Used for bulk changes).
-
-
-
-
-
 
 ## Other advanced topics
 
@@ -503,12 +477,6 @@ Highlights:
 This is covered in the [Browser security](https://docs.rstudio.com/connect/admin/security-and-auditing/#browser-security) section of the Connect admin guide.
 
 What about data governance? Later in the course you will become familiar with sandboxing in Connect.
-
-
-???
-
-The last line is about reassurance, RStudio has done many security audits internally and with big name customers.
-
 
 
 ### Upgrading Connect
@@ -543,9 +511,6 @@ Connect Admin Guide: [High Availability and Load Balancing](https://docs.rstudio
 ## Summary
 
 
-
-### Summary
-
 In this chapter you learned about some of the decision points when configuring a Connect instance.
 
 The exercises will guide you through these steps for one specific branch:
@@ -561,14 +526,10 @@ In subsequent chapters you will start using RStudio Connect and deploying conten
 ## Your turn
 
 
-
-
-
-
-Next complete the exercise.
+Now complete the lab exercise.
 
 Signs of success:
 
-    * You have a running instance of RStudio Connect
-    * You have working email integration
-    * You have multiple users, and you can log in using their LDAP credentials
+* You have a running instance of RStudio Connect
+* You have working email integration
+* You have multiple users, and you can log in using their LDAP credentials

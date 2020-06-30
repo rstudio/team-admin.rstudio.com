@@ -17,9 +17,6 @@ Video review:
 ## Task: Connect your IDE to Connect
 
 
-
-
-
 Use the "Global Options" menu in RStudio Server to configure a connection to your Connect instance. You need the host name or IP address.
 
 ```
@@ -31,6 +28,8 @@ RStudio
 ```
 
 Enter: `http://<host_name>/rsconnect`
+
+(Remembering to replace `<host_name>` with the appropriate hostname for your!)
 
 ![image](assets/ip_address.png)
 
@@ -139,7 +138,7 @@ Do the following
 
 * Publish the app to Connect
 
-/publish_app_0.png)
+![image](assets/publish_app_0.png)
   
 
 
@@ -236,9 +235,7 @@ After deployment to Connect:
 
 ### Task: Redeploy app_1
 
-That was pretty easy!
-
-Next, take a look at the redeployment process.
+Next, take a look at the _redeployment_ process.
 
 To do this, make any trivial change to the code, e.g. by inserting a new line after the `library(...)` statements.
 
