@@ -50,7 +50,7 @@ nav:
     - 9. Troubleshooting:
         - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
         - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
-    - ────────────── : separator.md
+    - "---": separator.md
     - Cheat sheet:   cheatsheet.md
     - Documentation: documentation.md
 
@@ -61,7 +61,6 @@ markdown_extensions:
     - pymdownx.details
     - pymdownx.superfences
     - pymdownx.magiclink
-    - meta
 
 extra_css:
     - assets/custom.css
