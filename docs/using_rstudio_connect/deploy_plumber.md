@@ -21,9 +21,6 @@ Machine-to-machine communication
 
 
 
-
-### What is an API?
-
 **Application programming interface**
 
 
@@ -50,7 +47,7 @@ From [WikiPedia](https://en.wikipedia.org/wiki/Representational_state_transfer):
 
 > RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations.
 
-In R, you can use the `plumber` package to turn an R function into REST API.
+In R, you can use the "[plumber](https://www.rplumber.io)" package to turn an R function into REST API.
 
 
 
@@ -99,7 +96,7 @@ In R, you can use the `plumber` package to turn an R function into REST API.
 
 The `plumber` package lets you create a REST API by merely decorating your existing R source code with special comments
 
-[https://www.rplumber.io/docs/](https://www.rplumber.io/docs/)
+[https://www.rplumber.io/](https://www.rplumber.io/articles/introduction.html)
 
 ```R
 ## Comment Decorators
@@ -121,8 +118,8 @@ function(name = default, req) {
 
 Connect supports the `plumber` package.  RStudio Connect automatically:
 
-    * manages the dependent packages and files of your API
-    * recreates an environment closely mimicking your local development environment on the server.
+* manages the dependent packages and files of your API
+* recreates an environment closely mimicking your local development environment on the server.
   
 In other words, Connect deploys the same bundling strategy as for Shiny apps
 
@@ -133,8 +130,6 @@ In addition, Connect manages parallel processes:
 * It can also shut down idle processes when they’re not in use.
 
 This allows you to run the appropriate number of R processes to scale your capacity to accommodate the current load.
-
-
 
 
 
@@ -190,10 +185,6 @@ rsconnect::deployAPI(".", server = ..., account = ...)
 ## API authentication
 
 
-
-
-### API authentication
-
 When submitting an API request, the sender must authenticate with an API Key:
 
 * API Keys are tied to users, not APIs
@@ -224,19 +215,14 @@ Authorization: Key ABCDEFGHIJKLMNO
 * Make a request:
 
 ```sh
-curl -X GET "<server_address>/mpg?new_hp=300" 
-   -H  "accept: application/json"  -H "Authorization: Key <>" 
+curl -X GET "<server_address>/mpg?new_hp=300" \
+   -H  "accept: application/json"  -H "Authorization: Key <API_KEY>" 
 ```
-
-
 
 
 
 ## Scaling APIs
 
-
-
-### Scaling APIs
 
 How do APIs scale?
 
