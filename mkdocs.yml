@@ -5,7 +5,13 @@ copyright: RStudio, PBC. All Rights Reserved.
 theme:
     name: material
     custom_dir: overrides
-    logo: assets/rstudio-logo-round.png
+    logo: 'images/rstudio-logo.png'
+    favicon: 'images/favicon.ico'
+    palette:
+        primary: white
+        accent: #75AADB
+    font:
+        text: Source Sans Pro
 
 nav:
     - Home: index.md

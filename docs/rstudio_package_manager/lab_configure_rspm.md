@@ -187,30 +187,30 @@ There are various methods to check the health of your RSPM instance.
 
 1. View the RSPM application logs:
 
-```sh
-sudo cat /var/log/rstudio-pm.log
-```
+    ```sh
+    sudo cat /var/log/rstudio-pm.log
+    ```
 
 2. View the RSPM access logs:
 
-```sh
-sudo cat /var/log/rstudio-pm.access.log
-```
+    ```sh
+    sudo cat /var/log/rstudio-pm.access.log
+    ```
 
 3. Check the status of your RSPM license:
 
-```sh
-sudo /opt/rstudio-pm/bin/license-manager status
-```
+    ```sh
+    sudo /opt/rstudio-pm/bin/license-manager status
+    ```
 
 4. Run RSPM diagnostics:
 
-```sh
-sudo /opt/rstudio-pm/bin/run-diagnostics
-```
+    ```sh
+    sudo /opt/rstudio-pm/bin/run-diagnostics
+    ```
 
-View diagnostics output:
+    View diagnostics output:
 
- ```sh
- cat rspm_diagnostics-report.txt
- ```
+    ```sh
+    cat rspm_diagnostics-report.txt
+    ```
