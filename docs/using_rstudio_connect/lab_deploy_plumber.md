@@ -14,12 +14,12 @@ setwd("05_api")
 rsconnect::deployAPI(".", server = ..., account = ...)
 ```
 
-Try out the Swagger Docs for the API
+Try out the Swagger Docs for the API.
 
 
 ## Task: Make an authenticated request
 
-Your task is to restrict access to the published API, then make an authenticated request from the linux terminal
+Your task is to restrict access to the published API, then make an authenticated request from the linux terminal.
 
 * First, restrict access to the sample API to authenticated users only.
 * Then, generate an API key in Connect

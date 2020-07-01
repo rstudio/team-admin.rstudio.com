@@ -16,7 +16,7 @@ This exercise is broken into three parts:
 
 1. Explore LDAP and obtain information from the `.ldif` file
 1. Use `sssd` to configure your server with LDAP
-2. Use PAM to configure RStudio Server Pro
+1. Use PAM to configure RStudio Server Pro
 
 
 !!! tip
@@ -48,7 +48,7 @@ This exercise is broken into three parts:
 
 
 
-### Configure RStudio Server Pro with LDAP
+### How this exercise works
 
 We have set up an LDAP server for you.
 
@@ -62,39 +62,38 @@ Successful completion involves:
 
 
 
-### A review of LDAP and sssd
+### A review of LDAP, sssd and ldif
 
-LDAP is a **protocol**.
+LDAP is a protocol.
 
-LDAP is implemented in **many** different ways.
-
-* Active Directory uses LDAP to communicate
-* OpenLDAP has different standards than Active Directory, for instance
+* LDAP is implemented in **many** different ways. For example:
+    * Active Directory uses LDAP to communicate
+    * OpenLDAP has different standards than Active Directory, for instance
   
 `sssd` is a system service
 
 * Makes LDAP a system identity and authentication provider
-* This means that **all** local system accounts are **technically** already provisioned even if they do not **actually** exist yet
+* This means that all local system accounts are technically already provisioned even if they do not actually exist yet
 
     * This is `sssd` magic!
+
+
+LDIF is a file format (with `.ldif` file extension):
+
+* LDAP Data Interchange Format
+* A standard plaintext format for representing LDAP objects
 
 
 
 ### Handy tools
 
-The `ldapsearch` utility
+The `ldapsearch` utility:
 
 * A command line utility
 * Used to interface with a remote LDAP identity provider
 * Query for LDAP entries
 
-Files in the `.ldif` format
-
-
-* LDAP Data Interchange Format
-* A standard plaintext format for representing LDAP objects
-
-The `pamtester` utility
+The `pamtester` utility:
 
 * A command line utility
 * Used to test PAM configuration
@@ -655,36 +654,26 @@ Log into RStudio Server Pro in your browser using one of the users from the LDAP
 
 ### Failure ?!
 
-Some things that could go wrong:
-
-1. You get the warning message:
-
-    ```
-    WARNINGS: The auth-pam-sessions-enabled option requires the PAM profile 
-    /etc/pam.d/rstudio-session however that profile does not exist. 
-    Disabling support for PAM sessions.
-    ```
-
-    This probably means:
-
-    * you forgot to copy the PAM Profile files in the task "Set up PAM profiles", OR 
-    * you didn't edit the `/etc/rstudio/rserver.conf` file.
-
-
-2. You forgot the URL for your RStudio Server Pro session
-
-    * Go back to https://rstd.io/class and bookmark the landing page.
+!!! failure "Some things that could go wrong:"
+    1. You get the warning message:
+        ```
+        WARNINGS: The auth-pam-sessions-enabled option requires the PAM profile 
+        /etc/pam.d/rstudio-session however that profile does not exist. 
+        Disabling support for PAM sessions.
+        ```
+        This probably means:
+        * you forgot to copy the PAM Profile files in the task "Set up PAM profiles", OR 
+        * you didn't edit the `/etc/rstudio/rserver.conf` file.
+    2. You forgot the URL for your RStudio Server Pro session
+        * Go back to https://rstd.io/class and bookmark the landing page.
+    3. You logged in as `admin-user`
+        * Remember that you now use LDAP to authenticate, and `admin-user` is not an authenticated user in LDAP
+        * Log in as a user that exists, and that has a home folder, e.g. `jen`
 
 
-3. You logged in as `admin-user`
+## Security best practices
 
-    * Remember that you now use LDAP to authenticate, and `admin-user` is not an authenticated user in LDAP
-    * Log in as a user that exists, and that has a home folder, e.g. `jen`
-
-
-## Closing thought: Security best practices
-
-!!! note
+!!! note "Closing thought:"
 
     * In this course we supplied a demonstration `sssd` config file (`s-answer.txt`), and in this example file encryption is specifically disabled.
     * Note that this is a test setup, without encryption enabled.  This is not suggested for anything but testing, as your credentials will pass over the wire in plain text!

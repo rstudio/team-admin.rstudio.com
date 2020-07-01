@@ -64,9 +64,9 @@ Address = http://ec2-00-000-00-000.us-east-2.compute.amazonaws.com/rsconnect
 
 It is possible to disable the HTTP warning.
 
-(For your sanity during the course. Do not do this in production!)
+(For your sanity during the course. Do not do this in production without a very good reason!)
 
-![image](assets/http_no_warning.png", width="80%")`
+![image](assets/http_no_warning.png)`
 
 ```gcfg
 [HTTP]
@@ -144,7 +144,7 @@ It is helpful to add a `[Debug]` section to the Connect configuration to enable 
 Log = ldap
 ```
 
-For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/dap#openldap-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determin the necessary changes.
+For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/dap#openldap-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determine the necessary changes.
 
 Hint: You can get the LDAP structure for user `jen` with:
 
@@ -218,7 +218,7 @@ You can get the same benefit of fast binary installs on RStudio Connect by setti
 
 To achieve this, you have to configure Connect to point to an instance of RStudio Package Manager.
 
-Since you haven't yet configured RStudio Package Manager on your VM, you will temporarily point Connect to a demonstration instance of RStudio Package Manager at [demo.rstudiopm.com](https://demo.rstudiopm.com)
+Since you haven't yet configured RStudio Package Manager on your VM, you will temporarily point Connect to a demonstration instance of RStudio Package Manager at [packagemanager.rstudio.com](https://packagemanager.rstudio.com)
 
 ### Override the Package Repository
 
@@ -226,7 +226,7 @@ Read the [documentation](https://docs.rstudio.com/connect/admin/getting-started/
 
 ```gcfg
 [RPackageRepository "CRAN"]
-URL = "https://demo.rstudiopm.com/cran/__linux__/bionic/latest"
+URL = "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"
 ```
 
 Then restart RStudio Connect.
