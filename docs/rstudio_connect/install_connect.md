@@ -1,7 +1,7 @@
 
 ## In this session
 
-In this sessions, you:
+In this session, you:
 
 * Prepare to install RStudio Connect
     - Pre-requisites
@@ -34,9 +34,9 @@ Refer to the product documentation at:
 * [https://docs.rstudio.com/connect/admin](https://docs.rstudio.com/connect/admin)
 
 
-This course is about teaching you to fish, not giving fish.
+This course is about teaching you to fish, not giving you fish.
 
-* Open up the guide, this will be a resource throughout the course and will help you decide which branch to pick.
+* Open up the guide, this will be a useful resource throughout the course and will help you decide which branch to pick.
 
 
 
@@ -65,7 +65,7 @@ Typical questions
     * The support article [Configuration and sizing recommendations](https://support.rstudio.com/hc/en-us/articles/115002344588-Configuration-and-sizing-recommendations) provides some suggestions.
 
 * Docker?
-    * Connect is designed to run on a persistent server, think SharePoint.
+    * Connect is designed to run on a persistent server (think Sharepoint).
     * As you will see, it internally runs and isolates user submitted code, manages processes, sandboxes permissions, etc.
     * You will get into this more, but all these aspects make it a bit of an odd fit for Docker. That said, it's possible, but must be run in a [privileged container](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities).
     * Running in a privileged container may reduce the amount of process isolation that Docker offers. Whether it is still worth dockerizing is a choice you must make.
@@ -89,11 +89,8 @@ Installation of RStudio Connect requires root permissions.
 
 
 
-## System requirements
+## System requirement: R
 
-
-
-### System requirement: R
 
 Where can R be installed?
 
@@ -105,18 +102,14 @@ which R
 Rscript -e 'R.home()'
 ```
 
-Notice that neither path includes a version.
-
-
-
-### System requirement: Build R from pre-compiled binaries
-
 
 RStudio Connect is all about "deploy and forget". This means you don't want existing content to break when R is upgraded.
 
 To achieve this, RStudio Connect supports **multiple versions of R**. 
 
-### Recommended best practice:
+!!! tip
+    Our recommended best practice is to always install R from pre-compiled binaries
+
 
 * Install R from [pre-compiled binaries](https://docs.rstudio.com/resources/install-r/)
 * Store in version specific locations, for example:
@@ -126,8 +119,6 @@ To achieve this, RStudio Connect supports **multiple versions of R**.
   - `/opt/R/3.6.1`
     
 
-
-### Upgrading R
 
 Because Connect supports multiple versions of R, the upgrading decision is easy:
 
@@ -159,21 +150,6 @@ A: It depends. You should be able to answer this question by the end of the cour
 
 
 
-### Installing Connect: Docker?
-
-Q: Can I use Connect in a Docker container?
-
-A: Possible but not recommended. 
-
-
-* RSC is designed to run on a persistent server (think SharePoint).
-* As you'll see, it internally runs and isolates user submitted code, manages processes, sandboxes permissions, etc.
-* All these aspects make it a bit of an odd fit for Docker.
-* That said, it's possible, but will require a [privileged container](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities). This means some of the process isolation offered by docker will not be available.
-
-
-
-
 ### Downloading Connect
 
 Download page links to current version:
@@ -195,9 +171,7 @@ Download page links to current version:
 
 
 
-
-
-Next complete the exercise.
+Next complete the lab exercise.
 
 Signs of success:
 

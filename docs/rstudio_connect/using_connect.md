@@ -1,7 +1,7 @@
 
 ## In this session
 
-In this session you:
+In this session you will:
 
 * Connect your RStudio IDE to Connect
 * Deploy a simple app
@@ -12,10 +12,6 @@ In this session you:
 ## Connecting the IDE
 
 
-
-
-### Connecting your IDE to Connect
-
 To deploy content from the IDE to Connect, you first have to set up a connection, i.e. tell the IDE where to find Connect.
 
 
@@ -25,14 +21,6 @@ To deploy content from the IDE to Connect, you first have to set up a connection
 Enter your server address: 'http://<host_name>/rsconnect'
 
 ![image](assets/ip_address.png)
-
-
-???
-
-Have them do this now. Talk about what happens and show them the resulting file.
-
-
-
 
 
 
@@ -59,27 +47,6 @@ Why do this?
 * HINT: This theme will come up again
 
 
-???
-
-Run the following as a demo:
-
-```r
-## R
-## creates a directory
-rsconnect::accountsConfigDir()
-```
-
-```sh
-## sh
-## shows a few .dcf files
-tree <directory>
-cat <result.dcf> 
-```
-
-
-
-
-
 
 ### Demo
 
@@ -89,34 +56,23 @@ Deploy an app to Connect
 * Select "Run App"
 * In the upper-right hand corner, "Publish"
 
-???
-
-* Observe how long it takes
-
-
-
+???+ Question
+    How long did the deployment take?
 
 
 ### That was pretty easy ...
 
 ... make a trivial change in the app and deploy again.
 
-Write down your observations.
-
-???
-
-* Much faster
-* App failed 
-
+???+ Question
+    How did this deployment differ from the first?
+    Was it faster? Why?
 
 
 
 ## Understanding failure
 
 
-
-
-### Understanding failure
 
 Deploying content to Connect is like taking a kid from home to daycare.
 
@@ -131,8 +87,6 @@ Deploying content to Connect is like taking a kid from home to daycare.
 
 
 
-
-
 ### Explore some troubleshooting tools
 
 * Deployment Log
@@ -141,8 +95,6 @@ Deploying content to Connect is like taking a kid from home to daycare.
 * Connect Sandbox 
 
 ![image](assets/tools.png)
-
-
 
 
 
@@ -190,40 +142,28 @@ Bundle requested R version 3.4.1; using /usr/lib64/R/bin/R which has version 3.4
 
 
 
-
 ### Components of the bundle
 
-Part 1: Create Bundle on Client
-
-Part 2: Upload Bundle on RSC
-
-Part 3: Restore Bundle
+* Part 1: Create Bundle on Client
+* Part 2: Upload Bundle to RSC
+* Part 3: Restore Bundle
 
 
+### Part 1: Create Bundle on Client
 
-
-### Components of the bundle: Create and upload
-
-Part 1: Create Bundle on Client
 
 ```sh
 Preparing to deploy application...DONE
 ```
 
-Part 2: Upload Bundle on RSC
+### Part 2: Upload Bundle to RSC
 
 ```sh
 Uploading bundle for application: 1...DONE
 Deploying bundle: 1 for application: 1 ...
 ```
 
-
-
-
-
-### Components of the bundle: Restore
-
-Part 3: Restore Bundle
+### Part 3: Restore Bundle
 
 ```sh
 Bundle requested R version 3.4.1; using /usr/lib64/R/bin/R which has version 3.4.1 
@@ -340,7 +280,7 @@ You can download the bundle from Connect, and the bundle id corresponds to the i
 
 
 
-### Part 1: Bundle (What are you sending to daycare?)
+### Bundle (What are you sending to daycare?)
 
 To understand what happened in RStudio, download the bundle from Connect. 
 
@@ -352,16 +292,11 @@ To understand what happened in RStudio, download the bundle from Connect.
 ![image](assets/bundle_source_versions_detail.png)
 
 
-???
-
-Download the bundle from RSC and show the contents of the `packrat.lock` file and the `manifest.json` file. Have them do this and discuss the results.
+Familiarise yourself with the contents of the `packrat.lock` file and the `manifest.json` file.
 
 
 
-
-
-
-### Part 1:  Bundle (what's in the bundle?)
+### Bundle contents (what's in the bundle?)
 
 1. packrat.lock
 
@@ -383,11 +318,7 @@ Download the bundle from RSC and show the contents of the `packrat.lock` file an
 
 
 
-
-
-
-
-### Part 1: Bundle (deployment record)
+### Bundle deployment record
 
 Deploying content creates a deployment record in the `rsconnect` folder.
 
@@ -405,65 +336,64 @@ url: https://colorado.rstudio.com:3939/admin_training_overview/
 when: 1534319482.42767
 ```
 
-Mostly used to help the IDE identify "re-deploying"
+Mostly used to help the IDE identify "re-deploying" scenarios.
 
 
-???
 
-Show the contents of the rsconnect folder
-
-
+Have a look at the contents of the rsconnect folder. 
 
 
 
 
-### Part 2: Upload (How do you get to daycare?)
 
-HTTP Requests
+
+### Upload (How do you get to daycare?)
+
+The bundle is uploaded via the Connect APIs using either HTTP or HTTPS.
+
+Remember, we're using plain HTTP for this environment, but a production environment should almost certainly use HTTPS.
+
 
 ![image](assets/ssl.png)
 
 
-???
-
-Discuss the pitfalls of custom SSL certs.
-
+!!! tip
+    Custom SSL certificates can be tricky to deal with. Whether you're using a self-signed certificate or a custom Certificate Authority, please ensure you familiarise yourself with the [Connect SSL documentation](https://docs.rstudio.com/rsc/configuration/ssl-certificates/).
 
 
 
-### Part 3: Restore (What happens at daycare?)
+### Restore (What happens at daycare?)
 
-Unpacking the bundle --> installing the packages
+The bundle is unpacked and Connect uses that data to install the required packages.
+
+Essentially, the bundle contains the app itself as well as data about the app environment, eg. R version and packages used.
+
+Connect will compare these to the installed versions of R it knows about as well as it's cache of pre-downloaded packages. Any package versions required and not already in the cache will be downloaded from the package repo.
 
 ![image](assets/bundle.png)
 ![image](assets/installing_packages.png)
-
-???
-
-This slide is all about unpacking the bundle and installing packages.
-
 
 
 
 ### Where did the bundle go?
 
-The internal architecture of RStudio Connect:
+The internal storage architecture of RStudio Connect:
 
 ![image](assets/connect_architecture.png)
 
 
-???
+Application files are stored on the server in the data directory. Metadata about the app, eg package versions used, is stored in the database.
 
-Talk about backups and migrations here? 
+This is useful information if you ever need to migrate from using the internal storage and database on a single server, to a shared database and storage for a high availability environment.
 
-Have them navigate to `/var/lib/rstudio-connect` and run the `tree` command.
-
-
+To see the RStudio Connect files navigate to `/var/lib/rstudio-connect` and run the `tree` command.
 
 
 
 
-### Part 3: Restore (What happens at daycare?)
+
+
+### Restore (What happens at daycare?)
 
 Connect installs packages from repositories.
 
@@ -480,44 +410,31 @@ This is ok!
 
 But it means Connect can't use a system library, because those can only have 1 version of a package.
 
-???
-
-Main takeaway, RSC has to be able to install the package:     
-
-- Repo access (and what to do offline)
-- System Libraries 
+This is therefore an important architectural consideration that RSC must be able to install packages from CRAN or a CRAN-like repository.
 
 
 
 
-
-
-### Part 3: Restore
+### Restore issues
 
 Most common sources of pain:
 
 * Repository is not available
-  - Solution: Set up an offline repository (RStudio Package Manager) 
+    - Solution: Set up an offline repository (RStudio Package Manager) 
   
-* Package can not be installed (System Libraries) 
-  - Solution: Add package to the system library.
-  - Good news is the 80:20 rule applies.
-
-
-???
-
-Main takeaway, RSC has to be able to install the package:   
-* Repo access (and what to do offline)
-* System Libraries 
+* Package can not be installed due to missing system level dependency. 
+    - Solution: Add package to the system library, eg via `apt` or `yum`.
+    - Good news is the 80:20 rule applies in that 80% of packages have no system level dependencies.
 
 
 
 
 
+### Restore (daycare rules are different)
 
-### Part 3: Restore (daycare rules are different)
+The way that applications are run in the development environment differs from how they're run on connect.
 
-RStudio Connect provides process management:
+RStudio Connect provides process management which effectively isolates the applications from one another and the host operating system:
 
 * [sandboxing](https://docs.rstudio.com/connect/admin/process-management/#sandboxing)
 * isolation for apps with `tmp` [directory masking](https://docs.rstudio.com/connect/admin/process-management/#temp-directory)
@@ -534,20 +451,13 @@ RStudio Connect provides process management:
 
 
 
-
-
-
-### Sandboxing
-
 The Connect admin guide on [sandboxing](https://docs.rstudio.com/connect/admin/process-management/#sandboxing):
 
 > 'The RStudio Connect process runs as the root user. It needs escalated privileges to allow binding to protected ports and to create "unshare" environments that contain the R processes.'
 
 This is why Connect needs to run as root!
 
-
 ![image](assets/sandbox.png)
-
 
 
 
@@ -559,9 +469,9 @@ Typically Connect will look on CRAN and github for these packages.  However, if 
 
 * Create an internal, [private repository](https://docs.rstudio.com/connect/admin/r/package-management/#private-repositories)
 * Use [external package installation](https://docs.rstudio.com/connect/admin/r/package-management/#external-package-installation)
-    - a form of white listing (at your own risk...)
+    - a form of installation override (at your own risk...)
 * Use RStudio Package Manager
-    - You cover this in module 7 and 8 of this course
+    - You cover this in the RSPM sections of this course
 
 
 
@@ -589,9 +499,6 @@ Possible values:
 ## Redeployment
 
 
-
-### Redeployment
-
 Re-deployment of apps is substantially faster than the first deployment.
 
 *  The reason is that Connect creates a cache of binary packages.
@@ -601,30 +508,20 @@ Hint: You can see installation from cache in the deployment log
 
 
 
-
-
-
 ### Define "collaborator"
 
 * Collaborate on application settings 
 * Collaborate on code (co-publish)
-    - Start by sharing the `rsconnect` folder
+    - Start by sharing the `rsconnect` folder (most commonly via git or another VCS)
 
 ![image](assets/collaborator.png)
 
-
-???
-
-Show an example of publishing to content that someone else deployed (just so they can see what the IDE looks like)
-
+Notice in the image above that the "Publish From Account" and "Publish To Account" are different accounts.
 
 
 
 ## Content discoverability
 
-
-
-### Content discoverability
 
 ![image](assets/being_disorganized.png)
 
@@ -680,24 +577,18 @@ Content **viewers** can search content by tag.
 ## Vanity URLs
 
 
-
-
-### Vanity URLs
-
 * Vanity URLS are useful to maintain a "static" URL even if you redeploy the content to a different Connect content ID.
 
 * With [PublishersCanManageVanities](https://docs.rstudio.com/connect/admin/appendix/configuration/#Authorization.PublishersCanManageVanities) set to `true` administrators and publishers can create vanity URLs.
 
 ![image](assets/creating_vanity_url.png)
+
 Creating a vanity URL
 
 
 ![image](assets/viewing_vanity_url.png)
+
 Viewing a vanity URL
-
-
-
-
 
 
 ## Other content deployment options
@@ -709,12 +600,18 @@ Viewing a vanity URL
 
 ![image](assets/connect_deployment_methods.png)
 
+The image above shows the "standard" pattern for deploying to Connect. A developer creates an application inside the IDE and when they're happy with it, they push their applcaition code to Connect.
+
+It is possible however, to perform many of the same tasks in a continuous integration tool, such as [Jenkins](https://www.jenkins.io).
+
+The key differences from the "standard" model are:
+
 * Authentication: machine to machine
-  - Jenkins needs a key 
-* Environment: Jenkins must create the bundle.
-  - Implies Jenkins must replicate the dev environment 
-* Testing: #2 sounds like a pain.
-  - You can take advantage of your work for a very powerful side effect: Shiny unit testing ([`shinytest`](https://rstudio.github.io/shinytest/))
+    - Jenkins needs a key 
+* Jenkins must create the bundle.
+    - Implies Jenkins must replicate the dev environment with R and packages and so on
+* Automated testing
+    - You can take advantage of this sort of configuration for a very powerful side effect: Shiny app testing ([`shinytest`](https://rstudio.github.io/shinytest/))
 
 Other resources:
 * https://solutions.rstudio.com/deploy/methods/
@@ -726,14 +623,10 @@ Other resources:
 
 ### Publishing apps from git / github
 
-![image](assets/connect_deployment_methods.png)
 
+You can also deploy artefacts to Connect directly from a git repository (including github), bypassing the need for a CI/CD tool like Jenkins.
 
-You can also deploy artefacts to Connect directly from a git repository (including github)
-
-Resources:
-
-* https://solutions.rstudio.com/deploy/methods/#deploying-from-git-repositories
+See [Deploying from git repositories](https://solutions.rstudio.com/deploy/methods/#deploying-from-git-repositories) in the admin guide for more information.
 
 
 
@@ -743,12 +636,12 @@ Resources:
 
 ### Managing Connect in an offline environment
 
-Need to set up a package repository that Connect can access:
+You'll need to set up a package repository that Connect can access.
 
-Several ways to do this, including:
+There are several ways to do this, including:
 
-* `miniCRAN`
-* `rsync`
+* manually maintaining your own CRAN-like repository with a package like `miniCRAN`
+* Maintaining your own CRAN mirror using `rsync`
 
 **The recommended option:**
 
@@ -773,11 +666,7 @@ Migrations:
 
 ## Your turn
 
-
-
-
-
-Next complete the exercise.
+Next complete the exercise in the next section.
 
 Signs of success:
 

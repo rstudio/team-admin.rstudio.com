@@ -80,7 +80,7 @@ Hint: Use the folder `/usr/local/src` to store the downloads after the installat
 
 ## Success
 
-How to know you did it?
+How do you know it worked?
 
 ```sh
 sudo tail /var/log/rstudio-connect.log
@@ -94,10 +94,10 @@ You should see something like this:
 2019/01/10 22:25:07 Starting HTTP listener on :3939
 ```
 
-The last line means Connect is listening on port 3939
+The last line means Connect is listening on port 3939.
 
 
-You can also open the connect landing page (from your course login page)
+You can also open the connect landing page (from your course login page).
 
 ![images](assets/welcome.jpg)
 
@@ -109,6 +109,6 @@ Not yet. More choices to make:
 * Initial configuration, including email
 * Auth Provider
 
-You cover these in the next section
+You will cover these in the next section.
 
 

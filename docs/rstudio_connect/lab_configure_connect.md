@@ -64,9 +64,9 @@ Address = http://ec2-00-000-00-000.us-east-2.compute.amazonaws.com/rsconnect
 
 It is possible to disable the HTTP warning.
 
-(For your sanity during the course. Do not do this in production!)
+(For your sanity during the course. Do not do this in production without a very good reason!)
 
-![image](assets/http_no_warning.png", width="80%")`
+![image](assets/http_no_warning.png)`
 
 ```gcfg
 [HTTP]
@@ -144,7 +144,7 @@ It is helpful to add a `[Debug]` section to the Connect configuration to enable 
 Log = ldap
 ```
 
-For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/dap#openldap-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determin the necessary changes.
+For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/dap#openldap-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determine the necessary changes.
 
 Hint: You can get the LDAP structure for user `jen` with:
 
