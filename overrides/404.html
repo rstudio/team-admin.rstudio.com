@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block libs %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+{% endblock %}
+
 {% block content %}
 
 <div>
@@ -23,12 +27,20 @@
   </li>
 </ul>
 
-<p>
-  or use the Search functionality on the top navigation bar;
-</p>
 
 <p>
-  or use the menu on the left sidebar.
+  Alternatively, use:
+  <ul>
+    <li>
+      the <i class="fas fa-search"></i> search functionality on the top navigation bar;
+    </li>
+    <li>
+      the <i class="fas fa-bars"></i> menu on the left sidebar.
+    </li>
+  </ul>
 </p>
+
 
 {% endblock %}
+
+
