@@ -80,3 +80,52 @@ extra_css:
 
 extra_javascript:
     - assets/asciinema-player.js
+
+plugins:
+    - redirects:
+        redirect_maps:
+            overview/concept-map:      overview.md
+            overview/coarse-goals:     overview.md
+            overview/assumptions:      overview.md
+            overview/pre-requirements: overview.md
+            overview/how-it-works:     overview.md
+            get-started:                 getting_started/how_it_works.md
+            get-started/getting-started: getting_started/how_it_works.md
+            get-started/ssh-in:          getting_started/lab_ssh_in.md
+            install-r:                    r/install_r.md
+            install-r/install-r:          r/install_r.md
+            install-r/install-r-exercise: r/lab_install_r.md
+            install-rsp/RSP:                      rstudio_server_pro/install_rsp.md
+            install-rsp/install-rsp-exercise:     rstudio_server_pro/lab_install_rsp.md
+            install-rsp/security:                 rstudio_server_pro/security.md
+            install-rsp/security-rsp-exercise:    rstudio_server_pro/lab_security.md
+            install-rsp/binary-packages:          rstudio_server_pro/startup_and_packages.md
+            install-rsp/binary-packages-exercise: rstudio_server_pro/lab_startup_and_packages.md
+            install-connect:                           rstudio_connect/install_connect.md
+            install-connect/install-connect:           rstudio_connect/install_connect.md
+            install-connect/install-connect-exercise:  rstudio_connect/lab_install_connect.md
+            install-connect/configure-connect:         rstudio_connect/configure_connect.md
+            install-connect/configure-connect-exercise: rstudio_connect/lab_configure_connect.md
+            install-connect/using-connect:          using_rstudio_connect/using_connect.md
+            install-connect/using-connect-exercise: using_rstudio_connect/lab_using_connect.md
+            use-connect:                            using_rstudio_connect/deploy_shiny.md
+            use-connect/deploy-shiny:               using_rstudio_connect/deploy_shiny.md
+            use-connect/deploy-shiny-exercise:      using_rstudio_connect/lab_deploy_shiny.md
+            use-connect/deploy-markdown:            using_rstudio_connect/deploy_markdown.md
+            use-connect/deploy-markdown-exercise:   using_rstudio_connect/lab_deploy_markdown.md
+            use-connect/deploy-plumber:             using_rstudio_connect/deploy_plumber.md
+            use-connect/deploy-plumber-exercise:    using_rstudio_connect/lab_deploy_plumber.md
+            install-rspm:                         rstudio_package_manager/install_rspm.md
+            install-rspm/install-rspm:            rstudio_package_manager/install_rspm.md
+            install-rspm/install-rspm-exercise:   rstudio_package_manager/lab_install_rspm.md
+            install-rspm/configure-rspm:          rstudio_package_manager/configure_rspm.md
+            install-rspm/configure-rspm-exercise: rstudio_package_manager/lab_configure_rspm.md
+            use-rspm:                                  using_rstudio_package_manager/using_rspm_repositories.md
+            use-rspm/using-rspm-repositories:          using_rstudio_package_manager/using_rspm_repositories.md
+            use-rspm/using-rspm-repositories-exercise: using_rstudio_package_manager/lab_using_rspm_repositories.md
+            use-rspm/using-rspm-packages:              using_rstudio_package_manager/using_rspm_packages.md
+            use-rspm/using-rspm-packages-exercise:     using_rstudio_package_manager/lab_using_rspm_packages.md
+            troubleshoot:                       troubleshooting/troubleshoot.md
+            troubleshoot/troubleshoot:          troubleshooting/troubleshoot.md
+            troubleshoot/troubleshoot-exercise: troubleshooting/lab_troubleshoot.md
+
