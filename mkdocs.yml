@@ -1,6 +1,9 @@
 site_name: "RStudio Team :: Admin Training"
 repo_url: https://github.com/rstudio/team-admin.rstudio.com
 copyright: RStudio, PBC. All Rights Reserved.
+google_analytics:
+    - UA-20375833-3
+    - auto
 
 theme:
     name: material
