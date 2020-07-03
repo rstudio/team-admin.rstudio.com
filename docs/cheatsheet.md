@@ -442,18 +442,7 @@ echo "alias rspm='/opt/rstudio-pm/bin/rspm'" >> ~/.bashrc
 
 
 
-<!-- Open all external links in a new tab (https://yihui.org/en/2018/09/target-blank/) -->
 <script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-
-
 // Add cheatsheet to md-typeset class, to use cheatsheet.css
 (function() {
   var el = document.getElementsByClassName('md-typeset')[0];
