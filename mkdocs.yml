@@ -20,45 +20,45 @@ nav:
     - Home: index.md
     - Overview: overview.md
     - 1. Getting started:
-        - 1.1 How the course works: getting_started/how_it_works.md
-        - 1.2 Lab - SSH in:        getting_started/lab_ssh_in.md
+        - 1.1 How the course works: getting-started/how-it-works.md
+        - 1.2 Lab - SSH in:        getting-started/lab-ssh-in.md
     - 2. R:
-        - 2.1 Installing R:     r/install_r.md
-        - 2.1 Lab:              r/lab_install_r.md
+        - 2.1 Installing R:     r/install-r.md
+        - 2.1 Lab:              r/lab-install-r.md
     - 3. RStudio Server Pro:
-        - 3.1 Install RStudio Server Pro:                rstudio_server_pro/install_rsp.md
-        - 3.1 Lab:                                       rstudio_server_pro/lab_install_rsp.md
-        - 3.2 RStudio Server Pro Security:               rstudio_server_pro/security.md
-        - 3.2 Lab:                                       rstudio_server_pro/lab_security.md
-        - 3.3 RStudio Server Pro Startup and packages:   rstudio_server_pro/startup_and_packages.md
-        - 3.3 Lab:                                       rstudio_server_pro/lab_startup_and_packages.md
+        - 3.1 Install RStudio Server Pro:                rstudio-server-pro/install-rsp.md
+        - 3.1 Lab:                                       rstudio-server-pro/lab-install-rsp.md
+        - 3.2 RStudio Server Pro Security:               rstudio-server-pro/security.md
+        - 3.2 Lab:                                       rstudio-server-pro/lab-security.md
+        - 3.3 RStudio Server Pro Startup and packages:   rstudio-server-pro/startup-and-packages.md
+        - 3.3 Lab:                                       rstudio-server-pro/lab-startup-and-packages.md
     - 4. RStudio Connect:
-        - 4.1 Installing RStudio Connect:   rstudio_connect/install_connect.md
-        - 4.1 Lab:                          rstudio_connect/lab_install_connect.md
-        - 4.2 Configuring RStudio Connect:  rstudio_connect/configure_connect.md
-        - 4.2 Lab:                          rstudio_connect/lab_configure_connect.md
-        - 4.3 Using RStudio Connect:        rstudio_connect/using_connect.md
-        - 4.3 Lab:                          rstudio_connect/lab_using_connect.md
+        - 4.1 Installing RStudio Connect:   rstudio-connect/install-connect.md
+        - 4.1 Lab:                          rstudio-connect/lab-install-connect.md
+        - 4.2 Configuring RStudio Connect:  rstudio-connect/configure-connect.md
+        - 4.2 Lab:                          rstudio-connect/lab-configure-connect.md
+        - 4.3 Using RStudio Connect:        rstudio-connect/using-connect.md
+        - 4.3 Lab:                          rstudio-connect/lab-using-connect.md
     - 5. Deploying to Connect:
-        - 5.1 Deploying Shiny Apps:         using_rstudio_connect/deploy_shiny.md
-        - 5.2 Lab:                          using_rstudio_connect/lab_deploy_shiny.md
-        - 5.3 Deploying Rmarkdown:          using_rstudio_connect/deploy_markdown.md
-        - 5.4 Lab:                          using_rstudio_connect/lab_deploy_markdown.md
-        - 5.5 Deploying plumber APIs:       using_rstudio_connect/deploy_plumber.md
-        - 5.6 Lab:                          using_rstudio_connect/lab_deploy_plumber.md
+        - 5.1 Deploying Shiny Apps:         using-rstudio-connect/deploy-shiny.md
+        - 5.2 Lab:                          using-rstudio-connect/lab-deploy-shiny.md
+        - 5.3 Deploying Rmarkdown:          using-rstudio-connect/deploy-markdown.md
+        - 5.4 Lab:                          using-rstudio-connect/lab-deploy-markdown.md
+        - 5.5 Deploying plumber APIs:       using-rstudio-connect/deploy-plumber.md
+        - 5.6 Lab:                          using-rstudio-connect/lab-deploy-plumber.md
     - 6. RStudio Package Manager:
-        - 6.1 Installing Package Manager:    rstudio_package_manager/install_rspm.md
-        - 6.1 Lab:                           rstudio_package_manager/lab_install_rspm.md
-        - 6.2 Configuring Package Manager:   rstudio_package_manager/configure_rspm.md
-        - 6.2 Lab:                           rstudio_package_manager/lab_configure_rspm.md
+        - 6.1 Installing Package Manager:    rstudio-package-manager/install-rspm.md
+        - 6.1 Lab:                           rstudio-package-manager/lab-install-rspm.md
+        - 6.2 Configuring Package Manager:   rstudio-package-manager/configure-rspm.md
+        - 6.2 Lab:                           rstudio-package-manager/lab-configure-rspm.md
     - 7. Using Package Manager:
-        - 7.1 Administering Package Manager: using_rstudio_package_manager/using_rspm_repositories.md
-        - 7.1 Lab:                           using_rstudio_package_manager/lab_using_rspm_repositories.md
-        - 7.2 Using Package Manager:         using_rstudio_package_manager/using_rspm_packages.md
-        - 7.2 Lab:                           using_rstudio_package_manager/lab_using_rspm_packages.md
+        - 7.1 Administering Package Manager: using-rstudio-package-manager/using-rspm-repositories.md
+        - 7.1 Lab:                           using-rstudio-package-manager/lab-using-rspm-repositories.md
+        - 7.2 Using Package Manager:         using-rstudio-package-manager/using-rspm-packages.md
+        - 7.2 Lab:                           using-rstudio-package-manager/lab-using-rspm-packages.md
     - 9. Troubleshooting:
         - 9.1 Troubleshooting: troubleshooting/troubleshoot.md
-        - 9.2 Lab:             troubleshooting/lab_troubleshoot.md
+        - 9.2 Lab:             troubleshooting/lab-troubleshoot.md
     - "---": separator.md
     - Cheat sheet:   cheatsheet.md
     - Documentation: documentation.md
@@ -105,43 +105,43 @@ plugins:
             overview/assumptions:      overview.md
             overview/pre-requirements: overview.md
             overview/how-it-works:     overview.md
-            get-started:                 getting_started/how_it_works.md
-            get-started/getting-started: getting_started/how_it_works.md
-            get-started/ssh-in:          getting_started/lab_ssh_in.md
-            install-r:                    r/install_r.md
-            install-r/install-r:          r/install_r.md
-            install-r/install-r-exercise: r/lab_install_r.md
-            install-rsp/RSP:                      rstudio_server_pro/install_rsp.md
-            install-rsp/install-rsp-exercise:     rstudio_server_pro/lab_install_rsp.md
-            install-rsp/security:                 rstudio_server_pro/security.md
-            install-rsp/security-rsp-exercise:    rstudio_server_pro/lab_security.md
-            install-rsp/binary-packages:          rstudio_server_pro/startup_and_packages.md
-            install-rsp/binary-packages-exercise: rstudio_server_pro/lab_startup_and_packages.md
-            install-connect:                           rstudio_connect/install_connect.md
-            install-connect/install-connect:           rstudio_connect/install_connect.md
-            install-connect/install-connect-exercise:  rstudio_connect/lab_install_connect.md
-            install-connect/configure-connect:         rstudio_connect/configure_connect.md
-            install-connect/configure-connect-exercise: rstudio_connect/lab_configure_connect.md
-            install-connect/using-connect:          using_rstudio_connect/using_connect.md
-            install-connect/using-connect-exercise: using_rstudio_connect/lab_using_connect.md
-            use-connect:                            using_rstudio_connect/deploy_shiny.md
-            use-connect/deploy-shiny:               using_rstudio_connect/deploy_shiny.md
-            use-connect/deploy-shiny-exercise:      using_rstudio_connect/lab_deploy_shiny.md
-            use-connect/deploy-markdown:            using_rstudio_connect/deploy_markdown.md
-            use-connect/deploy-markdown-exercise:   using_rstudio_connect/lab_deploy_markdown.md
-            use-connect/deploy-plumber:             using_rstudio_connect/deploy_plumber.md
-            use-connect/deploy-plumber-exercise:    using_rstudio_connect/lab_deploy_plumber.md
-            install-rspm:                         rstudio_package_manager/install_rspm.md
-            install-rspm/install-rspm:            rstudio_package_manager/install_rspm.md
-            install-rspm/install-rspm-exercise:   rstudio_package_manager/lab_install_rspm.md
-            install-rspm/configure-rspm:          rstudio_package_manager/configure_rspm.md
-            install-rspm/configure-rspm-exercise: rstudio_package_manager/lab_configure_rspm.md
-            use-rspm:                                  using_rstudio_package_manager/using_rspm_repositories.md
-            use-rspm/using-rspm-repositories:          using_rstudio_package_manager/using_rspm_repositories.md
-            use-rspm/using-rspm-repositories-exercise: using_rstudio_package_manager/lab_using_rspm_repositories.md
-            use-rspm/using-rspm-packages:              using_rstudio_package_manager/using_rspm_packages.md
-            use-rspm/using-rspm-packages-exercise:     using_rstudio_package_manager/lab_using_rspm_packages.md
+            get-started:                 getting-started/how-it-works.md
+            get-started/getting-started: getting-started/how-it-works.md
+            get-started/ssh-in:          getting-started/lab-ssh-in.md
+            install-r:                    r/install-r.md
+            install-r/install-r:          r/install-r.md
+            install-r/install-r-exercise: r/lab-install-r.md
+            install-rsp/RSP:                      rstudio-server-pro/install-rsp.md
+            install-rsp/install-rsp-exercise:     rstudio-server-pro/lab-install-rsp.md
+            install-rsp/security:                 rstudio-server-pro/security.md
+            install-rsp/security-rsp-exercise:    rstudio-server-pro/lab-security.md
+            install-rsp/binary-packages:          rstudio-server-pro/startup-and-packages.md
+            install-rsp/binary-packages-exercise: rstudio-server-pro/lab-startup-and-packages.md
+            install-connect:                           rstudio-connect/install-connect.md
+            install-connect/install-connect:           rstudio-connect/install-connect.md
+            install-connect/install-connect-exercise:  rstudio-connect/lab-install-connect.md
+            install-connect/configure-connect:         rstudio-connect/configure-connect.md
+            install-connect/configure-connect-exercise: rstudio-connect/lab-configure-connect.md
+            install-connect/using-connect:          using-rstudio-connect/using-connect.md
+            install-connect/using-connect-exercise: using-rstudio-connect/lab-using-connect.md
+            use-connect:                            using-rstudio-connect/deploy-shiny.md
+            use-connect/deploy-shiny:               using-rstudio-connect/deploy-shiny.md
+            use-connect/deploy-shiny-exercise:      using-rstudio-connect/lab-deploy-shiny.md
+            use-connect/deploy-markdown:            using-rstudio-connect/deploy-markdown.md
+            use-connect/deploy-markdown-exercise:   using-rstudio-connect/lab-deploy-markdown.md
+            use-connect/deploy-plumber:             using-rstudio-connect/deploy-plumber.md
+            use-connect/deploy-plumber-exercise:    using-rstudio-connect/lab-deploy-plumber.md
+            install-rspm:                         rstudio-package-manager/install-rspm.md
+            install-rspm/install-rspm:            rstudio-package-manager/install-rspm.md
+            install-rspm/install-rspm-exercise:   rstudio-package-manager/lab-install-rspm.md
+            install-rspm/configure-rspm:          rstudio-package-manager/configure-rspm.md
+            install-rspm/configure-rspm-exercise: rstudio-package-manager/lab-configure-rspm.md
+            use-rspm:                                  using-rstudio-package-manager/using-rspm-repositories.md
+            use-rspm/using-rspm-repositories:          using-rstudio-package-manager/using-rspm-repositories.md
+            use-rspm/using-rspm-repositories-exercise: using-rstudio-package-manager/lab-using-rspm-repositories.md
+            use-rspm/using-rspm-packages:              using-rstudio-package-manager/using-rspm-packages.md
+            use-rspm/using-rspm-packages-exercise:     using-rstudio-package-manager/lab-using-rspm-packages.md
             troubleshoot:                       troubleshooting/troubleshoot.md
             troubleshoot/troubleshoot:          troubleshooting/troubleshoot.md
-            troubleshoot/troubleshoot-exercise: troubleshooting/lab_troubleshoot.md
+            troubleshoot/troubleshoot-exercise: troubleshooting/lab-troubleshoot.md
 
