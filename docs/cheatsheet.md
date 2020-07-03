@@ -4,17 +4,6 @@ cheatsheet: true
 
 # RStudio Team System Admin :: <b>CHEATSHEET</b>
 
-<!-- ribbon from https://codepo8.github.io/css-fork-on-github-ribbon/ -->
-
-<span id="forkongithub">
-  <a href="https://github.com/sol-eng/sys-admin-cheatsheet">Fork me on GitHub</a>
-</span>
-
-<!-- Include iframeResizer library (https://github.com/davidjbradshaw/iframe-resizer) -->
-<script src=https://rstudio-cdn.s3.amazonaws.com/pro-admin/iframeResizer/iframeResizer.contentWindow.min.js></script>
-
-
-
 
 ## Documentation
 
