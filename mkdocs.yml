@@ -91,6 +91,7 @@ extra_css:
     - assets/cheatsheet.css
     - assets/asciinema-player.css
     - assets/external-links.css
+    # - assets/external-links.css
 
 extra_javascript:
     - assets/asciinema-player.js
