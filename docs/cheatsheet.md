@@ -4,17 +4,6 @@ cheatsheet: true
 
 # RStudio Team System Admin :: <b>CHEATSHEET</b>
 
-<!-- ribbon from https://codepo8.github.io/css-fork-on-github-ribbon/ -->
-
-<span id="forkongithub">
-  <a href="https://github.com/sol-eng/sys-admin-cheatsheet">Fork me on GitHub</a>
-</span>
-
-<!-- Include iframeResizer library (https://github.com/davidjbradshaw/iframe-resizer) -->
-<script src=https://rstudio-cdn.s3.amazonaws.com/pro-admin/iframeResizer/iframeResizer.contentWindow.min.js></script>
-
-
-
 
 ## Documentation
 
@@ -453,18 +442,7 @@ echo "alias rspm='/opt/rstudio-pm/bin/rspm'" >> ~/.bashrc
 
 
 
-<!-- Open all external links in a new tab (https://yihui.org/en/2018/09/target-blank/) -->
 <script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-
-
 // Add cheatsheet to md-typeset class, to use cheatsheet.css
 (function() {
   var el = document.getElementsByClassName('md-typeset')[0];
