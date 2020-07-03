@@ -1,0 +1,14 @@
+/* Display an icon after external links */
+div.md-content a[href^="http://"]:not([href*="test.rstudio.com"]):after,
+div.md-content a[href^="https://"]:not([href*="test.rstudio.com"]):after,
+div.md-content a[href^="//"]:not([href*="test.rstudio.com"]) {
+    font-family: "FontAwesome";
+    content: " \f08e";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 70%;
+    vertical-align: top;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 3px;
+}
