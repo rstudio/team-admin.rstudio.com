@@ -291,7 +291,7 @@ Somewhere else                                 | Going to need proxied auth.
 
 In this class you will integrate RStudio Connect with the LDAP server on the leader instance for this classroom.
 
-This is similar to what you will do most likely do in your organization, if LDAP or Active Directory is used. However, the details in your organization will be different. Be sure to get in contact with the respective IT team and refer to the [LDAP section in the admin guide](https://docs.rstudio.com/connect/admin/authentication.html#authentication-ldap).
+This is similar to what you will do most likely do in your organization, if LDAP or Active Directory is used. However, the details in your organization will be different. Be sure to get in contact with the respective IT team and refer to the [LDAP section in the admin guide](https://docs.rstudio.com/connect/admin/authentication/ldap/).
 
 Hint, use the [following setting](https://docs.rstudio.com/connect/admin/authentication/ldap/#ldap-or-ad-configuration-settings) to get more descriptive messages in your log file.
 
