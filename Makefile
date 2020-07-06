@@ -18,4 +18,4 @@ serve: ## Serve the site for local development
 help:  ## Show this help menu
 	@grep -E '^[0-9a-zA-Z_-]+:.*?##.*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?##"; OFS="\t\t"}; {printf "\033[36m%-30s\033[0m %s\n", $$1, ($$2==""?"":$$2)}'
 
-.PHONY: all test-local-links test-prod-links build serve help
+.PHONY: all linkcheck-local linkcheck-prod linkcheck-staging build serve help
