@@ -568,7 +568,7 @@ pamtester: successfully authenticated
 
 Every RStudio Server user must have a home directory.
 
-From the `r href("admin guide", "https://docs.rstudio.com/ide/server-pro/authenticating-users.html")`:
+From the [admin guide](https://docs.rstudio.com/ide/server-pro/authenticating-users.html):
 
 > R users require local system accounts regardless of what RStudio authentication method you use. You should set up local system accounts manually and then map authenticating users to these accounts. You can also use PAM Sessions to mount your user home directory to the server.
 
