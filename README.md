@@ -1,5 +1,5 @@
 
-# team-admin-training <img src='https://cdn.rstudio.com/pro-admin/pres/include/r-admins-button-small.png' align="right" height="139" />
+# team-admin.rstudio.com <img src='https://cdn.rstudio.com/pro-admin/pres/include/r-admins-button-small.png' align="right" height="139" />
 
 The goal of this course is to teach the fundamentals of administering
 [RStudio Team](https://rstudio.com/products/team/). The target audience for 

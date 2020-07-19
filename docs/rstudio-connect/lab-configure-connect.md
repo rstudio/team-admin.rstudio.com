@@ -144,7 +144,7 @@ It is helpful to add a `[Debug]` section to the Connect configuration to enable 
 Log = ldap
 ```
 
-For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/dap#openldap-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determine the necessary changes.
+For the actual configuration, you can use the [complete configuration example in the admin guide](https://docs.rstudio.com/connect/admin/authentication/ldap/#activate-directory-example-with-bind-credentials) as starting point. Compare the LDAP structure provided in the admin guide with the one used on `leader.example.org` to determine the necessary changes.
 
 Hint: You can get the LDAP structure for user `jen` with:
 
