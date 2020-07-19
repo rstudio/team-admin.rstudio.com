@@ -28,3 +28,15 @@
     <a href='https://xkcd.com/149/'>
     <img src='https://imgs.xkcd.com/comics/sandwich.png' />
     </a>
+
+
+## 502 Bad gateway error
+
+!!! tip "After claiming your VM, you get a '502 Bad Gateway error'"
+
+    Symptom: you get a `502 Bad Gateway error` when clicking on the RStudio product buttons
+
+    You’re getting a bad gateway error because you’ve not yet configured and installed the products on the VM.  Your task is to install the products and then these links will function.  This is described on the previous page in the sequence (the page where you claimed your VM).
+ 
+
+    ![](assets/faq/bad-gateway.jpg)
