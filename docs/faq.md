@@ -43,17 +43,16 @@
 
 ## General linux shell hints
 
-!!! tip "Where to get help on Linux commands"
+The course assumes you have some basic linux experience, meaning that you may struggle with some command if you are relatively new to Linux.
 
-    The course assumes you have some basic linux experience, meaning that you may struggle with some commands if you are relatively new to Linux.
+If you come across a Linux shell command that you don't understand, and you want to learn more, then you could consult online resources.
 
-    If you come across a Linux shell command that you don't understand, and you want to learn more, then you could consult online resources.
-
-    In particular, we have found [Explain Shell](https://explainshell.com/) very useful.
+In particular, we have found [Explain Shell](https://explainshell.com/) very useful.
 
 
-    For example, if you want to know more about the Linux `curl` command, and specifically what the `curl -O` argument does, then type `curl -O` into the ExplainShell explainer:
+For example, if you want to know more about the Linux `curl` command, and specifically what the `curl -O` argument does, then type `curl -O` into the ExplainShell explainer:
 
+<a href='https://explainshell.com/'>
+<img src='/assets/faq/explainshell-curl.png' />
+</a>
 
-
-    [![](/assets/faq/explainshell-curl.png)](https://explainshell.com/)
