@@ -25,9 +25,8 @@
 
     This will also help you understand the evergreen [XKCD sandwich joke](https://xkcd.com/149/):
 
-    <a href='https://xkcd.com/149/'>
-    <img src='https://imgs.xkcd.com/comics/sandwich.png' />
-    </a>
+    [![](https://imgs.xkcd.com/comics/sandwich.png)](https://xkcd.com/149/)
+
 
 
 ## 502 Bad gateway error
@@ -44,16 +43,17 @@
 
 ## General linux shell hints
 
-The course assumes you have some basic linux experience, meaning that you may struggle with some command if you are relatively new to Linux.
+!!! tip "Where to get help on Linux commands"
 
-If you come across a Linux shell command that you don't understand, and you want to learn more, then you could consult online resources.
+    The course assumes you have some basic linux experience, meaning that you may struggle with some commands if you are relatively new to Linux.
 
-In particular, we have found [Explain Shell](https://explainshell.com/) very useful.
+    If you come across a Linux shell command that you don't understand, and you want to learn more, then you could consult online resources.
+
+    In particular, we have found [Explain Shell](https://explainshell.com/) very useful.
 
 
-For example, if you want to know more about the Linux `curl` command, and specifically what the `curl -O` argument does, then type `curl -O` into the ExplainShell explainer:
+    For example, if you want to know more about the Linux `curl` command, and specifically what the `curl -O` argument does, then type `curl -O` into the ExplainShell explainer:
 
-<a href='https://explainshell.com/'>
-<img src='/assets/faq/explainshell-curl.png' />
-</a>
 
+
+    [![](/assets/faq/explainshell-curl.png)](https://explainshell.com/)
