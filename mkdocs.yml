@@ -62,6 +62,7 @@ nav:
     - "---": separator.md
     - Cheat sheet:   cheatsheet.md
     - Documentation: documentation.md
+    - Asking Questions: asking-questions.md
     - Frequently encountered problems: faq.md
 
 markdown_extensions:
