@@ -63,6 +63,7 @@ nav:
     - Cheat sheet:   cheatsheet.md
     - Documentation: documentation.md
     - Frequently encountered problems: faq.md
+    - Asking Questions: asking-questions.md
 
 markdown_extensions:
     - toc:
