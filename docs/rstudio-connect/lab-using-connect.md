@@ -46,10 +46,10 @@ Video review:
 
 **Perform this task from your SSH console**
 
-You can find the example apps for this classroom at `/usr/share/class/pro_admin_training_assets`
+You can find the example apps for this classroom at `/usr/share/class/class-repo`
 
 ```sh
-ls -l /usr/share/class/pro_admin_training_assets/
+ls -l /usr/share/class/class-repo/
 ```
 
 **Your task is to copy these files to `jen`'s home folder**
@@ -65,14 +65,14 @@ Remember:
 So, with your permissions as the `admin-user`, you must copy the course files to the home folder of the RStudio Server user, and set the file ownership so that `jen` owns these files.
 
 ```sh
-sudo cp -r /usr/share/class/pro_admin_training_assets/ /home/jen
+sudo cp -r /usr/share/class/class-repo/ /home/jen
 sudo chown -R jen: /home/jen
 ```
 
 Alternatively you can use the `Terminal` tab within RStudio Server, which provides you with a terminal session for user `jen`:
 
 ```sh
-cp -r /usr/share/class/pro_admin_training_assets/ ~
+cp -r /usr/share/class/class-repo/ ~
 ```
 
 

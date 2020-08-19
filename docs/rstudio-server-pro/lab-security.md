@@ -416,7 +416,7 @@ In this part, you configure your server with `sssd`.
 
 `sssd` helps you integrate your Linux system with LDAP. The configuration template is in your workshop materials.
 
-**Important: You can find the workshop materials at `/usr/share/class/pro_admin_training_assets/`.**
+**Important: You can find the workshop materials at `/usr/share/class/class-repo/`.**
 
 
 Tasks:
@@ -427,7 +427,7 @@ Tasks:
 ??? note "Show me how..."
 
     ```sh
-    sudo cp /usr/share/class/pro_admin_training_assets/s-template.txt /etc/sssd/sssd.conf
+    sudo cp /usr/share/class/class-repo/s-template.txt /etc/sssd/sssd.conf
     ```
 
 
@@ -514,7 +514,7 @@ RStudio Server Pro supports PAM sessions. The PAM sessions work with `sssd` to a
 
 Tasks
 
-1. Copy the following files (**Remember:** workshop materials are under `/usr/share/class/pro_admin_training_assets/`.):
+1. Copy the following files (**Remember:** workshop materials are under `/usr/share/class/class-repo/`.):
 
     What        | From:                  | To:
     -------     | ---------------------- | ----------------------------
