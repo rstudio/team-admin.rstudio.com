@@ -100,7 +100,8 @@ extra_javascript:
 
 plugins:
     - drawio-exporter:
-        drawio_executable: null
+        drawio_args:
+          - --no-sandbox
     - search
     - redirects:
         redirect_maps:
