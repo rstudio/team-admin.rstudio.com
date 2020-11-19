@@ -9,10 +9,6 @@
 ![Concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.drawio.svg)
 
 
-## New map city
-
-![](test.drawio)
-
 ## Course goals
 
 We will provide you with a virtual machine with:
