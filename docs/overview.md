@@ -6,12 +6,8 @@
 * RStudio Connect
 * RStudio Package Manager
 
-![image of a concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.svg)
+![image of a concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.drawio)
 
-
-## New map city
-
-![](test.drawio)
 
 ## Course goals
 
