@@ -99,9 +99,6 @@ extra_javascript:
     - assets/asciinema-player.js
 
 plugins:
-    - drawio-exporter:
-        drawio_args:
-          - --no-sandbox
     - search
     - redirects:
         redirect_maps:
