@@ -11,7 +11,7 @@ _**Hint:** Use `sudo su` or `sudo -i` to open an interactive root prompt instead
 First, add the pre-compiled version of R to the server:
 
 ```sh
-sudo cp /usr/share/class/pro_admin_training_assets/06_troubleshooting/3.0.0.tar.gz /opt/R/
+sudo cp /usr/share/class/class-repo/06_troubleshooting/3.0.0.tar.gz /opt/R/
 cd /opt/R
 sudo tar xf 3.0.0.tar.gz
 ls -la
@@ -87,7 +87,7 @@ Next you determine why an existing version of R on the server does not work for 
 First, execute the `existing_R_version` script to begin the scenario:
 
 ```sh
-cd /usr/share/class/pro_admin_training_assets/06_troubleshooting/
+cd /usr/share/class/class-repo/06_troubleshooting/
 sudo chmod +x existing_R_version
 sudo ./existing_R_version
 ```
@@ -165,7 +165,7 @@ In this exercise, your users have reported that after logging into Rstudio Serve
 To begin the scenario, execute the `r_Session_crash` script:
 
 ```sh
-cd /usr/share/class/pro_admin_training_assets/06_troubleshooting/
+cd /usr/share/class/class-repo/06_troubleshooting/
 sudo chmod +x r_Session_crash
 sudo ./r_Session_crash
 ```
