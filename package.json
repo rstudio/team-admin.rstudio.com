@@ -1,5 +1,33 @@
 {
   "name": "drawioex",
-  "description": "Draw.io exporter",
-  "version": "0.2.0"
+  "version": "0.1.0",
+  "description": "Export images from draw.io documents",
+  "keywords": [
+    "draw.io",
+    "svg",
+    "png"
+  ],
+  "homepage": "https://github.com/negokaz/drawioex",
+  "bugs": {
+    "url": "https://github.com/negokaz/drawioex/issues"
+  },
+  "license": "MIT",
+  "author": "Kazuki Negoro <negokaz@gmail.com> (https://github.com/negokaz/)",
+  "bin" : {
+    "drawioex" : "./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/negokaz/drawioex.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "test/test.sh",
+    "fetch-drawio": "bin/fetch-drawio"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^1.12.2"
+  }
 }
