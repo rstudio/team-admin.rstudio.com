@@ -6,7 +6,7 @@
 * RStudio Connect
 * RStudio Package Manager
 
-![image of a concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.drawio)
+![Concept map linking RStudio Server Pro, RStudio Package Manager and RStudio Connect](assets/team_concept_map.drawio.svg)
 
 
 ## Course goals
