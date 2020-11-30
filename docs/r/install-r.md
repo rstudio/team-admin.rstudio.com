@@ -65,6 +65,7 @@ This offers maximum flexibility, because you can specify the location of the ins
 
 The downside of installing R from source is that it takes some time for the compilation to complete.
 
+If you want to learn more about `make` you can read about it here: [https://swcarpentry.github.io/make-novice/](https://swcarpentry.github.io/make-novice/)
 
 
 
