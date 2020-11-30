@@ -42,7 +42,7 @@ For data science work in production, it is important to provide code stability b
 
 This means that using your Linux package manager for installing R in production is not a good idea.
 
-!!! tip "Recommendation"
+!!! tip 
     We recommend you don't use a Linux package manager to install R.
 
 
