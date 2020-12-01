@@ -64,12 +64,12 @@ You can also refer to the [Requirements](https://docs.rstudio.com/requirements/)
 
 ## Installing R
 
-!!! note 
+!!! tip
     You have already installed R in the previous exercise, but it's worth repeating the point.
     We strongly recommend you **install R from pre-compiled binaries** to get **multiple R versions side-by-side**
 
 
-![image](assets/multiple-r.png)
+![image](assets/multiple-r.drawio.svg)
 
 
 Why?
