@@ -243,14 +243,25 @@ Your organisation most likely have a formal process for obtaining trusted certif
 
 ### Running behind a proxy
 
-RStudio Server Pro is commonly run behind a [reverse proxy](<https://en.wikipedia.org/wiki/Reverse_proxy>)
+RStudio Server Pro is commonly run behind a reverse proxy.
 
-* A proxy provides a firewall between RStudio Server Pro and other servers on the network
 
-* Common proxies include
+!!! quote "From wikipedia:"
+    A reverse proxy is a type of proxy server that retrieves resources on behalf of a client from one or more servers. These resources are then returned to the client, appearing as if they originated from the reverse proxy server itself
 
-    * [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
-    * [Nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+    - https://en.wikipedia.org/wiki/Reverse_proxy
+
+![image](assets/reverse-proxy.drawio.svg)
+
+
+In other words, a reverse proxy taking requests from the Internet and forwarding them to servers in an internal network. Those making requests to the proxy may not be aware of the internal network.  Thus the purpose of the reverse proxy is to provide a firewall between RStudio Server Pro and other servers on the network.
+
+RStudio does not provide the proxy software, but you can open source or commercial software to configure a proxy.  For example:
+
+* [Apache](https://httpd.apache.org/docs/2.4/howto/reverse_proxy.html)
+* [Nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+* F5
+* ...
 
 
 For more information, see the support articles:
@@ -260,8 +271,7 @@ For more information, see the support articles:
 * [Running RStudio Package Manager behind a Proxy](https://support.rstudio.com/hc/en-us/articles/360009983293-Running-RStudio-Package-Manager-behind-a-Proxy)
 
 
-![image](assets/apache-reverse-proxy-arch.png)
-*Apache reverse proxy architecture*
+![image](assets/reverse-proxy-architecture.drawio.svg)
 
 
 
@@ -271,7 +281,7 @@ For more information, see the support articles:
 
 You can selectively disable some features of RStudio Server Pro. The [feature limits](https://docs.rstudio.com/ide/server-pro/r-sessions.html#feature-limits) section of the admin guide describes these limits.
 
-If your organisation operates a secure environment, you may want to limit:
+For example, if your organisation operates a secure environment, you may want to limit:
 
 * Shell access
 * File uploads
