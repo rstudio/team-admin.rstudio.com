@@ -79,7 +79,7 @@ Run the download and install script on that page.
 
 ```bash
 cd /usr/local/src
-sudo apt-get install gdebi-core
+sudo apt install gdebi-core
 curl -O https://download2.rstudio.org/server/trusty/amd64/rstudio-server-pro-1.2.5042-1-amd64.deb
 sudo gdebi rstudio-server-pro-1.2.5042-1-amd64.deb
 ```

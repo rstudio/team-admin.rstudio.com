@@ -10,8 +10,8 @@ Your task is to install R (version 3.6.0) from the pre-compiled binaries, follow
 For your convenience, we repeat the instructions here.  If in doubt. follow the advice in the official documentation.
 
 ```sh
-sudo apt-get update
-sudo apt-get install gdebi-core
+sudo apt update
+sudo apt install gdebi-core
 ```
 
 Specify the R version as an environment variable:
