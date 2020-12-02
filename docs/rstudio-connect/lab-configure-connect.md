@@ -335,11 +335,11 @@ Address = http://ec2-00-00-00-00.us-east-2.compute.amazonaws.com/rsconnect
 [SMTP]
 Host = localhost
 Port = 25
-startTls = never
+StartTLS = never
 
 [HTTP]
 Listen = :3939
-NoWarning
+NoWarning = true
 
 [Authentication]
 Provider = LDAP
