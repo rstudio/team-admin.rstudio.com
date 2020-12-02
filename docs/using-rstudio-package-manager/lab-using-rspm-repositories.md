@@ -101,7 +101,7 @@ Hint: You can also pass in the names of packages directly instead of creating a
 list of packages, as in:
 
 ```sh
-rspm add --packages 'plumber,shiny,ISLR' --source=subset --dryrun
+rspm add --packages 'plumber,shiny,ISLR' --source=subset
 ```
 
 Hint: Re-use the transaction ID output from the `rspm add` command with
