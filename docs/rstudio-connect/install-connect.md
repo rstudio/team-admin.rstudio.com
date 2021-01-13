@@ -128,7 +128,7 @@ Upgrading R is as simple as installing another version of R side-by-side.
 
 Important: avoid upgrading by using your repository:
 
-* Avoid `apt-get upgrade` !!!
+* Avoid `apt upgrade` !!!
 * Avoid `yum upgrade` !!!
 
 

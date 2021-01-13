@@ -100,12 +100,17 @@ to add a new repository that is subscribed to a source of approved CRAN packages
 Hint: You can also pass in the names of packages directly instead of creating a
 list of packages, as in:
 
+This will do a dry-run of the package installation and print a transaction ID.
+
 ```sh
-rspm add --packages 'plumber,shiny,ISLR' --source=subset --dryrun
+rspm add --packages 'plumber,shiny,ISLR' --source=subset
 ```
 
-Hint: Re-use the transaction ID output from the `rspm add` command with
-`--dryrun` flag.
+The transaction ID printed above is used to then apply the command with the flag `--transaction-id`.
+
+```
+rspm add --packages 'plumber,shiny,ISLR' --source=subset --transaction-id=<TRANSACTION-ID>
+```
 
 The steps you will perform are outlined as follows:
 
@@ -189,7 +194,7 @@ Navigate to the RSPM web interface in your browser and explore the newly created
 ## Task: Add a Git repository
 
 Follow the documented steps for 
-[Serving Local Packages from Git](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-local-git)
+[Serving Local Packages from Git](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-git)
 to add a new repository that is subscribed to a source with packages from Git.
 
 Hint: You'll need to configure the 

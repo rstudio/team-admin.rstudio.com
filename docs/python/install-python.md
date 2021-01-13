@@ -77,7 +77,7 @@ correctly.
 **Required dependency**
 
 ```sh
-sudo apt-get install bzip2
+sudo apt install bzip2
 ```
 
 **Python**

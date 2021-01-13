@@ -70,7 +70,7 @@ It is possible to disable the HTTP warning.
 
 ```gcfg
 [HTTP]
-NoWarning
+NoWarning = true
 ```
 
 
@@ -106,7 +106,7 @@ For the classroom virtual machine, use these settings to edit the Connect config
 [SMTP] 
 Host = localhost
 Port = 25
-startTls = never
+StartTLS = never
 ```
 
 * Save the settings.
@@ -152,7 +152,7 @@ Hint: You can get the LDAP structure for user `jen` with:
 ldapsearch -w admin -h leader.example.org -p 389 -D cn=admin,dc=example,dc=org -b dc=example,dc=org cn=jen
 ```
 
-Hint: It is enough to adjust `ServerAddress`, `BindDN`, `BindPassword` and `UserSearchBaseDN`.
+Hint: You have to adjust `ServerAddress`, `BindDN`, `BindPassword`, `UserSearchBaseDN`, `UsernameAttribute` and `UserObjectClass`.
 
 
 ## Task: activate your license
@@ -335,11 +335,11 @@ Address = http://ec2-00-00-00-00.us-east-2.compute.amazonaws.com/rsconnect
 [SMTP]
 Host = localhost
 Port = 25
-startTls = never
+StartTLS = never
 
 [HTTP]
 Listen = :3939
-NoWarning
+NoWarning = true
 
 [Authentication]
 Provider = LDAP

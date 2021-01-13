@@ -42,7 +42,7 @@ For data science work in production, it is important to provide code stability b
 
 This means that using your Linux package manager for installing R in production is not a good idea.
 
-!!! tip "Recommendation"
+!!! tip 
     We recommend you don't use a Linux package manager to install R.
 
 
@@ -65,6 +65,7 @@ This offers maximum flexibility, because you can specify the location of the ins
 
 The downside of installing R from source is that it takes some time for the compilation to complete.
 
+If you want to learn more about `make` you can read about it here: [https://swcarpentry.github.io/make-novice/](https://swcarpentry.github.io/make-novice/)
 
 
 
