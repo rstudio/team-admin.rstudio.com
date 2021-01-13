@@ -1,11 +1,11 @@
 
-## Task: Install R (v3.6.0) from pre-compiled binaries
+## Task: Install R (v4.0.0) from pre-compiled binaries
 
 RStudio recommended best practice is to install R from pre-compiled binaries on a Linux server.
 
 Refer to [https://docs.rstudio.com/resources/install-r/](https://docs.rstudio.com/resources/install-r/)
 
-Your task is to install R (version 3.6.0) from the pre-compiled binaries, following these instructions.
+Your task is to install R (version 4.0.0) from the pre-compiled binaries, following these instructions.
 
 For your convenience, we repeat the instructions here.  If in doubt. follow the advice in the official documentation.
 
@@ -17,7 +17,7 @@ sudo apt install gdebi-core
 Specify the R version as an environment variable:
 
 ```sh
-export R_VERSION=3.6.0
+export R_VERSION=4.0.0
 ```
 
 Download and install R
@@ -44,6 +44,6 @@ Verify your installation:
 Your output should be similar to this:
 
 ```
-R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+R version 4.0.0 (2019-04-26) -- "Planting of a Tree"
 ```
 

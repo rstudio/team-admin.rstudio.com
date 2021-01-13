@@ -53,7 +53,7 @@ Since you previously installed R from pre-compiled binaries, R is not automatica
 To add R to your path, you can use:
 
 ```sh
-export PATH=$PATH:/opt/R/3.6.0/bin
+export PATH=$PATH:/opt/R/4.0.0/bin
 ```
 
 Note that this is not permanent, since this exported setting will be lost if the machine restarts.
