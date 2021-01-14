@@ -44,6 +44,6 @@ Verify your installation:
 Your output should be similar to this:
 
 ```
-R version 4.0.0 (2019-04-26) -- "Planting of a Tree"
+R version 4.0.0 (2020-04-24) -- "Arbor Day"
 ```
 
