@@ -115,8 +115,9 @@ To achieve this, RStudio Connect supports **multiple versions of R**.
 * Store in version specific locations, for example:
 
   - `/opt/R/3.5.0`
-  - `/opt/R/4.0.0`
   - `/opt/R/3.6.1`
+  - `/opt/R/4.0.0`
+
     
 
 
