@@ -1,6 +1,5 @@
 
-# Pre-course survey
-
+# 
 
 <div class="responsive-container-rmd">
 

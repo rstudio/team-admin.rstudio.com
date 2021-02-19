@@ -1,5 +1,5 @@
 
-# Link your RStudio Community email
+# 
 
 
 <div class="responsive-container-rmd">

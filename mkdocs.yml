@@ -16,6 +16,8 @@ theme:
     font:
         text: Source Sans Pro
 
+edit_uri: ""
+
 nav:
     - Home: index.md
     - Overview: overview.md
