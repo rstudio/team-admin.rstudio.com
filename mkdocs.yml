@@ -16,6 +16,8 @@ theme:
     font:
         text: Source Sans Pro
 
+edit_uri: ""
+
 nav:
     - Home: index.md
     - Overview: overview.md
@@ -63,7 +65,7 @@ nav:
     - Cheat sheet:   cheatsheet.md
     - Documentation: documentation.md
     - Frequently encountered problems: faq.md
-    - Asking Questions: asking-questions.md
+    - Asking questions: asking-questions.md
 
 markdown_extensions:
     - toc:
@@ -93,9 +95,10 @@ extra_css:
     - assets/cheatsheet.css
     - assets/asciinema-player.css
     - assets/external-links.css
+    - assets/animated-r.css
 
 extra_javascript:
-    - assets/asciinema-player.js
+    - assets/js/asciinema-player.js
 
 plugins:
     - search
@@ -118,13 +121,13 @@ plugins:
             install-rsp/security-rsp-exercise:    rstudio-server-pro/lab-security.md
             install-rsp/binary-packages:          rstudio-server-pro/startup-and-packages.md
             install-rsp/binary-packages-exercise: rstudio-server-pro/lab-startup-and-packages.md
-            install-connect:                           rstudio-connect/install-connect.md
-            install-connect/install-connect:           rstudio-connect/install-connect.md
-            install-connect/install-connect-exercise:  rstudio-connect/lab-install-connect.md
-            install-connect/configure-connect:         rstudio-connect/configure-connect.md
+            install-connect:                            rstudio-connect/install-connect.md
+            install-connect/install-connect:            rstudio-connect/install-connect.md
+            install-connect/install-connect-exercise:   rstudio-connect/lab-install-connect.md
+            install-connect/configure-connect:          rstudio-connect/configure-connect.md
             install-connect/configure-connect-exercise: rstudio-connect/lab-configure-connect.md
-            install-connect/using-connect:          using-rstudio-connect/using-connect.md
-            install-connect/using-connect-exercise: using-rstudio-connect/lab-using-connect.md
+            install-connect/using-connect:              rstudio-connect/using-connect.md
+            install-connect/using-connect-exercise:     rstudio-connect/lab-using-connect.md
             use-connect:                            using-rstudio-connect/deploy-shiny.md
             use-connect/deploy-shiny:               using-rstudio-connect/deploy-shiny.md
             use-connect/deploy-shiny-exercise:      using-rstudio-connect/lab-deploy-shiny.md
