@@ -25,3 +25,8 @@
   iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
 })();
 </script>
+
+
+<script>
+document.getElementById("_1").style.display = "none"
+</script>
