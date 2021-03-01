@@ -4,6 +4,7 @@
 <div class="responsive-container-rmd">
 
   <div class="animated-r-wrapper">
+    Loading...
     <div class="animated-r-vertical">
       <div class="animated-r-circle"></div>
     </div>
@@ -22,11 +23,18 @@
 
 <script>
 (function() {
+  // resize iframe
   iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
+
+  // pass query parameters into frame source
+  var params = window.location.toString().split('?')[1],
+    iframe = document.getElementById('survey-iframe');
+  iframe.src = iframe.src + '?' + params;​​​​​​​​​​​​​​​​
 })();
 </script>
 
 
 <script>
+// Remove contents of header 1
 document.getElementById("_1").style.display = "none"
 </script>
