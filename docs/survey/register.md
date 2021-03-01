@@ -23,18 +23,15 @@
 
 <script>
 (function() {
-  // resize iframe
-  iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
+  // Remove contents of header 1
+  document.getElementById("_1").style.display = "none"
 
   // pass query parameters into frame source
   var params = window.location.toString().split('?')[1],
     iframe = document.getElementById('survey-iframe');
-  iframe.src = iframe.src + '?' + params;​​​​​​​​​​​​​​​​
+  iframe.src = iframe.src + '?' + params;
+
+  // resize iframe
+  iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
 })();
-</script>
-
-
-<script>
-// Remove contents of header 1
-document.getElementById("_1").style.display = "none"
 </script>
