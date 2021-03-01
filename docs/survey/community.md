@@ -1,10 +1,11 @@
-
+  
 # 
 
 
 <div class="responsive-container-rmd">
 
   <div class="animated-r-wrapper">
+  Loading...
     <div class="animated-r-vertical">
       <div class="animated-r-circle"></div>
     </div>
@@ -13,7 +14,7 @@
 
   <iframe id="survey-iframe"
     src="https://colorado.rstudio.com/rsc/team-admin-community/" 
-    gesture="media"  
+    allow="autoplay"
     allowfullscreen
     scrolling="yes"
   ></iframe>
@@ -23,6 +24,16 @@
 
 <script>
 (function() {
+  // Remove contents of header 1
+  document.getElementById("_1").style.display = "none"
+  
+  // pass query parameters into frame source
+  var params = window.location.toString().split('?')[1];
+  var iframe = document.getElementById('survey-iframe');
+  iframe.src = iframe.src + '?' + params;
+  
+  // resize iframe
   iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
-})();
+
+ })();
 </script>
