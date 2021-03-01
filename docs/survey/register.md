@@ -30,7 +30,7 @@
   var params = window.location.toString().split('?')[1],
     iframe = document.getElementById('survey-iframe');
   iframe.src = iframe.src + '?' + params;
-
+  
   // resize iframe
   iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
 })();

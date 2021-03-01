@@ -1,4 +1,4 @@
-
+  
 # 
 
 
@@ -14,7 +14,7 @@
 
   <iframe id="survey-iframe"
     src="https://colorado.rstudio.com/rsc/team-admin-community/" 
-    gesture="media"  
+    allow="autoplay"
     allowfullscreen
     scrolling="yes"
   ></iframe>
@@ -31,7 +31,7 @@
   var params = window.location.toString().split('?')[1];
   var iframe = document.getElementById('survey-iframe');
   iframe.src = iframe.src + '?' + params;
-
+  
   // resize iframe
   iFrameResize({ checkOrigin: 'https://colorado.rstudio.com/' , log: true }, '#survey-iframe')
 
