@@ -99,6 +99,7 @@ extra_css:
 
 extra_javascript:
     - assets/js/asciinema-player.js
+    - assets/js/openLinksInNewTabs.js
 
 # plugins:
 #     - search
