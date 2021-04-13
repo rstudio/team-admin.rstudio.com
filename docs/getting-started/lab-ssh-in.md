@@ -1,25 +1,16 @@
 
-## Task: Get your VM host name and credentials
 
-* Go to the classroom app: [https://rstd.io/class](https://rstd.io/class)
-* Enter your classroom password 
-* Register with your name and email address
+## Task: SSH in
 
-You will get a home screen with a URL, user name and password
+As part of the joining instructions for this course you will receive the login credentials to access your VM (via email).
 
-![image](assets/workshop-classroom.jpg)
+The email will contain your user name, password as well as a URL that is the home page for your virtual machine.
 
-* Point your browser browser to the URL you are given
-
-
-## Task: Open the getting started screen
-
-The screen should look similar to this:
+Once you follow the URL, your screen should look similar to this:
 
 ![image](assets/getting-started-screen.png)
 
 
-## Task: SSH in
 
 Use the provided credentials to log in
 
