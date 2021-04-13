@@ -4,6 +4,7 @@ copyright: RStudio, PBC. All Rights Reserved.
 google_analytics:
     - UA-20375833-3
     - auto
+edit_uri: ""
 
 theme:
     name: material
@@ -16,7 +17,6 @@ theme:
     font:
         text: Source Sans Pro
 
-edit_uri: ""
 
 nav:
     - Home: index.md
@@ -99,9 +99,10 @@ extra_css:
 
 extra_javascript:
     - assets/js/asciinema-player.js
+    - assets/js/openLinksInNewTabs.js
 
-# plugins:
-#     - search
+plugins:
+    - search
 #     - redirects:
 #         redirect_maps:
 #             overview/concept-map:      overview.md
