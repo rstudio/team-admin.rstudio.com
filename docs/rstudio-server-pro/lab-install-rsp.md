@@ -75,13 +75,15 @@ Run the download and install script on that page.
 
 !!! hint
     Remember to use `/usr/local/src` as the download destination
+    ```bash
+    cd /usr/local/src
+    ```
 
 
 ```bash
-cd /usr/local/src
-sudo apt install gdebi-core
-curl -O https://download2.rstudio.org/server/trusty/amd64/rstudio-server-pro-1.2.5042-1-amd64.deb
-sudo gdebi rstudio-server-pro-1.2.5042-1-amd64.deb
+sudo apt-get install gdebi-core
+curl -O https://download2.rstudio.org/server/bionic/amd64/rstudio-server-pro-1.4.1106-5-amd64.deb
+sudo gdebi rstudio-server-pro-1.4.1106-5-amd64.deb
 ```
 
 
