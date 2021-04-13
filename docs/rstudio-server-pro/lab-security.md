@@ -665,7 +665,7 @@ Log into RStudio Server Pro in your browser using one of the users from the LDAP
         * you forgot to copy the PAM Profile files in the task "Set up PAM profiles", OR 
         * you didn't edit the `/etc/rstudio/rserver.conf` file.
     2. You forgot the URL for your RStudio Server Pro session
-        * Go back to https://rstd.io/class and bookmark the landing page.
+        * Review the joining instructions sent via email and bookmark your Virtual Machine URL.
     3. You logged in as `admin-user`
         * Remember that you now use LDAP to authenticate, and `admin-user` is not an authenticated user in LDAP
         * Log in as a user that exists, and that has a home folder, e.g. `jen`

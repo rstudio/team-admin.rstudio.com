@@ -141,14 +141,14 @@ Note that there might also be other process information in the output - just loo
 
 ## Task: Log in to RStudio Server
 
-Remember the original login page ([https://rstd.io/class](https://rstd.io/class))?
+Remember the original login page (sent to you via email)?
 
 Click on the URL link to take you to your own Getting Started page.  From here, click on the link for RStudio Server Pro.
 
 ![images](assets/rsp-button.png)
 
 
-Then, on the sign-in page, sign in with the classroom credentials:
+Then, on the sign-in page, sign in with the classroom credentials (sent in the same email):
 
 ![images](assets/sign-in.png)
 
