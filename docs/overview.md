@@ -2,7 +2,7 @@
 
 **RStudio Team** refers to the set of three RStudio products that are available commercially:
 
-* RStudio Server Pro
+* RStudio Workbench
 * RStudio Connect
 * RStudio Package Manager
 
@@ -19,10 +19,10 @@ We will provide you with a virtual machine with:
 
 During this course you will build a sandbox environment that runs the RStudio Team products:
 
-1. RStudio Server Pro
+1. RStudio Workbench
 
     * Install R from pre-compiled binaries
-    * Install RStudio Server Pro
+    * Install RStudio Workbench
     * Integrate with LDAP authentication (for single sign-on)
 
 2. RStudio Connect
@@ -103,7 +103,7 @@ information, to ensure you can access all the material:
     * At the moment we do not have a mechanism to allocate IP addresses in a pre-defined range
 
 * You will communicate to the services inside this VM via a proxy on port 80, which eventually resolves to ports:
-    * 8787 (RStudio Server Pro)
+    * 8787 (RStudio Workbench)
     * 4242 (RStudio Package Manager)
     * 3939 (RStudio Connect)
 

@@ -3,7 +3,7 @@
 
 The default mechanism for installing a package on Linux is to compile from source.
 
-Use the R console in RStudio Server Pro to determine your current CRAN repository:
+Use the R console in RStudio Workbench to determine your current CRAN repository:
 
 ```r
 getOption("repos")
@@ -66,9 +66,9 @@ install.packages("quantreg", dependencies = TRUE)
     * Once you get `* DONE ...` you know that package installation is complete.
 
 
-## Configure RStudio Server Pro for binary packages
+## Configure RStudio Workbench for binary packages
 
-You will encounter RStudio Package Manager in a later module in this course.  You haven't yet installed RStudio Package Manager, so for now you can use the RStudio demo instance to configure RStudio Server Pro.
+You will encounter RStudio Package Manager in a later module in this course.  You haven't yet installed RStudio Package Manager, so for now you can use the RStudio demo instance to configure RStudio Workbench.
 
 ### Identify the binary package installation URL
 
@@ -84,11 +84,11 @@ Use the drop-down button to select the correct operating system, then copy the U
 https://packagemanager.rstudio.com/all/__linux__/bionic/latest
 ```
 
-Once you have the correct URL, you can configure RStudio Server Pro
+Once you have the correct URL, you can configure RStudio Workbench
 
-### Task: Configure RStudio Server Pro
+### Task: Configure RStudio Workbench
 
-You can find the instructions for configuring RStudio Server Pro in the [RStudio Package Manager admin guide](https://docs.rstudio.com/rspm/admin/), specifically in section [19.1 A Single Repository](https://docs.rstudio.com/rspm/admin/rstudio-server.html#a-single-repository).
+You can find the instructions for configuring RStudio Workbench in the [RStudio Package Manager admin guide](https://docs.rstudio.com/rspm/admin/), specifically in section [19.1 A Single Repository](https://docs.rstudio.com/rspm/admin/rstudio-server.html#a-single-repository).
 
 Read the instructions, then SSH into your VM instance and edit the file
 
@@ -102,19 +102,19 @@ and add the line
 r-cran-repos=https://packagemanager.rstudio.com/all/__linux__/bionic/latest
 ```
 
-Save the file, then restart RStudio Server:
+Save the file, then restart RStudio Workbench:
 
 ```sh
 sudo rstudio-server restart
 ```
 
 !!! Remember "Also restart your R session"
-    * In RStudio Server Pro, you can restart your R session from the menu at `/Session / Restart R`, OR
+    * In RStudio Workbench, you can restart your R session from the menu at `/Session / Restart R`, OR
     * Use the keyboard shortcut `Shift + Ctrl + F10`
 
 ### Task: Test that it works
 
-Once you've restarted RStudio Server Pro, use the R console to check that your repository is correct, and that packages install from binaries without compilation.
+Once you've restarted RStudio Workbench, use the R console to check that your repository is correct, and that packages install from binaries without compilation.
 
 To do this, repeat the R commands you used earlier:
 
