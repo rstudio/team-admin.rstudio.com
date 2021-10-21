@@ -2,9 +2,9 @@
 
 In the following exercises, you will:
 
-* Configure RStudio Server Pro to point to RSPM for a single user
+* Configure RStudio Workbench to point to RSPM for a single user
 * Install a package from a repository in RSPM
-* Configure RStudio Server Pro to point to RSPM globally for all users
+* Configure RStudio Workbench to point to RSPM globally for all users
 * Publish a project to RStudio Connect that fetches packages from RSPM
 
 Refer to the  [RSPM Documentation](https://docs.rstudio.com/rspm/admin/) throughout the exercises, specifically the [Configuring RStudio Server](https://docs.rstudio.com/rspm/admin/rstudio-server.html) section.
@@ -12,7 +12,7 @@ Refer to the  [RSPM Documentation](https://docs.rstudio.com/rspm/admin/) through
 
 ## Task: View CRAN repository setting
 
-1. Run the following in a Console in RStudio Server Pro:
+1. Run the following in a Console in RStudio Workbench:
 
 ```r
 getOption("repos")
@@ -27,15 +27,15 @@ attr(,"RStudio")
 [1] TRUE
 ```
 
-2. In RStudio Server Pro, go to `Tools` > `Global Options` > `Packages` and view the `Primary CRAN repository` that is currently set.
+2. In RStudio Workbench, go to `Tools` > `Global Options` > `Packages` and view the `Primary CRAN repository` that is currently set.
 
 ![image](assets/rsp-repository-setting.png)
 
 ## Task: Configure packages for one user
 
-As an end user, you can configure the RStudio IDE or RStudio Server Pro to point to one or more repositories in RSPM.
+As an end user, you can configure the RStudio IDE or RStudio Workbench to point to one or more repositories in RSPM.
 
-In this exercise, you will configure projects for one user on your instance of RStudio Server Pro to point to the CRAN repository in your RSPM instance.
+In this exercise, you will configure projects for one user on your instance of RStudio Workbench to point to the CRAN repository in your RSPM instance.
 
 1. Navigate to the web interface for your RSPM instance.
 
@@ -45,7 +45,7 @@ In this exercise, you will configure projects for one user on your instance of R
 
 3. Copy the `Repository URL`, which will appear similar to `http://{IP-ADDRESS}/{REPO-NAME}/latest`
    
-4. In RStudio Server Pro, go to `Tools` > `Global Options` > `Packages`.
+4. In RStudio Workbench, go to `Tools` > `Global Options` > `Packages`.
 
 5. Click on the `Change` button in the `Primary CRAN repository` setting.
 
@@ -61,7 +61,7 @@ In this exercise, you will configure projects for one user on your instance of R
 
 You can install a new package in RStudio and verify that the new package is being downloaded from the repository in RSPM.
 
-1. In RStudio Server Pro, use the console to install a new package:
+1. In RStudio Workbench, use the console to install a new package:
 
 ```r
 install.packages("abind")
@@ -85,17 +85,17 @@ downloaded 21 KB
 
 As an administrator, you can configure all users and projects to point to one or more repositories in RSPM.
 
-In this exercise, you will configure all users and projects on your instance of RStudio Server Pro to point to the CRAN repository in your RSPM instance.
+In this exercise, you will configure all users and projects on your instance of RStudio Workbench to point to the CRAN repository in your RSPM instance.
 
-1. Open the RStudio Server Pro configuration file `/etc/rstudio/rsession.conf` in a text editor.
+1. Open the RStudio Workbench configuration file `/etc/rstudio/rsession.conf` in a text editor.
    
-2. Add a line similar to the following to the RStudio Server Pro configuration file, replacing `{RSTUDIO-PM-REPO-URL}` with the repository URL for the `prod-cran` repository in RSPM:
+2. Add a line similar to the following to the RStudio Workbench configuration file, replacing `{RSTUDIO-PM-REPO-URL}` with the repository URL for the `prod-cran` repository in RSPM:
    
 ```sh
 r-cran-repos={RSTUDIO-PM-REPO-URL}
 ```
    
-3. Save the RStudio Server Pro configuration file, and restart RStudio Server Pro using the following command:
+3. Save the RStudio Workbench configuration file, and restart RStudio Workbench using the following command:
    
 ```sh
 sudo rstudio-server restart
@@ -104,14 +104,14 @@ sudo rstudio-server restart
 Now, all users and projects will fetch packages from the repository in RSPM that you've specified.
 
 The documentation for 
-[Configuring RStudio Server](https://docs.rstudio.com/rspm/admin/rstudio-server.html) provides more details and describes additional scenarios for configuring RStudio Server Pro to point to repositories in RSPM.
+[Configuring RStudio Server](https://docs.rstudio.com/rspm/admin/rstudio-server.html) provides more details and describes additional scenarios for configuring RStudio Workbench to point to repositories in RSPM.
 
 
 ## Task: Publish to RStudio Connect
 
-Now that you've configured RStudio Server Pro to point to a repository in RSPM, projects that are published to RStudio Connect will fetch packages from RSPM.
+Now that you've configured RStudio Workbench to point to a repository in RSPM, projects that are published to RStudio Connect will fetch packages from RSPM.
 
-1. Open a project (or create a new project) in RStudio Server Pro
+1. Open a project (or create a new project) in RStudio Workbench
 2. Publish the project to RStudio Connect
 
 How can you confirm that the packages are being served from RStudio Package
@@ -136,7 +136,7 @@ Previously you tried to deploy `app_02` from the course material to RStudio Conn
 
 * Get the URL for the new repository from the web interface of RStudio Package Manager.
 
-* Add the new repository as an additional one in RStudio Server Pro under `Tools` > `Global Options` > `Packages`.
+* Add the new repository as an additional one in RStudio Workbench under `Tools` > `Global Options` > `Packages`.
 
 * Try to publish `app_02` from before.
 
@@ -148,6 +148,6 @@ install.packages("rstudiointernal")
 
 Note that the app still does not work on RStudio Connect? Can you identify the issue?
 
-As an alternative, you could also create a repository based on *both* CRAN and local source packages following the documented steps for [Distributing Local Packages along with CRAN Packages](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-local-and-cran). In that case you would have switched the main repository in RStudio Server Pro instead of adding an additional one.
+As an alternative, you could also create a repository based on *both* CRAN and local source packages following the documented steps for [Distributing Local Packages along with CRAN Packages](https://docs.rstudio.com/rspm/admin/quickstarts.html#quickstart-local-and-cran). In that case you would have switched the main repository in RStudio Workbench instead of adding an additional one.
 
 Congratulations on completing the RSPM section of this training course!

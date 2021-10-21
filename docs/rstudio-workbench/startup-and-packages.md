@@ -58,5 +58,5 @@ Next complete the exercise.
 
 Signs of success:
 
-* You have configured RStudio Server to install binaries from the RStudio demo instance of Package Manager
+* You have configured RStudio Workbench to install binaries from the RStudio demo instance of Package Manager
 * You have installed some packages and observed that there is no compilation step.

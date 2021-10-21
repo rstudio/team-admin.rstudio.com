@@ -4,7 +4,7 @@
 In this session, you will:
 
 * Learn about different methods for configuring package repositories in RStudio
-* Configure RStudio Server Pro to point to RSPM package repository
+* Configure RStudio Workbench to point to RSPM package repository
 * See how RSPM is used when publishing to RStudio Connect
 
 
@@ -62,7 +62,7 @@ Example: Using binary packages from a fixed version of a repository:
 
 RSPM provides building blocks for configuring repositories and accessing packages. There are a spectrum of options that range from:
 
-* An administrator assembles all packages and sources into a single repository, then sets this as only global option in RStudio Server Pro
+* An administrator assembles all packages and sources into a single repository, then sets this as only global option in RStudio Workbench
 * An administrator configures multiple sources and repositories, then allows data scientists to set their own repositories as needed
 
 Repositories can be configured in RStudio in different ways, for example:
@@ -76,7 +76,7 @@ Repositories can be configured in RStudio in different ways, for example:
 
 ### Configuring RSP 1.1 with RSPM for a single user
 
-Steps for configuring RStudio Server Pro 1.1 with RSPM for a single user using
+Steps for configuring RStudio Workbench 1.1 with RSPM for a single user using
 `.Rprofile`:
 
 A sample `.Rprofile` file with two different package repositories:
@@ -94,13 +94,13 @@ More details on configuring RStudio for different repositories are provided in t
 
 You can also set this globally for all users with `Rprofile.site`.
 
-Or, you can set this for all users in the RStudio Server Pro configuration file, as shown below.
+Or, you can set this for all users in the RStudio Workbench configuration file, as shown below.
 
 
 
 ### Configuring RSP 1.2+ with RSPM for a single user
 
-Steps for configuring RStudio Server Pro 1.2+ with RSPM for a single user:
+Steps for configuring RStudio Workbench 1.2+ with RSPM for a single user:
 
 ![image](assets/rstudio-repos.png)
 
@@ -114,7 +114,7 @@ field or click `Add` to include this repository as a secondary repo.
 
 ### Configuring RSP with RSPM for all users
 
-In the RStudio Server Pro configuration file, `/etc/rstudio/rsession.conf`:
+In the RStudio Workbench configuration file, `/etc/rstudio/rsession.conf`:
 
 ```sh
 r-cran-repos=http://{RSTUDIO-PM-ADDRESS}/{REPO-NAME}/latest
@@ -134,7 +134,7 @@ following setting in `/etc/rstudio/rsession.conf`:
 allow-r-cran-repos-edit=0
 ```
 
-More details on configuring RStudio Server Pro with RSPM are provided in the
+More details on configuring RStudio Workbench with RSPM are provided in the
 documentation on
 [Configuring RStudio Server](https://docs.rstudio.com/rspm/admin/rstudio-server.html).
 
@@ -195,7 +195,7 @@ RStudio Package Manager allows you to:
 * Organize packages in a central repository
 * Perform automatic versioning of the entire repository
 * Track package usage statistics and metrics
-* Integrates with R, RStudio Server Pro, and RStudio Connect
+* Integrates with R, RStudio Workbench, and RStudio Connect
 * Serve packages from
     * CRAN
     * Subset of CRAN packages
@@ -286,9 +286,9 @@ Configuration and sizing recommendations:
 ## Your turn
 
 
-In the following exercise you'll configure RStudio Server Pro to use RSPM as it's package source.
+In the following exercise you'll configure RStudio Workbench to use RSPM as it's package source.
 
 Signs of success:
 
 * You understand the different methods of configuring RStudio to access packages from different repositories
-* You have RStudio Server Pro configured to obtain packages from RSPM
+* You have RStudio Workbench configured to obtain packages from RSPM
