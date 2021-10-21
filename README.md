@@ -114,7 +114,7 @@ make test-prod-links
 ### Deployment to Netlify
 
 The site is hosted on Netlify which will build and serve the site 
-automatically when changes occur in the `master` branch.
+automatically when changes occur in the `main` branch.
 
 The Netlify build is currently controlled by two files, `runtime.txt`
 and `requirements.txt`.
