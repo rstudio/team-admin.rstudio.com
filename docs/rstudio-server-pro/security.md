@@ -16,7 +16,7 @@ RStudio Server Pro works with your existing authentication service
     * Single sign-on
     * Web based authentication
 
-3. Google OAuth
+3. Google OAuth (note: this option still works but has been deprecated since Server Pro version 1.4)
 
 
 
