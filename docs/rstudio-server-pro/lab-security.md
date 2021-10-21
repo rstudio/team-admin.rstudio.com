@@ -28,7 +28,7 @@ This exercise is broken into three parts:
 
     Which authentication protocols are supported by RStudio Server Pro?",
     
-    Choose five answers from the following list:
+    Choose six answers from the following list:
     
     * Operating system
     * Proxy
@@ -40,10 +40,8 @@ This exercise is broken into three parts:
 
 ??? example "Answer:"
 
-    The correct answer is: Operating system, Proxy, PAM, LDAP and Google OAuth.
+    The correct answer is: Operating system, Proxy, PAM, LDAP, OAuth2 and SAML.
     
-    SAML is not currently supported and OAuth 2 is not supported, though the Google specific variant is.
-    In both cases we recommend you use proxied authentication instead.
     
 
 
