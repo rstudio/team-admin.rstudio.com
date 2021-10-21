@@ -212,7 +212,7 @@ Allow-APIs: 1
 
 ### Reminder of binary packages
 
-You have already configured RStudio Server Pro to install R packages from pre-compiled binaries from RStudio Package Manager.
+You have already configured RStudio Workbench to install R packages from pre-compiled binaries from RStudio Package Manager.
 
 You can get the same benefit of fast binary installs on RStudio Connect by setting an override switch on Connect.  When this is configured, Connect will ignore the `packrat` manifest file in the deployment bundle and attempt to install from the override repository instead.
 
@@ -272,8 +272,8 @@ Now you can log into Connect and start to explore the system.
 Remember:
 
 * The first user you create on Connect is the admin user
-* The Connect authentication mechanism is not necessarily tied to the authentication mechanism of RStudio Server Pro.
-* However, it will make life easier if you use the same user name for your admin user than the user you are logged into on RStudio Server Pro.
+* The Connect authentication mechanism is not necessarily tied to the authentication mechanism of RStudio Workbench.
+* However, it will make life easier if you use the same user name for your admin user than the user you are logged into on RStudio Workbench.
 * Concretely, this means that you should log in to Connect as `jen`
     
 

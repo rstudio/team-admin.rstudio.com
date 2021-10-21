@@ -53,7 +53,7 @@ Common issues:
 
     Product               | Log file
     --------------------  | ------------------
-    RStudio Server Pro    | `/var/lib/rstudio-server/monitor/log/rstudio-server.log`
+    RStudio Workbench    | `/var/lib/rstudio-server/monitor/log/rstudio-server.log`
     Shiny Server Pro      | `/var/log/shiny-server.log`
     RStudio Connect       | `/var/log/rstudio-connect.log`
     Package Manager       | `/var/log/rstudio-pm.log`
@@ -225,7 +225,7 @@ Make sure you're on the right version of the product compared to the admin guide
 * Does it work outside of the RStudio product?
 
     * Often possible to copy over working setup from other systems or services.
-    * For RStudio Server Pro
+    * For RStudio Workbench
     * `pamtester` utility lets you test outside RStudio systems.
   
 ```sh

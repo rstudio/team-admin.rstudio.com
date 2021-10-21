@@ -6,7 +6,7 @@ In the following exercises, you:
 - Install Python from Anaconda
 - Verify the installation
 - Configure for use with RStudio Connect
-- Test installation in RStudio Server Pro with `reticulate` 
+- Test installation in RStudio Workbench with `reticulate` 
 - Install an additional version of Python (_optional_)
 
 
@@ -20,7 +20,7 @@ Refer to the [Python Installation Documentation](https://docs.rstudio.com/resour
 {r use_cases}
 quiz(
   question(
-    "What are some of the possible uses of Python combined with RStudio Server Pro and RStudio Connect?",
+    "What are some of the possible uses of Python combined with RStudio Workbench and RStudio Connect?",
     answer("Reticulated Shiny applications", correct = TRUE),
     answer("Publishing Jupyter Notebooks", correct = TRUE),
     answer("Using the `reticulate` package", correct = TRUE),
@@ -134,7 +134,7 @@ PATH=/opt/python/3.6.5/bin:$PATH
     The above pattern `PATH=/opt/python/<PYTHON_VERSION>/bin:$PATH` can be replicated when configuring a machine with multiple Python installations.
 
 
-## Task: Test installation in RStudio Server Pro with _reticulate_ 
+## Task: Test installation in RStudio Workbench with _reticulate_ 
 
  // TODO:
  https://support.rstudio.com/hc/en-us/articles/360023654474-Installing-and-Configuring-Python-with-RStudio

@@ -6,7 +6,7 @@ In this session, you will:
 * Understand the problems associated with R package management in enterprise environments
 * Learn how RStudio Package Manager (RSPM) solves these problems
 * Install RSPM on a server
-* configure RStudio Server Pro and RStudio Connect as consumers of
+* configure RStudio Workbench and RStudio Connect as consumers of
 the packages
 
 
@@ -93,7 +93,7 @@ RStudio Package Manager:
 * Organizes packages in a central repository
 * Performs automatic versioning of the entire repository
 * Tracks package usage statistics and metrics
-* Integrates with with R, RStudio Server Pro, and RStudio Connect
+* Integrates with with R, RStudio Workbench, and RStudio Connect
 
 
 

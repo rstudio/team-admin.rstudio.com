@@ -53,7 +53,7 @@ Verify installation:
 ```
 
 
-## RStudio Server Pro
+## RStudio Workbench
 
 Admin guide: https://docs.rstudio.com/ide/server-pro/
 
@@ -395,7 +395,7 @@ It is difficult for RStudio Support to troubleshoot as it depends on external co
 Does it work outside of the RStudio product?
 
 * Often possible to copy over working setup from other systems or services.
-* For RStudio Server Pro, the`pamtester` utility lets you test outside RStudio systems.
+* For RStudio Workbench, the`pamtester` utility lets you test outside RStudio systems.
   
 ```sh
 sudo /usr/lib/rstudio-server/bin/pamtester \

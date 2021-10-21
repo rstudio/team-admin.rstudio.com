@@ -27,12 +27,12 @@ nav:
     - 2. R:
         - 2.1 Installing R:     r/install-r.md
         - 2.1 Lab:              r/lab-install-r.md
-    - 3. RStudio Server Pro:
-        - 3.1 Install RStudio Server Pro:                rstudio-server-pro/install-rsp.md
+    - 3. RStudio Workbench:
+        - 3.1 Install RStudio Workbench:                rstudio-server-pro/install-rsp.md
         - 3.1 Lab:                                       rstudio-server-pro/lab-install-rsp.md
-        - 3.2 RStudio Server Pro Security:               rstudio-server-pro/security.md
+        - 3.2 RStudio Workbench Security:               rstudio-server-pro/security.md
         - 3.2 Lab:                                       rstudio-server-pro/lab-security.md
-        - 3.3 RStudio Server Pro Startup and packages:   rstudio-server-pro/startup-and-packages.md
+        - 3.3 RStudio Workbench Startup and packages:   rstudio-server-pro/startup-and-packages.md
         - 3.3 Lab:                                       rstudio-server-pro/lab-startup-and-packages.md
     - 4. RStudio Connect:
         - 4.1 Installing RStudio Connect:   rstudio-connect/install-connect.md

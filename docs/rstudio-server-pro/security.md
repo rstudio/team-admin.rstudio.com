@@ -3,7 +3,7 @@
 ## Authentication
 
 
-RStudio Server Pro works with your existing authentication service
+RStudio Workbench works with your existing authentication service
 
 1. PAM
 
@@ -16,7 +16,7 @@ RStudio Server Pro works with your existing authentication service
     * Single sign-on
     * Web based authentication
 
-3. Google OAuth (note: this option still works but has been deprecated since Server Pro version 1.4)
+3. Google OAuth (note: this option still works but has been deprecated since RStudio Server Pro version 1.4)
 
 
 
@@ -24,7 +24,7 @@ RStudio Server Pro works with your existing authentication service
 
 ### PAM
 
-The most common authentication mode for RStudio Server Pro is **PAM** (pluggable authentication module).  You can configure PAM with **LDAP** or **Active Directory**.
+The most common authentication mode for RStudio Workbench is **PAM** (pluggable authentication module).  You can configure PAM with **LDAP** or **Active Directory**.
 
 * LDAP
 
@@ -38,7 +38,7 @@ The most common authentication mode for RStudio Server Pro is **PAM** (pluggable
 
 !!! note
     * Your organization most likely already have a PAM configuration.
-    * This session has exercises for configuring RStudio Server Pro using PAM with LDAP.
+    * This session has exercises for configuring RStudio Workbench using PAM with LDAP.
 
 
 
@@ -46,11 +46,11 @@ The most common authentication mode for RStudio Server Pro is **PAM** (pluggable
 
 If you are not using PAM, LDAP or Active Directory, you should use **Proxied Auth**.
 
-* In proxied auth mode, RStudio Server Pro trusts the users sent by your existing authentication system (e.g. Shibboleth). 
+* In proxied auth mode, RStudio Workbench trusts the users sent by your existing authentication system (e.g. Shibboleth). 
 
-* Configure your authentication system to add a special HTTP header for requests sent to RStudio Server Pro.
+* Configure your authentication system to add a special HTTP header for requests sent to RStudio Workbench.
 
-* Take precautions to prevent unauthorized traffic from accessing RStudio Server Pro.
+* Take precautions to prevent unauthorized traffic from accessing RStudio Workbench.
 
     - This will be defined by your firewall and [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud) (virtual private cloud) settings.
 
@@ -58,7 +58,7 @@ If you are not using PAM, LDAP or Active Directory, you should use **Proxied Aut
 
 ### Token based authentication (SAML)
 
-RStudio Server Pro does not natively support token based auth today.  However, we intend to support **SAML** for many of these auth providers in the future:
+RStudio Workbench does not natively support token based auth today.  However, we intend to support **SAML** for many of these auth providers in the future:
 
 Cloud based: 
 
@@ -127,7 +127,7 @@ RStudio integration
     Also, read the support articles:
 
     * [How to pass authentication credentials to a database using Kerberos](https://support.rstudio.com/hc/en-us/articles/115000259268-How-to-pass-authentication-credentials-to-a-database-using-Kerberos).
-    * [Handling long-running sessions in RStudio Server Pro with Kerberos](https://support.rstudio.com/hc/en-us/articles/115013500128-Handling-long-running-sessions-in-RStudio-Server-Pro-with-Kerberos-)
+    * [Handling long-running sessions in RStudio Workbench with Kerberos](https://support.rstudio.com/hc/en-us/articles/115013500128-Handling-long-running-sessions-in-RStudio-Server-Pro-with-Kerberos-)
 
 
 
@@ -187,11 +187,11 @@ Typical security concerns:
 * How does the user authenticate using their browser?
 * How to secure browser communications?
 
-The next section dicusses security features of RStudio Server Pro
+The next section dicusses security features of RStudio Workbench
 
 
 
-### RStudio Server Pro Security features
+### RStudio Workbench Security features
 
 * Clickjacking
     - Will not load inside a browser frame
@@ -205,13 +205,13 @@ The next section dicusses security features of RStudio Server Pro
 * Cross Site Request Forgery (CSRF):
     - Protection with the R session includes a double submit cookie
 
-Note: Also refer to the support article [Security features in RStudio Server Pro](https://support.rstudio.com/hc/en-us/articles/221682007-Security-features-in-RStudio-Server-Pro)
+Note: Also refer to the support article [Security features in RStudio Workbench](https://support.rstudio.com/hc/en-us/articles/221682007-Security-features-in-RStudio-Server-Pro)
 
 
 
 ### SSL Certificates
 
-Transport layer security (TLS) is a mechanism to establish secure browser communications between a client (e.g. browser) and server (RStudio Server Pro) over an insecure channel.
+Transport layer security (TLS) is a mechanism to establish secure browser communications between a client (e.g. browser) and server (RStudio Workbench) over an insecure channel.
 
 The technology to achieve this a combination of SSL, TLS, and HTTPS.
 
@@ -243,7 +243,7 @@ Your organisation most likely have a formal process for obtaining trusted certif
 
 ### Running behind a proxy
 
-RStudio Server Pro is commonly run behind a reverse proxy.
+RStudio Workbench is commonly run behind a reverse proxy.
 
 
 !!! quote "From wikipedia:"
@@ -254,7 +254,7 @@ RStudio Server Pro is commonly run behind a reverse proxy.
 ![image](assets/reverse-proxy.drawio.svg)
 
 
-In other words, a reverse proxy taking requests from the Internet and forwarding them to servers in an internal network. Those making requests to the proxy may not be aware of the internal network.  Thus the purpose of the reverse proxy is to provide a firewall between RStudio Server Pro and other servers on the network.
+In other words, a reverse proxy taking requests from the Internet and forwarding them to servers in an internal network. Those making requests to the proxy may not be aware of the internal network.  Thus the purpose of the reverse proxy is to provide a firewall between RStudio Workbench and other servers on the network.
 
 RStudio does not provide the proxy software, but you can open source or commercial software to configure a proxy.  For example:
 
@@ -279,7 +279,7 @@ For more information, see the support articles:
 
 ### Disabling access to some features
 
-You can selectively disable some features of RStudio Server Pro. The [feature limits](https://docs.rstudio.com/ide/server-pro/r-sessions.html#feature-limits) section of the admin guide describes these limits.
+You can selectively disable some features of RStudio Workbench. The [feature limits](https://docs.rstudio.com/ide/server-pro/r-sessions.html#feature-limits) section of the admin guide describes these limits.
 
 For example, if your organisation operates a secure environment, you may want to limit:
 
@@ -302,7 +302,7 @@ In addition, you can also limit:
 ### Why root access?
 
 * RStudio needs root access to provision sessions on behalf of other users
-* The RStudio Server Pro runs under the `rstudio-server` user in the normal course of operations.
+* The RStudio Workbench runs under the `rstudio-server` user in the normal course of operations.
 
 !!! quote "From the docs"
     RStudio Server runs as the system root user during startup and then drops this privilege and runs as a more restricted user. RStudio Server then re-assumes root privilege for a brief instant when creating R sessions on behalf of users (the server needs to call `setresuid` when creating the R session, and this call requires root privilege).
@@ -354,4 +354,4 @@ Signs of success:
 
 * You have created a new user `jen`
 * You can authenticate against sssd as `jen`
-* You have logged in as `jen` on RStudio Server Pro
+* You have logged in as `jen` on RStudio Workbench

@@ -1,7 +1,7 @@
 
 ## Task: Allow pop-ups in your browser
 
-When you connect your IDE to Connect, a choreographed **dance** starts.  During this dance you provide your Connect credentials to RStudio Server Pro.
+When you connect your IDE to Connect, a choreographed **dance** starts.  During this dance you provide your Connect credentials to RStudio Workbench.
 
 The dance includes a pop-up window that is blocked by most modern browsers.
 
@@ -59,7 +59,7 @@ Remember:
 * Think carefully about where you are logged in as which user
 * You are probably:
     - logged in as `admin-user` in SSH
-    - logged in as `jen` in RStudio Server Pro 
+    - logged in as `jen` in RStudio Workbench 
   
   
 So, with your permissions as the `admin-user`, you must copy the course files to the home folder of the RStudio Server user, and set the file ownership so that `jen` owns these files.
@@ -104,7 +104,7 @@ drwxr-xr-x 2 jen root     4096 Oct 22 11:42 06_troubleshooting
 
 ## Task: Deploy app_0
 
-Now open RStudio Server Pro and navigate to `~/pro_admin_training_assets` in the files tab (where you are logged in as `jen`)
+Now open RStudio Workbench and navigate to `~/pro_admin_training_assets` in the files tab (where you are logged in as `jen`)
 
 ![image](assets/home_folder_jen.png)
 
@@ -220,7 +220,7 @@ Now for a more complex example
 While the app deploys, observe:
 
 * Can you see what happens?
-    - Observe the "Deploy" pane in RStudio Server Pro:
+    - Observe the "Deploy" pane in RStudio Workbench:
 ![image](assets/deploy_pane.png)
     - Specifically, notice the bundle id and document id
 * How long does it take?

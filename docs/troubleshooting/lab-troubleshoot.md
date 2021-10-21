@@ -1,7 +1,7 @@
 
 ## Exercise 1
 
-In this exercise you determine why a new version of R added to the server does not work with RStudio Server Pro. 
+In this exercise you determine why a new version of R added to the server does not work with RStudio Workbench. 
 
 
 ### Task: Install pre-compiled version of R
@@ -127,13 +127,13 @@ How do you investigate this further?
 sudo ls -la /opt/R/3.5.1/lib/R
 ```
 
-* Was it detected by RStudio Server Pro in this internal file?
+* Was it detected by RStudio Workbench in this internal file?
 
 ```sh
 cat /var/lib/rstudio-server/r-versions
 ```
 
-_This undocumented r-versions file contains information regarding the R versions detected by RStudio Server Pro_
+_This undocumented r-versions file contains information regarding the R versions detected by RStudio Workbench_
 
 * Can you launch that version of R from the command line?
 
@@ -158,7 +158,7 @@ sudo chmod 755 /opt/R/3.5.1/
 ## Exercise 3
 
 
-In this exercise, your users have reported that after logging into Rstudio Server Pro, the session crashes with an `Unable to connect to service error`.  Maintenance was performed recently by your IT group.
+In this exercise, your users have reported that after logging into Rstudio Workbench, the session crashes with an `Unable to connect to service error`.  Maintenance was performed recently by your IT group.
 
 ### Task: Simulate an R session crash
 
@@ -170,7 +170,7 @@ sudo chmod +x r_Session_crash
 sudo ./r_Session_crash
 ```
       
-Are you able to reproduce the issue with your `admin-user` by logging into RStudio Server Pro or by starting a new session?
+Are you able to reproduce the issue with your `admin-user` by logging into RStudio Workbench or by starting a new session?
 
 ### Task: Investigate
 
@@ -204,7 +204,7 @@ service rstudio-server stop
 service rstudio-server start
 ```
 
-Are you still able to reproduce the issue with your `admin-user` by logging into RStudio Server Pro or by starting a new session?
+Are you still able to reproduce the issue with your `admin-user` by logging into RStudio Workbench or by starting a new session?
 
 !!! info 
     This option, to disable startup scripts, is a good way to troubleshoot the inability for sessions to launch, as it could indicate a conflict is occuring due to environment variables being set in the shell profiles.

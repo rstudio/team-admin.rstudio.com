@@ -1,9 +1,9 @@
-# Installing RStudio Server Pro
+# Installing RStudio Workbench
 
 You have already installed R from pre-compiled binaries.  In this session you:
 
-* Review the RStudio Server Pro installation checklist
-* Install RStudio Server Pro 
+* Review the RStudio Workbench installation checklist
+* Install RStudio Workbench 
 * Discuss architecture and some best practices
 
 
@@ -22,9 +22,9 @@ The answer is it depends, but as a general guideline:
 
 Product                 | Minimum (CPU / Memory) | Recommended (CPU / Memory) |
 ---------------------   |            ----------- |                  --------- |
-RStudio Server Pro      |            2 core / 4G |    4 - 16 core / 8G - 256G |
+RStudio Workbench       |            2 core / 4G |    4 - 16 core / 8G - 256G |
 RStudio Connect         |            2 core / 4G |   8 - 16 core / 32G - 128G |
-Shiny Server Pro        |            2 core / 4G |      4 - 8 core / 4G - 64G |
+Shiny Workbench         |            2 core / 4G |      4 - 8 core / 4G - 64G |
 RStudio Package Manager | 2 core / 2G (RAM) / 50 G (Disk) | 2 core / 2 G (RAM) / 200 G (Disk) |
 
 
@@ -32,7 +32,7 @@ RStudio Package Manager | 2 core / 2G (RAM) / 50 G (Disk) | 2 core / 2 G (RAM) /
 
 ### Pre-requirements
 
-To install RStudio Server Pro you need:
+To install RStudio Workbench you need:
 
 * **Root privileges** for installing and running
 * Access to the **R programming language** (we recommend [installing from pre-compiled binaries](https://docs.rstudio.com/resources/install-r/))
@@ -54,7 +54,7 @@ Support article:
 
 Please read the support article:
 
-* [RStudio Server Pro Installation and Configuration - Example Checklist](https://support.rstudio.com/hc/en-us/articles/360015079054-RStudio-Server-Pro-Installation-and-Configuration-Example-Checklist)
+* [RStudio Workbench Installation and Configuration - Example Checklist](https://support.rstudio.com/hc/en-us/articles/360015079054-RStudio-Server-Pro-Installation-and-Configuration-Example-Checklist)
 
 
 You can also refer to the [Requirements](https://docs.rstudio.com/requirements/) section of the [RStudio product documentation](https://docs.rstudio.com).
@@ -86,5 +86,5 @@ Next complete the exercise.
 
 Signs of success:
 
-* You have installed RStudio Server Pro
-* RStudio Server Pro is running
+* You have installed RStudio Workbench
+* RStudio Workbench is running

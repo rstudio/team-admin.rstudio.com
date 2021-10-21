@@ -24,15 +24,15 @@ Notice that the documentation page is organized in a logical flow for each produ
 Take a look at the support documents:
 
 * [General product requirements](https://support.rstudio.com/hc/en-us/articles/360015177453-RStudio-professional-product-requirements)
-* [RStudio Server Pro Installation and Configuration - Example Checklist](https://support.rstudio.com/hc/en-us/articles/360015079054-RStudio-Server-Pro-Installation-and-Configuration-Example-Checklist)
+* [RStudio Workbench Installation and Configuration - Example Checklist](https://support.rstudio.com/hc/en-us/articles/360015079054-RStudio-Server-Pro-Installation-and-Configuration-Example-Checklist)
 
 
-## Task: Install RStudio Server Pro
+## Task: Install RStudio Workbench
 
 ### Confirm your OS
 
 !!! question "Quiz: Which operating system?"
-    You must download RStudio Server Pro for the correct operating system.
+    You must download RStudio Workbench for the correct operating system.
     
     What OS are you using in this classroom virtual machine?
     
@@ -60,7 +60,7 @@ Note that this is not permanent, since this exported setting will be lost if the
 
 ### Perform the installation
 
-For production use, RStudio strongly recommends you use the supported version of RStudio Server Pro.
+For production use, RStudio strongly recommends you use the supported version of RStudio Workbench.
 
 You can find the installation instructions in the documentation page at [https://docs.rstudio.com/rsp/installation/](https://docs.rstudio.com/rsp/installation/)
 
@@ -110,10 +110,10 @@ It means you installed the **open source** version of RStudio Server.
 
 To fix this, you should:
 
-* Ensure you download the **RStudio Server Pro**
+* Ensure you download the **RStudio Workbench**
 * Follow the installation instructions
 
-You can safely install RStudio Server Pro on top of the open source RStudio Server.  Specifically, you don't have to remove any installation folders or files.
+You can safely install RStudio Workbench on top of the open source RStudio Server.  Specifically, you don't have to remove any installation folders or files.
 
 
 ### Success!!
@@ -143,7 +143,7 @@ Note that there might also be other process information in the output - just loo
 
 Remember the original login page (sent to you via email)?
 
-Click on the URL link to take you to your own Getting Started page.  From here, click on the link for RStudio Server Pro.
+Click on the URL link to take you to your own Getting Started page.  From here, click on the link for RStudio Workbench.
 
 ![images](assets/rsp-button.png)
 
@@ -153,7 +153,7 @@ Then, on the sign-in page, sign in with the classroom credentials (sent in the s
 ![images](assets/sign-in.png)
 
 
-This should log you into RStudio Server Pro.
+This should log you into RStudio Workbench.
 
 
 !!! note
