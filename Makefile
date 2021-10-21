@@ -1,7 +1,7 @@
 all: help
 
 linkcheck-local: ## build the site locally and test links
-	docker run --rm -it --network="host" -u $(id -u):$(id -g) linkchecker/linkchecker --check-extern http://127.0.0.1:8000
+	docker run --rm -it --network="host" -u $(id -u):$(id -g) linkchecker/linkchecker --check-extern http://host.docker.internal:8000
 
 linkcheck-staging: ## Test links on the production site
 	docker run --rm -it -u $(id -u):$(id -g) linkchecker/linkchecker --check-extern https://team-admin-staging.netlify.app
