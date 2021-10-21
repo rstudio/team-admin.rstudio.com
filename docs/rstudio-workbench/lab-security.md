@@ -4,9 +4,9 @@ Imagine that you are in an organization that standardized authentication using t
 
 * In this exercise, we have provided the LDAP server for you.
 
-* Your task is to configure RStudio Server Pro to integrate with the LDAP server.
+* Your task is to configure RStudio Workbench to integrate with the LDAP server.
 
-* When you are finished, users in the LDAP directory should be able to authenticate into RStudio Server Pro.
+* When you are finished, users in the LDAP directory should be able to authenticate into RStudio Workbench.
 
 
 ![images](assets/4-security.png)
@@ -16,7 +16,7 @@ This exercise is broken into three parts:
 
 1. Explore LDAP and obtain information from the `.ldif` file
 1. Use `sssd` to configure your server with LDAP
-1. Use PAM to configure RStudio Server Pro
+1. Use PAM to configure RStudio Workbench
 
 
 !!! tip
@@ -26,7 +26,7 @@ This exercise is broken into three parts:
 
 !!! question "Quiz: Authentication protocols"
 
-    Which authentication protocols are supported by RStudio Server Pro?",
+    Which authentication protocols are supported by RStudio Workbench?",
     
     Choose six answers from the following list:
     
@@ -51,12 +51,12 @@ This exercise is broken into three parts:
 We have set up an LDAP server for you.
 
 * First, configure LDAP
-* Second, use PAM to configure RStudio Server Pro 
+* Second, use PAM to configure RStudio Workbench 
 
 Successful completion involves:
 
 * LDAP users are accessible from the command line
-* LDAP users can login into RStudio Server Pro
+* LDAP users can login into RStudio Workbench
 
 
 
@@ -497,18 +497,18 @@ Consider these questions:
 
 You have successfully configured your server to recognize LDAP. PAM can now call the `sssd` service and find users in the LDAP directory.
 
-The next step is to configure RStudio Server Pro with PAM.
+The next step is to configure RStudio Workbench with PAM.
 
 
 
 ## Part 3: Configure RSP
 
-In this part, you configure RStudio Server Pro to connect to LDAP via PAM.
+In this part, you configure RStudio Workbench to connect to LDAP via PAM.
 
 
 ### Task: Set up PAM Profiles
 
-RStudio Server Pro supports PAM sessions. The PAM sessions work with `sssd` to authenticate users.
+RStudio Workbench supports PAM sessions. The PAM sessions work with `sssd` to authenticate users.
 
 Tasks
 
@@ -600,7 +600,7 @@ man chown
 
 ### Task: Restart RStudio Server
 
-You must restart RStudio Server Pro for your configuration change to take effect
+You must restart RStudio Workbench for your configuration change to take effect
 
 !!! note
 
@@ -628,9 +628,9 @@ sudo rstudio-server status
 
 ### Task: Log in as a user that exists in LDAP
 
-Log into RStudio Server Pro in your browser using one of the users from the LDAP Server.
+Log into RStudio Workbench in your browser using one of the users from the LDAP Server.
 
-* Important: **Since RStudio Server Pro now authenticates only users in LDAP, you must log in as one of those users**
+* Important: **Since RStudio Workbench now authenticates only users in LDAP, you must log in as one of those users**
 * Also, a user home folder must exist, so make sure you've created a home folder!
 * practically speaking, this means you must log in as `jen`, since you created a home folder for `jen` in the previous step
     
@@ -662,7 +662,7 @@ Log into RStudio Server Pro in your browser using one of the users from the LDAP
         This probably means:
         * you forgot to copy the PAM Profile files in the task "Set up PAM profiles", OR 
         * you didn't edit the `/etc/rstudio/rserver.conf` file.
-    2. You forgot the URL for your RStudio Server Pro session
+    2. You forgot the URL for your RStudio Workbench session
         * Review the joining instructions sent via email and bookmark your Virtual Machine URL.
     3. You logged in as `admin-user`
         * Remember that you now use LDAP to authenticate, and `admin-user` is not an authenticated user in LDAP
