@@ -9,7 +9,7 @@ and customers.
 
 The course covers installation, configuration, integration and usage of:
 
-  - RStudio Server Pro
+  - RStudio Workbench
   - RStudio Connect
   - RStudio Package Manager
 
