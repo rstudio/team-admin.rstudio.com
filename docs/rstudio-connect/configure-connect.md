@@ -203,7 +203,7 @@ RStudio Connect supports both online and offline license activation:
 * Offline: licenses require manual exchange.
 
 
-**Online** servers automatically start with a 45 day trial.
+You will need a valid license to start a trial.  You can apply for a free 30 day trial license at https://posit.co/trial-license
 
 License can be activated with: 
 
